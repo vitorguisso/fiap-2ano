@@ -161,39 +161,45 @@ A partir desses dados, é possível treinar modelos capazes de:
 
 ## Parte 2 – Dados Textuais (NLP)
 
-Para a etapa de **Processamento de Linguagem Natural (NLP)**, foram selecionados textos científicos relacionados às doenças cardiovasculares, fatores de risco e prevenção em saúde pública. Esses documentos foram armazenados na pasta `document/textos` do repositório e servirão como base para experimentos de análise textual utilizando técnicas de Inteligência Artificial.
+Para a etapa de **Processamento de Linguagem Natural (NLP)**, foram selecionados textos científicos relacionados às doenças cardiovasculares, fatores de risco e prevenção em saúde pública. Esses documentos foram armazenados na pasta `document` do repositório e servirão como base para experimentos de análise textual utilizando técnicas de Inteligência Artificial.
 
 ### Arquivos principais utilizados
 
-- Associação Individual e Simultânea entre Fatores de Risco para Doença Cardiovascular e Hábitos Inadequados do Estilo de Vida
-- Fatores associados às doenças cardiovasculares na população adulta brasileira
-- Nutrição e doenças cardiovasculares: os marcadores de risco em adultos
+- [Associação Individual e Simultânea entre Fatores de Risco para Doença Cardiovascular e Hábitos Inadequados do Estilo de Vida](../document/Associação%20Individual%20e%20Simultânea%20entre%20Fatores%20de%20Risco%20para.pdf)
+
+- [Fatores associados às doenças cardiovasculares na população adulta brasileira](../document/Fatores%20associados%20às%20doenças%20cardiovasculares.pdf)
+
+- [Nutrição e doenças cardiovasculares: os marcadores de risco em adultos](../document/Nutrição%20e%20doenças%20cardiovasculares%20os.pdf)
 
 Esses textos abordam temas como:
 
-- fatores de risco cardiovasculares
-- influência do estilo de vida na saúde cardíaca
-- fatores nutricionais associados às doenças cardiovasculares
-- determinantes epidemiológicos da saúde da população brasileira
+- fatores de risco cardiovasculares  
+- influência do estilo de vida na saúde cardíaca  
+- fatores nutricionais associados às doenças cardiovasculares  
+- determinantes epidemiológicos da saúde da população brasileira  
 
 ### Potencial de aplicação de NLP
 
 Os textos selecionados podem ser explorados por técnicas de NLP como:
 
-- **Extração de entidades médicas**, identificando termos como hipertensão, diabetes, obesidade, colesterol elevado, tabagismo e sedentarismo
-- **Classificação de tópicos**, permitindo separar documentos por temas como prevenção cardiovascular, fatores de risco, nutrição e saúde pública
-- **Mineração de fatores de risco**, identificando relações entre hábitos e doenças, como sedentarismo, dieta inadequada e tabagismo
+- **Extração de entidades médicas**, identificando termos como hipertensão, diabetes, obesidade, colesterol elevado, tabagismo e sedentarismo  
+- **Classificação de tópicos**, permitindo separar documentos por temas como prevenção cardiovascular, fatores de risco, nutrição e saúde pública  
+- **Mineração de fatores de risco**, identificando relações entre hábitos e doenças, como sedentarismo, dieta inadequada e tabagismo  
 
 ### Relevância para o projeto
 
 A utilização desses textos permite demonstrar como sistemas de IA podem:
 
-- analisar conteúdos médicos e epidemiológicos automaticamente
-- identificar padrões de risco em saúde
-- apoiar a tomada de decisão clínica
-- estruturar conhecimento a partir de grandes volumes de informação textual
+- analisar conteúdos médicos e epidemiológicos automaticamente  
+- identificar padrões de risco em saúde  
+- apoiar a tomada de decisão clínica  
+- estruturar conhecimento a partir de grandes volumes de informação textual  
 
-Além dos textos principais, o repositório também conta com materiais complementares na pasta `document/other`, que poderão ser utilizados em fases futuras do projeto.
+Além dos textos principais, o repositório também conta com **materiais complementares**, disponíveis na pasta:
+
+➡️ **[document/outros](../document/outros)**
+
+Esses materiais poderão ser utilizados em fases futuras do projeto para ampliar a base textual utilizada nas análises de NLP.
 
 ---
 

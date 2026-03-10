@@ -213,7 +213,7 @@ A partir desses dados, é possível treinar modelos capazes de:
 - prever o risco de doenças cardiovasculares
 - relacionar variáveis clínicas com padrões de sinais cardíacos
 
-### Observação sobre o tratamento de dados**
+### Observação sobre o tratamento de dados
 
 Nesta etapa inicial do projeto foi realizado apenas um tratamento básico dos dados, com o objetivo de possibilitar a leitura, exploração preliminar e geração de dados simulados a partir da base original. Foram verificadas a estrutura do dataset, a presença de valores ausentes e a consistência das variáveis, permitindo compreender as características gerais da base utilizada.
 

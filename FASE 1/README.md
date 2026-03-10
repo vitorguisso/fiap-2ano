@@ -85,11 +85,59 @@ O dataset utilizado neste projeto pode ser acessado no repositório:
 
 📊 [heart_disease_uci.csv](https://github.com/vitorguisso/fiap-2ano/blob/main/FASE%201/assets/datasets/heart_disease_uci.csv)
 
-Além da base original, foi gerado um **dataset sintético complementar**, contendo pacientes simulados com distribuição estatística semelhante à base real, com o objetivo de ampliar o conjunto de dados para experimentos futuros.
+## Parte 1.2– Geração de Dataset Sintético (Google Colab)
 
-O dataset sintético utilizado neste projeto pode ser acessado no repositório:
+Para complementar a base de dados do projeto, foi desenvolvido um notebook em **Python utilizando o Google Colab** com o objetivo de gerar um dataset sintético baseado na distribuição estatística da base real de pacientes cardiológicos.
 
+### Notebook utilizado
+
+O notebook completo pode ser acessado no link abaixo:
+
+🔗 [Notebook Google Colab – Geração do Dataset Sintético](https://colab.research.google.com/drive/19iOr93Yp4Nm8TdAb1WNDxTdbSLkygErS)
+
+### Etapas realizadas no notebook
+
+
+### 1.2.1. Leitura do dataset original
+
+Inicialmente foi carregado o dataset **UCI Heart Disease Dataset**, contendo **920 pacientes** e **16 variáveis clínicas**, incluindo informações como idade, pressão arterial, colesterol, frequência cardíaca máxima, entre outras.
+
+📊 Dataset original:  
+[heart_disease_uci.csv](https://github.com/vitorguisso/fiap-2ano/blob/main/FASE%201/assets/datasets/heart_disease_uci.csv)
+
+### 1.2.2. Verificação da estrutura dos dados
+
+Foram realizadas análises exploratórias iniciais para compreender a estrutura da base de dados, incluindo:
+
+- visualização das primeiras linhas da base
+- verificação do número de registros e variáveis
+- inspeção dos nomes das colunas
+- identificação de valores ausentes
+
+Para essa etapa foram utilizadas principalmente as bibliotecas:
+
+- **Pandas**
+- **NumPy**
+
+### 1.2.3. Simulação de novos pacientes
+
+A partir da distribuição estatística das variáveis da base original, foram gerados **1000 pacientes simulados**, preservando características estatísticas semelhantes às da base real.
+
+Essa simulação permite:
+
+- ampliar o volume de dados disponível
+- testar algoritmos de Inteligência Artificial
+- realizar experimentos futuros de modelagem preditiva
+
+### 1.2.4. Exportação do dataset sintético
+
+Após a geração dos dados simulados, foi criado o arquivo:
+
+Dataset sintético:  
 📊 [heart_disease_simulado.csv](https://github.com/vitorguisso/fiap-2ano/blob/main/FASE%201/assets/datasets/heart_disease_simulado.csv)
+
+Esse dataset será utilizado nas próximas fases do projeto para testes de modelos de aprendizado de máquina e análises preditivas.
+
 
 ### Variáveis clínicas utilizadas
 

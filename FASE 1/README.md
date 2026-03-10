@@ -47,17 +47,11 @@ Assim, esta entrega representa a fundação do projeto CardioIA, estabelecendo u
 
 Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
 
-- **.github**: nesta pasta ficarão os arquivos de configuração específicos do GitHub que ajudam a gerenciar e automatizar processos no repositório.
+- **assets**: aqui estão os arquivos relacionados a elementos não estruturados deste repositório, como imagens, logotipos, materiais visuais de apoio E datasets CSV.
 
-- **assets**: aqui estão os arquivos relacionados a elementos não estruturados deste repositório, como imagens, logotipos e materiais visuais de apoio.
+- **document**: aqui estão todos os documentos do projeto. Nesta fase, foram organizados os materiais textuais utilizados nas análises de NLP, além de documentos complementares na subpasta `outros`.
 
-- **config**: pasta reservada para arquivos de configuração utilizados em etapas futuras do projeto.
-
-- **document**: aqui estão todos os documentos do projeto. Nesta fase, foram organizados os materiais textuais utilizados nas análises de NLP, além de documentos complementares na subpasta `other`.
-
-- **scripts**: pasta destinada a scripts auxiliares para tarefas específicas do projeto, como limpeza de dados, conversões de formatos e automatizações futuras.
-
-- **src**: diretório reservado para o código-fonte que será desenvolvido ao longo das próximas fases do CardioIA.
+- **scripts**: pasta destinada a scripts auxiliares para tarefas específicas do projeto, como limpeza de dados, conversões de formatos e automatizações futuras. Aqui também estão os arquivos .ipynb do google colab.
 
 - **README.md**: arquivo que serve como guia e explicação geral sobre o projeto.
 

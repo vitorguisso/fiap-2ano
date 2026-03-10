@@ -14,6 +14,7 @@
 
 ## 👨‍🎓 Integrantes
 
+- [Ryan Carlos Sousa Alves da Cunha]()
 - [Vinícius Pereira Santana]()
 - [Vitor Augusto Prado Guisso]()
 

@@ -81,7 +81,15 @@ Essa base reúne dados clínicos reais de pacientes avaliados em hospitais parti
 
 Para este projeto, foi utilizada uma base com **920 registros de pacientes**, contendo variáveis clínicas relevantes para análise e aplicação em modelos de Inteligência Artificial voltados à saúde cardiovascular.
 
+O dataset utilizado neste projeto pode ser acessado no repositório:
+
+📊 [heart_disease_uci.csv](https://github.com/vitorguisso/fiap-2ano/blob/main/FASE%201/assets/datasets/heart_disease_uci.csv)
+
 Além da base original, foi gerado um **dataset sintético complementar**, contendo pacientes simulados com distribuição estatística semelhante à base real, com o objetivo de ampliar o conjunto de dados para experimentos futuros.
+
+O dataset sintético utilizado neste projeto pode ser acessado no repositório:
+
+📊 [heart_disease_simulado.csv](https://github.com/vitorguisso/fiap-2ano/blob/main/FASE%201/assets/datasets/heart_disease_simulado.csv)
 
 ### Variáveis clínicas utilizadas
 
@@ -120,7 +128,7 @@ As variáveis mais importantes para um projeto de IA voltado à saúde cardiovas
 Além do dataset clínico, também foi incorporado ao projeto um conjunto adicional de dados provenientes do **MIT-BIH Arrhythmia Database**, um dos bancos de dados mais tradicionais da literatura científica para estudo de eletrocardiogramas e arritmias.
 
 **Fonte do dataset:**  
-MIT-BIH Arrhythmia Database
+🔗 [MIT-BIH Arrhythmia Database](https://drive.google.com/drive/u/1/folders/1T4ynNIcFw0yh5qoqNrQTstz6ugt1r8ynh)
 
 **Autores:**  
 George B. Moody e Roger G. Mark

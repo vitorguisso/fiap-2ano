@@ -128,7 +128,7 @@ As variáveis mais importantes para um projeto de IA voltado à saúde cardiovas
 Além do dataset clínico, também foi incorporado ao projeto um conjunto adicional de dados provenientes do **MIT-BIH Arrhythmia Database**, um dos bancos de dados mais tradicionais da literatura científica para estudo de eletrocardiogramas e arritmias.
 
 **Fonte do dataset:**  
-🔗 [MIT-BIH Arrhythmia Database](https://drive.google.com/drive/u/1/folders/1T4ynNIcFw0yh5qoqNrQTstz6ugt1r8ynh)
+🔗 [MIT-BIH Arrhythmia Database](https://drive.google.com/drive/u/1/folders/1T4ynNIcFw0yh5qoqNrQTstz6ugt1r8yn)
 
 **Autores:**  
 George B. Moody e Roger G. Mark

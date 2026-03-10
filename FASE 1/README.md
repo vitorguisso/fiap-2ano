@@ -165,11 +165,11 @@ Para a etapa de **Processamento de Linguagem Natural (NLP)**, foram selecionados
 
 ### Arquivos principais utilizados
 
-- [Associação Individual e Simultânea entre Fatores de Risco para Doença Cardiovascular e Hábitos Inadequados do Estilo de Vida](../document/Associação%20Individual%20e%20Simultânea%20entre%20Fatores%20de%20Risco%20para.pdf)
+- [Associação Individual e Simultânea entre Fatores de Risco para Doença Cardiovascular e Hábitos Inadequados do Estilo de Vida](https://github.com/vitorguisso/fiap-2ano/blob/main/FASE%201/document/Associa%C3%A7%C3%A3o%20Individual%20e%20Simult%C3%A2nea%20entre%20Fatores%20de%20Risco%20para.pdf)
 
-- [Fatores associados às doenças cardiovasculares na população adulta brasileira](../document/Fatores%20associados%20às%20doenças%20cardiovasculares.pdf)
+- [Fatores associados às doenças cardiovasculares na população adulta brasileira](https://github.com/vitorguisso/fiap-2ano/blob/main/FASE%201/document/Fatores%20associados%20%C3%A0s%20doen%C3%A7as%20cardiovasculares.pdf)
 
-- [Nutrição e doenças cardiovasculares: os marcadores de risco em adultos](../document/Nutrição%20e%20doenças%20cardiovasculares%20os.pdf)
+- [Nutrição e doenças cardiovasculares: os marcadores de risco em adultos](https://github.com/vitorguisso/fiap-2ano/blob/main/FASE%201/document/Nutri%C3%A7%C3%A3o%20e%20doen%C3%A7as%20cardiovasculares%20os.pdf)
 
 Esses textos abordam temas como:
 
@@ -195,9 +195,9 @@ A utilização desses textos permite demonstrar como sistemas de IA podem:
 - apoiar a tomada de decisão clínica  
 - estruturar conhecimento a partir de grandes volumes de informação textual  
 
-Além dos textos principais, o repositório também conta com **materiais complementares**, disponíveis na pasta:
+Além dos textos principais, o repositório também conta com materiais complementares disponíveis na pasta:
 
-➡️ **[document/outros](../document/outros)**
+📂 [Materiais complementares](https://github.com/vitorguisso/fiap-2ano/tree/main/FASE%201/document/outros)
 
 Esses materiais poderão ser utilizados em fases futuras do projeto para ampliar a base textual utilizada nas análises de NLP.
 

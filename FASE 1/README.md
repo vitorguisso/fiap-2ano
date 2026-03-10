@@ -93,7 +93,7 @@ Para complementar a base de dados do projeto, foi desenvolvido um notebook em **
 
 O notebook completo pode ser acessado no link abaixo:
 
-🔗 [Notebook Google Colab – Geração do Dataset Sintético](https://colab.research.google.com/drive/19iOr93Yp4Nm8TdAb1WNDxTdbSLkygErS)
+🔗 [Notebook Google Colab – Geração do Dataset Sintético](https://colab.research.google.com/drive/19iOr93Yp4Nm8TdAb1WNDxTdbSLkygErS) OU [https://github.com/vitorguisso/fiap-2ano/blob/main/FASE%201/scripts/dataset_heart_disease_simulado.ipynb)
 
 ### Etapas realizadas no notebook
 

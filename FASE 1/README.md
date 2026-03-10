@@ -61,28 +61,6 @@ Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
 
 - **README.md**: arquivo que serve como guia e explicação geral sobre o projeto.
 
-### Estrutura atual esperada do repositório
-
-CardioIA/
-├── .github/
-├── assets/
-│   ├── logo-fiap.png
-│   └── imagens_ecg/
-├── config/
-├── document/
-│   ├── textos/
-│   │   ├── artigo_01.txt
-│   │   ├── artigo_02.txt
-│   │   └── artigo_03.txt
-│   └── other/
-│       └── materiais_complementares.pdf
-├── scripts/
-├── src/
-├── dados_numericos/
-│   ├── uci_heart_disease.csv
-│   ├── dataset_sintetico.csv
-│   └── mit_bih_processado.csv
-└── README.md
 
 ## 📊 Organização dos dados da Fase 1
 

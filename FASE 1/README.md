@@ -213,6 +213,14 @@ A partir desses dados, é possível treinar modelos capazes de:
 - prever o risco de doenças cardiovasculares
 - relacionar variáveis clínicas com padrões de sinais cardíacos
 
+  **Observação sobre o tratamento de dados**
+
+Nesta etapa inicial do projeto foi realizado apenas um tratamento básico dos dados, com o objetivo de possibilitar a leitura, exploração preliminar e geração de dados simulados a partir da base original. Foram verificadas a estrutura do dataset, a presença de valores ausentes e a consistência das variáveis, permitindo compreender as características gerais da base utilizada.
+
+Ressalta-se que, neste momento, não foi realizado um processo aprofundado de limpeza, imputação de valores faltantes, normalização ou engenharia de atributos. Essas etapas de tratamento de dados, bem como análises estatísticas mais detalhadas, serão conduzidas posteriormente de forma mais criteriosa, de acordo com os requisitos específicos do modelo, das técnicas de Machine Learning e do projeto que será desenvolvido nas próximas fases.
+
+Dessa forma, a presente etapa tem caráter exploratório e preparatório, servindo como base para o desenvolvimento futuro de análises mais robustas e para a construção dos modelos inteligentes previstos no projeto.
+
 ---
 
 ## Parte 2 – Dados Textuais (NLP)

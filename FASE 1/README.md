@@ -63,7 +63,6 @@ Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
 
 ### Estrutura atual esperada do repositório
 
-```text
 CardioIA/
 ├── .github/
 ├── assets/

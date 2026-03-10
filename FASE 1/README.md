@@ -6,22 +6,20 @@
 
 <br>
 
-# Nome do projeto
+#  CardioIA – Fase 1: Batimentos de Dados
 
 ## Nome do grupo
 
 ## 👨‍🎓 Integrantes: 
-- <a href="https://www.linkedin.com/company/inova-fusca">Nome do integrante 1</a>
-- <a href="https://www.linkedin.com/company/inova-fusca">Nome do integrante 2</a>
-- <a href="https://www.linkedin.com/company/inova-fusca">Nome do integrante 3</a> 
-- <a href="https://www.linkedin.com/company/inova-fusca">Nome do integrante 4</a> 
-- <a href="https://www.linkedin.com/company/inova-fusca">Nome do integrante 5</a>
+- [Vinícius Pereira Santana]()
+- [Vitor Augusto Prado Guisso]()
 
-## 👩‍🏫 Professores:
-### Tutor(a) 
-- <a href="https://www.linkedin.com/company/inova-fusca">Nome do Tutor</a>
+## 👩‍🏫 Professores
+### Tutor(a)
+- [Caique Nonato da Silva Bezerra](.)
+
 ### Coordenador(a)
-- <a href="https://www.linkedin.com/company/inova-fusca">Nome do Coordenador</a>
+- [Andre Godoi Chiovato](https://www.linkedin.com/company/inova-fusca)
 
 
 ## 📜 Descrição

@@ -328,7 +328,7 @@ A análise automatizada de exames cardiológicos é uma das aplicações mais im
 
 ## 🔗 Links públicos dos dados
 
-- [ECG Images Dataset (MIT-BIH Arrhythmia)](https://drive.google.com/drive/u/1/folders/1G-PjyrZvAJim7DEcohYbYdltkQ8n6B3q)
+- [ECG Images Dataset (MIT-BIH Arrhythmia)](https://drive.google.com/drive/u/1/folders/1Wx45xjWuUPrYFnoy0AonnOA2NKOXeDGe)
 - [ECG Images Dataset of Cardiac Patients (Chaudhry Pervaiz Elahi Institute of Cardiology)](https://drive.google.com/drive/u/1/folders/1MTJs3u_KbfJBQ__6lsuWFyLr-z-DRuGD) 
 
 ### Dados numéricos

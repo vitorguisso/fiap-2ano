@@ -44,6 +44,19 @@ Também possui:
 - Consulta manual
 - Leitura de múltiplas consultas via arquivo ([frases.txt](assets/data/frases.txt))
 
+
+## 🧠 Interface do Sistema
+
+O sistema desenvolvido na Parte 1 possui menu interativo:
+
+### 📸 Menu do sistema:
+![Menu](assets/img/menu_parte1.PNG)
+
+Funcionalidades:
+- Consulta manual de sintomas
+- Análise de múltiplas frases via arquivo
+- Diagnóstico automatizado
+
 ---
 
 ### 🔹 Parte 2 — Inteligência Artificial (Machine Learning)
@@ -87,20 +100,6 @@ Exemplos reais de classificação:
 
 ### 📸 Aplicação do modelo:
 ![Aplicação do modelo](assets/img/aplicacao_modelo.PNG)
-
----
-
-## 🧠 Interface do Sistema
-
-O sistema desenvolvido na Parte 1 possui menu interativo:
-
-### 📸 Menu do sistema:
-![Menu](assets/img/menu_parte1.PNG)
-
-Funcionalidades:
-- Consulta manual de sintomas
-- Análise de múltiplas frases via arquivo
-- Diagnóstico automatizado
 
 ---
 

@@ -273,7 +273,6 @@ Por fim, conclui-se que a combinação entre **lógica baseada em regras** e **a
 
 Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
 
-- <b>.github</b>: Configurações internas do GitHub (templates e automações)
 
 - <b>assets</b>: Arquivos não estruturados do projeto
   - <b>data</b>: Base de dados utilizada (`frases.txt`, `mapa_sintomas.csv`, `risco.csv`)
@@ -284,7 +283,6 @@ Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
 - <b>document</b>: Contém o notebook da Parte 2  
   - `classificacao_risco.ipynb`
 
-- <b>scripts</b>: Scripts auxiliares (não utilizados nesta fase)
 
 - <b>src</b>: Código principal do sistema  
   - `diagnostico.py`

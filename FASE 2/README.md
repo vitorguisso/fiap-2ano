@@ -194,13 +194,17 @@ O modelo foi avaliado com:
 
 ## 🧪 Testes práticos
 
-O modelo foi testado com frases reais digitadas pelo usuário:
+Por fim, o modelo foi testado com frases reais digitadas pelo usuário:
 
 **Exemplos:**
 
 - "dor no peito e dificuldade para respirar" → **alto risco**  
 - "leve dor muscular nas costas" → **baixo risco**  
-- "febre" → **alto risco (erro esperado)**  
+- "febre" → **alto risco (erro esperado)**
+
+  ### 📸 Exemplo de aplicação do modelo:
+
+![Aplicação do modelo](assets/img/aplicacao_modelo.PNG)
 
 ---
 
@@ -236,9 +240,31 @@ O modelo demonstrou que:
 - Aumentar a base de dados  
 - Incluir mais variações de frases  
 - Utilizar modelos mais robustos (ex: Random Forest, XGBoost)  
-- Aplicar técnicas mais avançadas de NLP  
+- Aplicar técnicas mais avançadas de NLP
+- 
+---
 
+## 🧠 Conclusão Geral do Projeto
 
+O desenvolvimento do projeto **CardioIA** permitiu a aplicação prática de conceitos fundamentais de Inteligência Artificial, especialmente no contexto de **Processamento de Linguagem Natural (NLP)** e **classificação de dados textuais**.
+
+Na **Parte 1**, foi possível compreender a lógica por trás de sistemas baseados em regras, onde a identificação de padrões ocorre por meio de correspondência direta entre palavras-chave e sintomas previamente definidos. Essa abordagem demonstrou ser eficiente para cenários controlados, porém limitada quando exposta à variabilidade da linguagem natural.
+
+Já na **Parte 2**, o uso de técnicas de Machine Learning representou um avanço significativo, permitindo que o sistema aprendesse padrões a partir dos dados. A utilização de **TF-IDF** para vetorização e **Regressão Logística** como modelo de classificação mostrou-se adequada para o problema proposto, atingindo uma acurácia de **87,5%**, mesmo com uma base de dados reduzida.
+
+Durante os testes, observou-se que o modelo apresentou bom desempenho na identificação de padrões relacionados a sintomas de maior risco. No entanto, também foram identificadas limitações importantes, como a dificuldade em interpretar palavras isoladas ou fora do contexto de treinamento, evidenciando a dependência do modelo em relação à qualidade e diversidade dos dados utilizados.
+
+Um dos principais desafios enfrentados no desenvolvimento foi justamente a **limitação da base de dados**, tanto em quantidade quanto em variedade de expressões linguísticas. Isso impacta diretamente na capacidade de generalização do modelo, tornando-o mais suscetível a erros em situações não previstas durante o treinamento.
+
+Além disso, o projeto evidenciou que, embora modelos simples possam apresentar bons resultados iniciais, sistemas reais exigem:
+- Bases de dados mais robustas
+- Maior diversidade de exemplos
+- Técnicas mais avançadas de NLP
+- Integração com conhecimento de domínio (neste caso, médico)
+
+De forma geral, o projeto atingiu plenamente os objetivos propostos pela atividade, permitindo não apenas a implementação técnica de um modelo de classificação, mas também a compreensão crítica sobre suas limitações e possibilidades de evolução.
+
+Por fim, conclui-se que a combinação entre **lógica baseada em regras** e **aprendizado de máquina** representa uma abordagem complementar e eficaz, sendo amplamente utilizada em sistemas reais de triagem e apoio à decisão — reforçando a relevância prática dos conceitos abordados nesta fase do curso.
 ---
 
 ## 📁 Estrutura de pastas

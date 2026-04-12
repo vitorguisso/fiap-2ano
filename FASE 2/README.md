@@ -125,7 +125,6 @@ Utilizando:
 - 8 exemplos para teste  
 
 ---
-
 ### 🔹 4. Treinamento do modelo
 
 Foi utilizado o algoritmo:
@@ -133,16 +132,111 @@ Foi utilizado o algoritmo:
 - **Regressão Logística**
 
 Motivo da escolha:
-- Simples
-- Eficiente para classificação de texto
-- Muito utilizado em problemas reais de NLP
+- Simples  
+- Eficiente para classificação de texto  
+- Muito utilizado em problemas reais de NLP  
 
 O modelo foi treinado com:
 
 ```python
 modelo.fit(X_train, y_train)
+```
+
 ---
 
+### 🔹 5. Avaliação do modelo
+
+O modelo foi avaliado com:
+
+- Acurácia  
+- Precision  
+- Recall  
+- F1-score  
+- Matriz de confusão  
+
+---
+
+## 📊 Resultados obtidos
+
+### 📌 Acurácia:
+- **0.875 (87,5%)**
+
+---
+
+### 📌 Relatório de classificação:
+
+| Classe       | Precision | Recall | F1-score |
+|-------------|----------|--------|----------|
+| Alto risco  | 0.80     | 1.00   | 0.89     |
+| Baixo risco | 1.00     | 0.75   | 0.86     |
+
+---
+
+### 📌 Matriz de confusão:
+
+```
+[[4 0]
+ [1 3]]
+```
+
+👉 **Interpretação:**
+- 4 acertos de alto risco  
+- 3 acertos de baixo risco  
+- 1 erro de classificação  
+
+---
+
+### 📸 Avaliação do modelo:
+
+![Avaliação do modelo](assets/img/avaliacao_modelo.PNG)
+
+---
+
+## 🧪 Testes práticos
+
+O modelo foi testado com frases reais digitadas pelo usuário:
+
+**Exemplos:**
+
+- "dor no peito e dificuldade para respirar" → **alto risco**  
+- "leve dor muscular nas costas" → **baixo risco**  
+- "febre" → **alto risco (erro esperado)**  
+
+---
+
+## ⚠️ Discussão dos resultados
+
+Apesar da boa acurácia, foram observadas limitações importantes:
+
+### 🔹 1. Base de dados pequena
+- Apenas 24 exemplos no total  
+- Limita a capacidade de generalização  
+
+### 🔹 2. Falta de contexto nas frases
+- Palavras isoladas como "febre" ou "sede" podem gerar interpretações incorretas  
+
+### 🔹 3. Modelo sensível a palavras-chave
+- O modelo aprende padrões simples  
+- Pode classificar errado frases fora do padrão de treino  
+
+---
+
+## ✅ Conclusões da Parte 2
+
+O modelo demonstrou que:
+
+- É possível classificar sintomas com NLP  
+- Mesmo modelos simples podem atingir bons resultados  
+- A qualidade e quantidade dos dados impactam diretamente o desempenho  
+
+---
+
+## 🚀 Possíveis melhorias futuras
+
+- Aumentar a base de dados  
+- Incluir mais variações de frases  
+- Utilizar modelos mais robustos (ex: Random Forest, XGBoost)  
+- Aplicar técnicas mais avançadas de NLP  
 ## 📊 Resultados do Modelo
 
 ### 📌 Acurácia do modelo:

@@ -60,10 +60,6 @@ Funcionalidades:
 
 ### 🔹 Parte 2 — Inteligência Artificial (Machine Learning)
 
-
-
-### 🔹 Parte 2 — Inteligência Artificial (Machine Learning)
-
 📎 [Abrir notebook no Google Colab](https://colab.research.google.com/github/vitorguisso/fiap-2ano/blob/main/FASE%202/document/classificacao_risco.ipynb)
 
 Nesta etapa, foi desenvolvido um modelo de classificação de risco baseado em sintomas descritos em linguagem natural, utilizando técnicas de **Processamento de Linguagem Natural (NLP)** e **Machine Learning**.
@@ -85,7 +81,7 @@ O processo foi dividido em etapas bem definidas:
 
 ### 🔹 1. Leitura e análise dos dados
 
-Foi utilizada a base de dados `risco.csv`, contendo frases e suas respectivas classificações:
+Foi utilizada a base de dados [risco.csv](assets/data/risco.csv), contendo frases e suas respectivas classificações:
 
 - `alto risco`
 - `baixo risco`

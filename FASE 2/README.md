@@ -242,7 +242,7 @@ O modelo demonstrou que:
 - Incluir mais variações de frases  
 - Utilizar modelos mais robustos (ex: Random Forest, XGBoost)  
 - Aplicar técnicas mais avançadas de NLP
-- 
+  
 ---
 
 ## 🧠 Conclusão Geral do Projeto

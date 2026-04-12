@@ -237,32 +237,7 @@ O modelo demonstrou que:
 - Incluir mais variações de frases  
 - Utilizar modelos mais robustos (ex: Random Forest, XGBoost)  
 - Aplicar técnicas mais avançadas de NLP  
-## 📊 Resultados do Modelo
 
-### 📌 Acurácia do modelo:
-- **0.875 (87,5%)**
-
-### 📌 Relatório de classificação:
-- Boa precisão geral
-- Excelente recall para casos de alto risco
-
-### 📌 Matriz de confusão:
-- 1 erro de classificação identificado
-
-### 📸 Avaliação do modelo:
-![Avaliação do modelo](assets/img/avaliacao_modelo.PNG)
-
----
-
-## 🧪 Testes do Modelo
-
-Exemplos reais de classificação:
-
-- "dor no peito e dificuldade para respirar" → **alto risco**
-- "leve dor muscular nas costas" → **baixo risco**
-
-### 📸 Aplicação do modelo:
-![Aplicação do modelo](assets/img/aplicacao_modelo.PNG)
 
 ---
 
@@ -328,15 +303,6 @@ Execute no:
 
 - Google Colab  
 - Jupyter Notebook  
-
----
-
-## 📌 Observações importantes
-
-- Este projeto é um **protótipo acadêmico**  
-- Não substitui avaliação médica real  
-- O modelo pode apresentar erros devido à base limitada  
-- Palavras fora do contexto podem gerar classificações incorretas  
 
 ---
 

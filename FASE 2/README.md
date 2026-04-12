@@ -140,3 +140,71 @@ Instalação:
 
 ```bash
 pip install pandas scikit-learn
+
+### 🔹 Parte 1 — Sistema de Diagnóstico
+
+Execute o sistema com:
+
+```bash
+python src/diagnostico.py
+```
+
+O menu interativo será exibido no terminal.
+
+---
+
+### 🔹 Parte 2 — Modelo de IA
+
+Acesse o notebook:
+
+```
+document/classificacao_risco.ipynb
+```
+
+Execute no:
+
+- Google Colab  
+- Jupyter Notebook  
+
+---
+
+## 📌 Observações importantes
+
+- Este projeto é um **protótipo acadêmico**  
+- Não substitui avaliação médica real  
+- O modelo pode apresentar erros devido à base limitada  
+- Palavras fora do contexto podem gerar classificações incorretas  
+
+---
+
+## 🧠 Conclusão
+
+O projeto demonstra, na prática, como sistemas reais de triagem podem ser construídos combinando:
+
+- Regras lógicas (Parte 1)  
+- Inteligência Artificial (Parte 2)  
+
+Também evidencia a importância de:
+
+- Qualidade dos dados  
+- Volume de dados  
+- Contexto na linguagem natural  
+
+---
+
+## 🗃 Histórico de lançamentos
+
+* 0.2.0 - 11/04/2026  
+    * Implementação do modelo de Machine Learning  
+
+* 0.1.0 - 10/04/2026  
+    * Sistema base de diagnóstico por sintomas  
+
+---
+
+## 📋 Licença
+
+<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg">
+<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg">
+
+MODELO GIT FIAP por FIAP está licenciado sob Attribution 4.0 International.

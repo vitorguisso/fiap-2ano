@@ -266,6 +266,7 @@ Além disso, o projeto evidenciou que, embora modelos simples possam apresentar 
 De forma geral, o projeto atingiu plenamente os objetivos propostos pela atividade, permitindo não apenas a implementação técnica de um modelo de classificação, mas também a compreensão crítica sobre suas limitações e possibilidades de evolução.
 
 Por fim, conclui-se que a combinação entre **lógica baseada em regras** e **aprendizado de máquina** representa uma abordagem complementar e eficaz, sendo amplamente utilizada em sistemas reais de triagem e apoio à decisão — reforçando a relevância prática dos conceitos abordados nesta fase do curso.
+
 ---
 
 ## 📁 Estrutura de pastas

@@ -15,11 +15,12 @@
 - <a href="#">Vinícius Pereira Santana</a>
 
 ## 👩‍🏫 Professores:
-### Tutor(a) 
-- <a href="#">Nome do Tutor</a>
-### Coordenador(a)
-- <a href="#">Nome do Coordenador</a>
 
+### Tutor(a)
+- [Caique Nonato da Silva Bezerra](.)
+
+### Coordenador(a)
+- [Andre Godoi Chiovato](https://www.linkedin.com/company/inova-fusca)
 ---
 
 ## 📜 Descrição

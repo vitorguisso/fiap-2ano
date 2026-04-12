@@ -53,9 +53,8 @@ O sistema desenvolvido na Parte 1 possui menu interativo:
 ![Menu](assets/img/menu_parte1.PNG)
 
 Funcionalidades:
-- Consulta manual de sintomas
-- Análise de múltiplas frases via arquivo
-- Diagnóstico automatizado
+- Consulta manual de sintomas: o usuário escreve os sintomas e recebe uma resposta para aqueles sintomas. Para efeito de estudos iniciais, foram usados como base 2 sintomas no mínimo para a detecção de uma passível causa.
+- Análise de múltiplas frases via arquivo: o programa lê um arquivo com diversos casos, simulando um banco de dados de consultas. 
 
 ---
 

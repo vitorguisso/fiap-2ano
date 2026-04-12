@@ -6,67 +6,137 @@
 
 <br>
 
-# Nome do projeto
+# CardioIA — Sistema Inteligente de Triagem de Sintomas
 
 ## Nome do grupo
 
 ## 👨‍🎓 Integrantes: 
-- <a href="https://www.linkedin.com/company/inova-fusca">Nome do integrante 1</a>
-- <a href="https://www.linkedin.com/company/inova-fusca">Nome do integrante 2</a>
-- <a href="https://www.linkedin.com/company/inova-fusca">Nome do integrante 3</a> 
-- <a href="https://www.linkedin.com/company/inova-fusca">Nome do integrante 4</a> 
-- <a href="https://www.linkedin.com/company/inova-fusca">Nome do integrante 5</a>
+- <a href="#">Vitor Augusto Prado Guisso</a>
+- <a href="#">Ryan Carlos Sousa Alves da Cunha</a>
+- <a href="#">Vinícius Pereira Santana</a>
 
 ## 👩‍🏫 Professores:
 ### Tutor(a) 
-- <a href="https://www.linkedin.com/company/inova-fusca">Nome do Tutor</a>
+- <a href="#">Nome do Tutor</a>
 ### Coordenador(a)
-- <a href="https://www.linkedin.com/company/inova-fusca">Nome do Coordenador</a>
+- <a href="#">Nome do Coordenador</a>
 
+---
 
 ## 📜 Descrição
 
-*Descreva seu projeto com base no texto do PBL (até 600 palavras)*
+O projeto **CardioIA** tem como objetivo simular um sistema inteligente de triagem de sintomas relacionados a doenças cardiovasculares, utilizando conceitos fundamentais de **Processamento de Linguagem Natural (NLP)** e **Machine Learning**.
 
+A solução foi dividida em duas etapas principais:
+
+### 🔹 Parte 1 — Sistema Base (Regra + Sintomas)
+
+Nesta etapa, foi desenvolvido um sistema baseado em regras, onde o usuário descreve os sintomas e o sistema identifica possíveis diagnósticos com base em um arquivo estruturado (`mapa_sintomas.csv`).
+
+O sistema:
+- Analisa frases digitadas pelo usuário
+- Identifica sintomas dentro da frase
+- Exige pelo menos 2 sintomas para um diagnóstico mais assertivo
+- Retorna um diagnóstico sugerido
+
+Também possui:
+- Consulta manual
+- Leitura de múltiplas consultas via arquivo (`frases.txt`)
+
+---
+
+### 🔹 Parte 2 — Inteligência Artificial (Machine Learning)
+
+Nesta etapa, foi desenvolvido um modelo de classificação utilizando:
+
+- TF-IDF (transformação de texto em números)
+- Regressão Logística (modelo de classificação)
+- Separação de dados em treino e teste
+- Avaliação com métricas reais
+
+O modelo classifica as frases em:
+- **Alto risco**
+- **Baixo risco**
+
+---
+
+## 📊 Resultados do Modelo
+
+### 📌 Acurácia do modelo:
+- **0.875 (87,5%)**
+
+### 📌 Relatório de classificação:
+- Boa precisão geral
+- Excelente recall para casos de alto risco
+
+### 📌 Matriz de confusão:
+- 1 erro de classificação identificado
+
+### 📸 Avaliação do modelo:
+![Avaliação do modelo](assets/img/avaliacao_modelo.PNG)
+
+---
+
+## 🧪 Testes do Modelo
+
+Exemplos reais de classificação:
+
+- "dor no peito e dificuldade para respirar" → **alto risco**
+- "leve dor muscular nas costas" → **baixo risco**
+
+### 📸 Aplicação do modelo:
+![Aplicação do modelo](assets/img/aplicacao_modelo.PNG)
+
+---
+
+## 🧠 Interface do Sistema
+
+O sistema desenvolvido na Parte 1 possui menu interativo:
+
+### 📸 Menu do sistema:
+![Menu](assets/img/menu_parte1.PNG)
+
+Funcionalidades:
+- Consulta manual de sintomas
+- Análise de múltiplas frases via arquivo
+- Diagnóstico automatizado
+
+---
 
 ## 📁 Estrutura de pastas
 
 Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
 
-- <b>.github</b>: Nesta pasta ficarão os arquivos de configuração específicos do GitHub que ajudam a gerenciar e automatizar processos no repositório.
+- <b>.github</b>: Configurações internas do GitHub (templates e automações)
 
-- <b>assets</b>: aqui estão os arquivos relacionados a elementos não-estruturados deste repositório, como imagens.
+- <b>assets</b>: Arquivos não estruturados do projeto
+  - <b>data</b>: Base de dados utilizada (`frases.txt`, `mapa_sintomas.csv`, `risco.csv`)
+  - <b>img</b>: Imagens e prints dos resultados
 
-- <b>config</b>: Posicione aqui arquivos de configuração que são usados para definir parâmetros e ajustes do projeto.
+- <b>config</b>: Pasta reservada para configurações futuras do projeto
 
-- <b>document</b>: aqui estão todos os documentos do projeto que as atividades poderão pedir. Na subpasta "other", adicione documentos complementares e menos importantes.
+- <b>document</b>: Contém o notebook da Parte 2  
+  - `classificacao_risco.ipynb`
 
-- <b>scripts</b>: Posicione aqui scripts auxiliares para tarefas específicas do seu projeto. Exemplo: deploy, migrações de banco de dados, backups.
+- <b>scripts</b>: Scripts auxiliares (não utilizados nesta fase)
 
-- <b>src</b>: Todo o código fonte criado para o desenvolvimento do projeto ao longo das 7 fases.
+- <b>src</b>: Código principal do sistema  
+  - `diagnostico.py`
 
-- <b>README.md</b>: arquivo que serve como guia e explicação geral sobre o projeto (o mesmo que você está lendo agora).
+- <b>README.md</b>: Documentação do projeto
+
+---
 
 ## 🔧 Como executar o código
 
-*Acrescentar as informações necessárias sobre pré-requisitos (IDEs, serviços, bibliotecas etc.) e instalação básica do projeto, descrevendo eventuais versões utilizadas. Colocar um passo a passo de como o leitor pode baixar o seu código e executá-lo a partir de sua máquina ou seu repositório. Considere a explicação organizada em fase.*
+### 🔹 Pré-requisitos
 
+- Python 3.10+
+- Bibliotecas:
+  - pandas
+  - scikit-learn
 
-## 🗃 Histórico de lançamentos
+Instalação:
 
-* 0.5.0 - XX/XX/2024
-    * 
-* 0.4.0 - XX/XX/2024
-    * 
-* 0.3.0 - XX/XX/2024
-    * 
-* 0.2.0 - XX/XX/2024
-    * 
-* 0.1.0 - XX/XX/2024
-    *
-
-## 📋 Licença
-
-<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/agodoi/template">MODELO GIT FIAP</a> por <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://fiap.com.br">Fiap</a> está licenciado sobre <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Attribution 4.0 International</a>.</p>
-
-
+```bash
+pip install pandas scikit-learn

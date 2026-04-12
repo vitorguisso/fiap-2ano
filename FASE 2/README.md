@@ -12,7 +12,6 @@
 
 ## 👨‍🎓 Integrantes: 
 - <a href="#">Vitor Augusto Prado Guisso</a>
-- <a href="#">Ryan Carlos Sousa Alves da Cunha</a>
 - <a href="#">Vinícius Pereira Santana</a>
 
 ## 👩‍🏫 Professores:

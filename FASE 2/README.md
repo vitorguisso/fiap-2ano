@@ -71,6 +71,80 @@ O modelo classifica as frases em:
 - **Alto risco**
 - **Baixo risco**
 
+### 🔹 Parte 2 — Inteligência Artificial (Machine Learning)
+
+📎 [Abrir notebook no Google Colab](https://colab.research.google.com/github/vitorguisso/fiap-2ano/blob/main/FASE%202/document/classificacao_risco.ipynb)
+
+Nesta etapa, foi desenvolvido um modelo de classificação de risco baseado em sintomas descritos em linguagem natural, utilizando técnicas de **Processamento de Linguagem Natural (NLP)** e **Machine Learning**.
+
+---
+
+## 🧠 Etapas do desenvolvimento
+
+O processo foi dividido em etapas bem definidas:
+
+### 🔹 1. Leitura e análise dos dados
+
+Foi utilizada a base de dados `risco.csv`, contendo frases e suas respectivas classificações:
+
+- `alto risco`
+- `baixo risco`
+
+Inicialmente, foram realizadas:
+- Leitura da base com **pandas**
+- Visualização das primeiras linhas
+- Contagem de exemplos por classe
+
+👉 Resultado:
+- Base balanceada (mesma quantidade de exemplos para cada classe)
+
+---
+
+### 🔹 2. Vetorização dos textos (TF-IDF)
+
+As frases foram transformadas em dados numéricos utilizando:
+
+- **TF-IDF (Term Frequency - Inverse Document Frequency)**
+
+Essa técnica permite:
+- Identificar a importância de cada palavra
+- Converter texto em vetores numéricos
+- Tornar os dados compreensíveis para o modelo
+
+---
+
+### 🔹 3. Separação dos dados
+
+Os dados foram divididos em:
+
+- **70% treino**
+- **30% teste**
+
+Utilizando:
+- `train_test_split`
+- `stratify=y` (mantendo o equilíbrio entre classes)
+
+👉 Resultado:
+- 16 exemplos para treino  
+- 8 exemplos para teste  
+
+---
+
+### 🔹 4. Treinamento do modelo
+
+Foi utilizado o algoritmo:
+
+- **Regressão Logística**
+
+Motivo da escolha:
+- Simples
+- Eficiente para classificação de texto
+- Muito utilizado em problemas reais de NLP
+
+O modelo foi treinado com:
+
+```python
+modelo.fit(X_train, y_train)
 ---
 
 ## 📊 Resultados do Modelo

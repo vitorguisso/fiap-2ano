@@ -29,9 +29,10 @@ O projeto **CardioIA** tem como objetivo simular um sistema inteligente de triag
 
 A solução foi dividida em duas etapas principais:
 
-### 🔹 Parte 1 — Sistema Base (Regra + Sintomas)
 
-Nesta etapa, foi desenvolvido um sistema baseado em regras, onde o usuário descreve os sintomas e o sistema identifica possíveis diagnósticos com base em um arquivo estruturado (`mapa_sintomas.csv`).
+  ### 🔹 Parte 1 — Sistema Base (Regra + Sintomas)
+
+Nesta etapa, foi desenvolvido um sistema baseado em regras, onde o usuário descreve os sintomas e o sistema identifica possíveis diagnósticos com base em um arquivo estruturado ([mapa_sintomas.csv](assets/data/mapa_sintomas.csv)).
 
 O sistema:
 - Analisa frases digitadas pelo usuário
@@ -41,7 +42,7 @@ O sistema:
 
 Também possui:
 - Consulta manual
-- Leitura de múltiplas consultas via arquivo (`frases.txt`)
+- Leitura de múltiplas consultas via arquivo ([frases.txt](assets/data/frases.txt))
 
 ---
 

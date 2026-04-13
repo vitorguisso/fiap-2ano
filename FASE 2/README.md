@@ -25,7 +25,7 @@
 
 ## 🎥 Vídeo de Apresentação
 
-[Acesse aqui o vídeo de explicação do projeto](COLE_AQUI_O_LINK_DO_VIDEO)
+[Acesse aqui o vídeo de explicação do projeto](https://youtu.be/ao-GGlWf8IA)
 
 ---
 

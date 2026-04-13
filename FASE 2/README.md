@@ -23,6 +23,12 @@
 - [Andre Godoi Chiovato](https://www.linkedin.com/company/inova-fusca)
 ---
 
+## 🎥 Vídeo de Apresentação
+
+[Acesse aqui o vídeo de explicação do projeto](COLE_AQUI_O_LINK_DO_VIDEO)
+
+---
+
 ## 📜 Descrição
 
 O projeto **CardioIA** tem como objetivo simular um sistema inteligente de triagem de sintomas relacionados a doenças cardiovasculares, utilizando conceitos fundamentais de **Processamento de Linguagem Natural (NLP)** e **Machine Learning**.

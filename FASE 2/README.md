@@ -307,14 +307,13 @@ pip install pandas scikit-learn
 
 ### 🔹 Parte 1 — Sistema de Diagnóstico
 
-Execute o sistema com:
+1. Baixe o repositório completo clicando em **Code > Download ZIP** no GitHub.  
+2. Extraia os arquivos no seu computador.  
+3. Abra o terminal na pasta **FASE 2**.  
+4. Execute o comando: python src/diagnostico.py
 
-```bash
-python src/diagnostico.py
-```
 
-O menu interativo será exibido no terminal.
-
+> ⚠️ Importante: o sistema depende da estrutura completa do projeto. Não execute o arquivo `.py` isoladamente.
 ---
 
 ### 🔹 Parte 2 — Modelo de IA

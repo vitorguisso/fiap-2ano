@@ -317,7 +317,8 @@ Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
 Acesse o notebook:
 
 ```
-document/classificacao_risco.ipynb
+📎 [Abrir notebook no Google Colab](https://colab.research.google.com/github/vitorguisso/fiap-2ano/blob/main/FASE%202/document/classificacao_risco.ipynb) ou 
+💾 [Acessar arquivo notebook (.ipynb)](document/classificacao_risco.ipynb)
 ```
 
 Execute no:

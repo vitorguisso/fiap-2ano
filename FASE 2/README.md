@@ -300,11 +300,6 @@ Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
   - pandas
   - scikit-learn
 
-Instalação:
-
-```bash
-pip install pandas scikit-learn
-
 ### 🔹 Parte 1 — Sistema de Diagnóstico
 
 1. Baixe o repositório completo clicando em **Code > Download ZIP** no GitHub.  
@@ -314,6 +309,7 @@ pip install pandas scikit-learn
 
 
 > ⚠️ Importante: o sistema depende da estrutura completa do projeto. Não execute o arquivo `.py` isoladamente.
+
 ---
 
 ### 🔹 Parte 2 — Modelo de IA

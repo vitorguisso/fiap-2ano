@@ -319,6 +319,7 @@ Acesse o notebook:
 ```
 📎 [Abrir notebook no Google Colab](https://colab.research.google.com/github/vitorguisso/fiap-2ano/blob/main/FASE%202/document/classificacao_risco.ipynb) ou 
 💾 [Acessar arquivo notebook (.ipynb)](document/classificacao_risco.ipynb)
+
 ```
 
 Execute no:

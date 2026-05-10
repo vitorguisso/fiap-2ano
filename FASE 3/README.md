@@ -78,6 +78,25 @@ A figura abaixo apresenta a arquitetura implementada no simulador Wokwi.
 
 ---
 
+# 📄 Relatório acadêmico
+
+O relatório completo do projeto pode ser acessado pelo link abaixo:
+
+## 🔗 [Clique aqui para abrir o relatório da FASE 3](document/RELATORIO_FASE3_FIAP.pdf)
+
+O documento contém:
+- fundamentação teórica;
+- arquitetura do sistema;
+- Edge Computing;
+- MQTT;
+- dashboard;
+- resiliência offline;
+- resultados obtidos;
+- testes realizados;
+- conclusões do projeto.
+
+---
+
 # 🚀 Tecnologias utilizadas
 
 ## Hardware e simulação

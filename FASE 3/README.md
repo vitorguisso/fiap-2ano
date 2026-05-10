@@ -10,7 +10,6 @@
 
 # CardioIA – Edge Computing e Resiliência Offline em IoT para Monitoramento Cardíaco
 
-## Inova Fusca
 
 ## 👨‍🎓 Integrantes: 
 - <a href="#">Vitor Augusto Prado Guisso</a>

@@ -76,7 +76,21 @@ A figura abaixo apresenta a arquitetura implementada no simulador Wokwi.
 
 ![Arquitetura do sistema](assets/arquitetura-wokwi.png)
 
+# ▶️ Projeto no Wokwi
+
+O projeto completo pode ser acessado pelo link abaixo:
+
+https://wokwi.com/projects/462873493787646977
+
+Para executar a simulação:
+
+1. Abrir o projeto;
+2. Clicar em `Start Simulation`;
+3. Acompanhar os dados no Serial Monitor;
+4. Executar o Node-RED localmente para visualizar o dashboard.
+
 ---
+
 
 # 📄 Relatório acadêmico
 
@@ -177,20 +191,6 @@ Quando ocorre perda de conectividade:
 
 ---
 
-# ▶️ Projeto no Wokwi
-
-O projeto completo pode ser acessado pelo link abaixo:
-
-https://wokwi.com/projects/462873493787646977
-
-Para executar a simulação:
-
-1. Abrir o projeto;
-2. Clicar em `Start Simulation`;
-3. Acompanhar os dados no Serial Monitor;
-4. Executar o Node-RED localmente para visualizar o dashboard.
-
----
 
 # 📊 Dashboard em funcionamento
 

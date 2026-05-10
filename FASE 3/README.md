@@ -12,20 +12,17 @@
 
 ## Inova Fusca
 
-## 👨‍🎓 Integrantes
+## 👨‍🎓 Integrantes: 
+- <a href="#">Vitor Augusto Prado Guisso</a>
+- <a href="#">Vinícius Pereira Santana</a>
 
-- <a href="https://github.com/vitorguisso">Vitor Augusto Prado Guisso</a>
-
----
-
-## 👩‍🏫 Professores
+## 👩‍🏫 Professores:
 
 ### Tutor(a)
-- FIAP
+- [Caique Nonato da Silva Bezerra](.)
 
 ### Coordenador(a)
-- FIAP
-
+- [Andre Godoi Chiovato](https://www.linkedin.com/company/inova-fusca)
 ---
 
 # 📜 Descrição

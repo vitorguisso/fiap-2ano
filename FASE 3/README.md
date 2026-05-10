@@ -10,18 +10,23 @@
 
 # CardioIA – Edge Computing e Resiliência Offline em IoT para Monitoramento Cardíaco
 
+---
 
-## 👨‍🎓 Integrantes: 
-- <a href="#">Vitor Augusto Prado Guisso</a>
-- <a href="#">Vinícius Pereira Santana</a>
+## 👨‍🎓 Integrantes
 
-## 👩‍🏫 Professores:
+- Vitor Augusto Prado Guisso
+- Vinícius Pereira Santana
+
+---
+
+## 👩‍🏫 Professores
 
 ### Tutor(a)
-- [Caique Nonato da Silva Bezerra](.)
+- Caique Nonato da Silva Bezerra
 
 ### Coordenador(a)
-- [Andre Godoi Chiovato](https://www.linkedin.com/company/inova-fusca)
+- Andre Godoi Chiovato
+
 ---
 
 # 📜 Descrição
@@ -38,7 +43,9 @@ O fluxo completo do sistema funciona da seguinte forma:
 Sensores → ESP32 → Processamento Local → MQTT Broker → Node-RED → Dashboard
 ```
 
-O ESP32 realiza a leitura dos sensores e executa o processamento local dos dados, caracterizando o conceito de Edge Computing. Durante a execução, o sistema identifica automaticamente possíveis estados clínicos, como:
+O ESP32 realiza a leitura dos sensores e executa o processamento local dos dados, caracterizando o conceito de Edge Computing.
+
+Durante a execução, o sistema identifica automaticamente possíveis estados clínicos, como:
 
 - Febre;
 - Hipotermia;
@@ -54,6 +61,20 @@ O Node-RED recebe as informações e atualiza um dashboard interativo em tempo r
 Além disso, o projeto implementa resiliência offline. Durante falhas simuladas de conectividade, o ESP32 continua coletando os dados normalmente e realiza armazenamento temporário em cache local. Quando a conexão retorna, os dados são sincronizados automaticamente.
 
 Essa abordagem demonstra uma arquitetura moderna de IoT aplicada à saúde digital, permitindo maior confiabilidade em cenários críticos.
+
+---
+
+# 🏗 Arquitetura do sistema
+
+O projeto foi estruturado em seis etapas principais:
+
+```txt
+Sensores → ESP32 → Processamento Local → MQTT Broker → Node-RED → Dashboard
+```
+
+A figura abaixo apresenta a arquitetura implementada no simulador Wokwi.
+
+![Arquitetura do sistema](assets/arquitetura-wokwi.png)
 
 ---
 
@@ -96,11 +117,12 @@ Essa abordagem demonstra uma arquitetura moderna de IoT aplicada à saúde digit
 # 📊 Funcionalidades implementadas
 
 ## ✅ Captura de sinais vitais
-- Temperatura corporal
-- Umidade
-- Batimentos cardíacos simulados
+- Temperatura corporal;
+- Umidade;
+- Batimentos cardíacos simulados.
 
 ## ✅ Processamento local
+
 O ESP32 realiza:
 - Leitura dos sensores;
 - Processamento dos dados;
@@ -136,6 +158,60 @@ Quando ocorre perda de conectividade:
 
 ---
 
+# ▶️ Projeto no Wokwi
+
+O projeto completo pode ser acessado pelo link abaixo:
+
+https://wokwi.com/projects/462873493787646977
+
+Para executar a simulação:
+
+1. Abrir o projeto;
+2. Clicar em `Start Simulation`;
+3. Acompanhar os dados no Serial Monitor;
+4. Executar o Node-RED localmente para visualizar o dashboard.
+
+---
+
+# 📊 Dashboard em funcionamento
+
+## ✅ Paciente normal
+
+![Dashboard normal](assets/dashboard-normal.png)
+
+---
+
+## 🚨 Febre + Taquicardia
+
+![Dashboard febre e taquicardia](assets/dashboard-febre-taquicardia.png)
+
+---
+
+## 🚨 Hipotermia + Bradicardia
+
+![Dashboard hipotermia e bradicardia](assets/dashboard-hipotermia-bradicardia.png)
+
+---
+
+# 🧪 Resiliência offline
+
+O projeto implementa resiliência offline utilizando armazenamento temporário em cache local no ESP32.
+
+Durante falhas de conectividade:
+- os dados continuam sendo coletados;
+- o sistema continua funcionando;
+- os dados são armazenados localmente;
+- nenhuma leitura é perdida.
+
+Após o retorno da conexão:
+- o ESP32 sincroniza automaticamente os dados armazenados.
+
+A figura abaixo demonstra o funcionamento da sincronização offline.
+
+![Resiliência offline](assets/resiliencia-offline.png)
+
+---
+
 # 📁 Estrutura de pastas
 
 Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
@@ -144,16 +220,19 @@ Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
 Arquivos de configuração específicos do GitHub.
 
 ## 📂 assets
-Imagens utilizadas no projeto, incluindo:
-- logo FIAP;
-- prints do dashboard;
-- evidências do sistema.
+Imagens utilizadas no projeto:
+- arquitetura do sistema;
+- dashboard;
+- evidências dos testes;
+- resiliência offline;
+- logo FIAP.
 
 ## 📂 config
-Arquivos auxiliares de configuração do projeto.
+Arquivos auxiliares de configuração do projeto:
+- flows.json do Node-RED.
 
 ## 📂 document
-Documentação acadêmica do projeto:
+Documentação acadêmica:
 - relatório da fase;
 - documentação complementar.
 
@@ -161,11 +240,13 @@ Documentação acadêmica do projeto:
 Scripts auxiliares do projeto.
 
 ## 📂 src
-Código-fonte do projeto:
-- ESP32;
-- MQTT;
-- lógica clínica;
-- processamento local.
+Código-fonte do projeto.
+
+### 📂 src/esp32
+Arquivos do simulador Wokwi:
+- sketch.ino
+- diagram.json
+- libraries.txt
 
 ## 📄 README.md
 Arquivo principal de documentação do projeto.
@@ -177,11 +258,10 @@ Arquivo principal de documentação do projeto.
 ## 📌 Pré-requisitos
 
 Instalar:
-
-- Node.js
-- Node-RED
-- Navegador web
-- Conta no Wokwi
+- Node.js;
+- Node-RED;
+- Navegador web;
+- Conta no Wokwi.
 
 ---
 
@@ -191,20 +271,13 @@ Instalar:
 
 Acesse:
 
-https://wokwi.com
+```txt
+https://wokwi.com/projects/462873493787646977
+```
 
 ---
 
-## 2. Importar os arquivos
-
-Importe:
-- sketch.ino
-- diagram.json
-- libraries.txt
-
----
-
-## 3. Executar a simulação
+## 2. Executar a simulação
 
 Clique em:
 
@@ -221,7 +294,7 @@ O ESP32 iniciará:
 
 # ▶️ Executando o Node-RED
 
-## 1. Instalar Node-RED
+## 1. Instalar o Node-RED
 
 No terminal:
 
@@ -247,9 +320,51 @@ Server now running at http://127.0.0.1:1880/
 
 ---
 
-## 3. Acessar o dashboard
+## 3. Abrir o Node-RED
 
-Abra no navegador:
+No navegador:
+
+```txt
+http://localhost:1880
+```
+
+---
+
+# 🔄 Importando o fluxo do Node-RED
+
+## 1. Abrir o menu
+
+No canto superior direito:
+
+```txt
+Menu → Import
+```
+
+---
+
+## 2. Selecionar o arquivo
+
+Importar:
+
+```txt
+config/flows.json
+```
+
+---
+
+## 3. Implantar o fluxo
+
+Clique em:
+
+```txt
+Deploy
+```
+
+---
+
+# 📈 Acessando o dashboard
+
+Após executar o fluxo, abrir no navegador:
 
 ```txt
 http://localhost:1880/ui
@@ -278,45 +393,63 @@ funciona apenas no computador onde o Node-RED está sendo executado.
 
 ---
 
-# 🔄 Importando o fluxo do Node-RED
+# 📂 Arquivos importantes do projeto
 
-## 1. Abrir o Node-RED
+## 🔧 Código ESP32
 
-Acesse:
+Localização:
 
 ```txt
-http://localhost:1880
+src/esp32/
 ```
+
+Arquivos:
+- sketch.ino
+- diagram.json
+- libraries.txt
 
 ---
 
-## 2. Importar o fluxo
+## 🔄 Fluxo do Node-RED
 
-No canto superior direito:
+Localização:
 
 ```txt
-Menu → Import
+config/flows.json
 ```
 
-Selecionar:
-- flows.json
+O arquivo contém:
+- dashboard;
+- MQTT;
+- gráficos;
+- gauge;
+- alertas clínicos;
+- integração em tempo real.
 
 ---
 
-## 3. Implantar o fluxo
+## 📄 Relatório acadêmico
 
-Clique em:
+Localização:
 
 ```txt
-Deploy
+document/RELATORIO_FASE3_FIAP.pdf
 ```
+
+O relatório contém:
+- fundamentação teórica;
+- arquitetura do sistema;
+- Edge Computing;
+- MQTT;
+- resultados;
+- testes;
+- resiliência offline.
 
 ---
 
 # 📈 Resultados obtidos
 
 O sistema apresentou:
-
 - funcionamento estável;
 - comunicação MQTT em tempo real;
 - dashboard funcional;
@@ -336,29 +469,9 @@ O sistema continuou funcionando normalmente mesmo durante desconexões simuladas
 
 ---
 
-# 🧪 Demonstração da resiliência offline
-
-Durante os testes:
-
-```txt
-=== WIFI SIMULADO: OFFLINE ===
-OFFLINE → salvando no cache
-```
-
-Após reconexão:
-
-```txt
-=== WIFI SIMULADO: ONLINE ===
-Sincronizando cache
-Cache enviado com sucesso
-```
-
----
-
 # 🔮 Trabalhos futuros
 
 Como evolução futura, pretende-se:
-
 - integrar sensores biomédicos reais;
 - utilizar SPIFFS;
 - hospedar o dashboard em nuvem;

@@ -215,6 +215,38 @@ Nele estão disponíveis:
 | Analisar todo o trabalho desenvolvido | Relatório Completo |
 | Ver códigos, experimentos e implementação detalhada | Notebook Google Colab |
 
+--- 
+
+# 📁 Estrutura de Pastas
+
+## 📂 assets
+
+Imagens utilizadas na documentação:
+
+* matrizes de confusão;
+* métricas
+* gráficos;
+* protótipo;
+* exemplos do dataset;
+* logo FIAP.
+
+## 📂 document
+
+Documentação acadêmica:
+
+* relatório entrega parte 1;
+* relatório completo da fase 4;
+
+## 📂 notebooks
+
+* CardioIA_Vision_Fase4.ipynb
+* CardioIA_Prototype.ipynb
+
+## 📄 README.md
+
+Arquivo principal de documentação do projeto.
+
+
 ---
 
 # 📑 DESENVOLVIMENTO DO PROJETO
@@ -631,48 +663,6 @@ Clique no botão abaixo para abrir o notebook diretamente no Google Colab:
 
 ---
 
-# 📁 Estrutura de Pastas
-
-## 📂 assets
-
-Imagens utilizadas na documentação:
-
-* matrizes de confusão;
-* métricas
-* gráficos;
-* protótipo;
-* exemplos do dataset;
-* logo FIAP.
-
-## 📂 document
-
-Documentação acadêmica:
-
-* relatório entrega parte 1;
-* relatório completo da fase 4;
-
-## 📂 notebooks
-
-* CardioIA_Vision_Fase4.ipynb
-* CardioIA_Prototype.ipynb
-
-## 📄 README.md
-
-Arquivo principal de documentação do projeto.
-
-
----
-
-# 📚 Referências
-
-- GOODFELLOW, Ian; BENGIO, Yoshua; COURVILLE, Aaron. *Deep Learning*. Cambridge: MIT Press, 2016.
-- HE, Kaiming; ZHANG, Xiangyu; REN, Shaoqing; SUN, Jian. *Deep Residual Learning for Image Recognition*. In: IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2016.
-- SIMONYAN, Karen; ZISSERMAN, Andrew. *Very Deep Convolutional Networks for Large-Scale Image Recognition*. arXiv preprint arXiv:1409.1556, 2015.
-- SHORTEN, Connor; KHOSHGOFTAAR, Taghi M. *A Survey on Image Data Augmentation for Deep Learning*. Journal of Big Data, v. 6, n. 60, 2019.
-- TENSORFLOW. *TensorFlow Documentation*. Disponível em: <https://www.tensorflow.org/>. Acesso em: 16 jun. 2026.
-- KAGGLE. *ECG Images Dataset*. Kaggle, [s.d.]. Disponível em: <https://www.kaggle.com/datasets/erhmrai/ecg-image-data>. Acesso em: 16 jun. 2026.
----
-
 # 🏁 Conclusão
 
 Este projeto teve como objetivo investigar a aplicação de técnicas de Visão Computacional e Deep Learning na classificação automática de eletrocardiogramas (ECG), utilizando imagens pertencentes a quatro categorias distintas: batimentos cardíacos anormais, infarto do miocárdio, exames normais e histórico pós-infarto.
@@ -693,6 +683,17 @@ Como trabalhos futuros, recomenda-se a ampliação do conjunto de dados, a aplic
 
 Dessa forma, conclui-se que os objetivos propostos para a Fase 4 foram alcançados. O projeto permitiu construir, treinar, comparar e avaliar diferentes arquiteturas de Deep Learning aplicadas à classificação de eletrocardiogramas, além de disponibilizar um protótipo funcional para demonstração dos resultados. O estudo também contribuiu para a compreensão dos benefícios, limitações e desafios envolvidos na aplicação da Inteligência Artificial ao contexto da saúde, reforçando o potencial dessas tecnologias como ferramentas de apoio ao diagnóstico médico.
 
+---
+
+# 📚 Referências
+
+- GOODFELLOW, Ian; BENGIO, Yoshua; COURVILLE, Aaron. *Deep Learning*. Cambridge: MIT Press, 2016.
+- HE, Kaiming; ZHANG, Xiangyu; REN, Shaoqing; SUN, Jian. *Deep Residual Learning for Image Recognition*. In: IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2016.
+- SIMONYAN, Karen; ZISSERMAN, Andrew. *Very Deep Convolutional Networks for Large-Scale Image Recognition*. arXiv preprint arXiv:1409.1556, 2015.
+- SHORTEN, Connor; KHOSHGOFTAAR, Taghi M. *A Survey on Image Data Augmentation for Deep Learning*. Journal of Big Data, v. 6, n. 60, 2019.
+- TENSORFLOW. *TensorFlow Documentation*. Disponível em: <https://www.tensorflow.org/>. Acesso em: 16 jun. 2026.
+- KAGGLE. *ECG Images Dataset*. Kaggle, [s.d.]. Disponível em: <https://www.kaggle.com/datasets/erhmrai/ecg-image-data>. Acesso em: 16 jun. 2026.
+  
 ---
 
 # 📋 Licença

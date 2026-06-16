@@ -352,7 +352,6 @@ Para garantir uma avaliação confiável dos modelos, o conjunto de dados foi di
 O resultado final da divisão é apresentado na figura abaixo.
 ![Divisão do Dataset](assets/dataset/separacao_data_set.png)
 
-
 # 📊 Matrizes de Confusão e Métricas
 
 ## CNN Desenvolvida do Zero

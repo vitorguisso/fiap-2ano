@@ -330,28 +330,6 @@ O notebook contém:
 
 ---
 
-# 📄 Relatório Acadêmico
-
-## Relatório Completo da Fase 4
-
-🔗 PDF:
-
-document/RELATORIO_FASE4_FIAP.pdf
-
-O relatório contém:
-
-* Fundamentação teórica;
-* Visão Computacional;
-* Deep Learning;
-* Transfer Learning;
-* Pré-processamento;
-* Avaliação dos modelos;
-* Comparação dos resultados;
-* Protótipo desenvolvido;
-* Conclusões.
-
----
-
 # 🚀 Tecnologias Utilizadas
 
 ## Inteligência Artificial
@@ -453,6 +431,35 @@ Documentação acadêmica:
 Arquivo principal de documentação do projeto.
 
 ---
+# 📂 Materiais Complementares
+
+Para facilitar a organização do projeto, alguns arquivos foram disponibilizados no Google Drive.
+
+Os modelos treinados não foram armazenados diretamente no GitHub devido às limitações de tamanho da plataforma. Todos os modelos podem ser acessados pela pasta oficial do projeto.
+
+## 📁 Pasta Principal do Projeto
+
+Contém:
+
+- Dataset original;
+- Dataset processado;
+- Modelos treinados;
+- Arquivos auxiliares utilizados durante o desenvolvimento.
+
+🔗 https://drive.google.com/drive/folders/1EUozAz7xARDM7x4axd_glI4zG7Ph4BjI?usp=drive_link
+
+## 🧠 Modelos Treinados
+
+Modelos gerados durante o desenvolvimento da solução:
+
+- CNN Própria;
+- ResNet50 com Fine Tuning;
+- VGG16 (modelo selecionado para o protótipo CardioIA Vision).
+
+🔗 https://drive.google.com/drive/folders/1GbFi29Q-nHpjspH2xo0l5ZO5s8TDldbU?usp=drive_link
+
+> Observação: o modelo VGG16 foi utilizado na implementação do protótipo CardioIA Vision por apresentar o melhor desempenho entre as arquiteturas avaliadas.
+
 
 # ▶️ Como Executar
 

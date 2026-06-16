@@ -67,25 +67,28 @@ Dependendo do objetivo do leitor, diferentes materiais podem ser consultados.
 
 ## 📖 README (Este Documento)
 
-O README foi desenvolvido como uma leitura dinâmica do projeto.
+O README foi desenvolvido como uma leitura dinâmica do projeto CardioIA Vision.
 
-Seu objetivo é apresentar de forma rápida e objetiva os principais elementos da solução desenvolvida, incluindo:
+Além de cumprir sua função tradicional de documentação inicial para desenvolvedores e avaliadores, este documento centraliza os principais recursos do projeto, servindo como ponto de partida para navegação entre os materiais disponibilizados.
 
-- Contexto do problema;
-- Objetivos do projeto;
-- Dataset utilizado;
-- Pipeline de Visão Computacional;
-- Arquiteturas avaliadas;
-- Resultados obtidos;
-- Comparação entre modelos;
-- Protótipo desenvolvido;
-- Principais conclusões.
+Seu objetivo é apresentar, de forma rápida e organizada, os principais elementos da solução desenvolvida, incluindo:
 
-A leitura deste documento permite compreender o projeto como um todo em poucos minutos.
+* Contexto do problema;
+* Objetivos do projeto;
+* Dataset utilizado;
+* Pipeline de Visão Computacional;
+* Arquiteturas avaliadas;
+* Resultados obtidos;
+* Comparação entre modelos;
+* Protótipo desenvolvido;
+* Principais conclusões.
+
+Também são disponibilizados links para os documentos complementares do projeto, permitindo ao leitor aprofundar sua análise conforme o nível de detalhe desejado.
+
+A leitura deste documento permite compreender a visão geral do CardioIA Vision em poucos minutos, enquanto os relatórios e o notebook fornecem análises técnicas, experimentos, métricas e implementações completas.
 
 Para análises mais detalhadas, recomenda-se consultar os documentos complementares apresentados a seguir.
 
----
 
 ## 📄 Relatório de Pré-processamento (Parte 1)
 

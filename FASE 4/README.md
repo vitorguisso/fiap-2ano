@@ -219,7 +219,6 @@ Nele estão disponíveis:
 
 # 📑 DESENVOLVIMENTO DO PROJETO
 
-
 ---
 
 # 🏥 Objetivo do Projeto
@@ -267,6 +266,59 @@ Modelo pré-treinado na ImageNet utilizado como extrator de características.
 Após os experimentos, apresentou o melhor desempenho geral do projeto.
 
 ---
+
+## ⚙️ Pré-processamento dos Dados
+
+Antes do treinamento dos modelos de Deep Learning, foi realizada uma etapa completa de preparação e validação do dataset de eletrocardiogramas.
+
+O conjunto de dados utilizado contém 928 imagens reais de ECG distribuídas em quatro categorias clínicas:
+
+- Abnormal Heartbeat;
+- Myocardial Infarction;
+- Normal ECG;
+- Post Myocardial Infarction History.
+
+Durante a inspeção inicial foram verificadas as características do conjunto de dados:
+
+- Total de imagens: 928;
+- Número de classes: 4;
+- Resolução original: 2213 × 1572 pixels;
+- Formato de cor: RGB;
+- Imagens corrompidas encontradas: 0.
+
+Após a validação dos dados, foi definido o pipeline de pré-processamento utilizado durante o treinamento dos modelos.
+
+### Etapas aplicadas
+
+#### Redimensionamento
+
+Todas as imagens foram redimensionadas para 224 × 224 pixels, garantindo compatibilidade com as arquiteturas CNN, ResNet50 e VGG16.
+
+#### Normalização
+
+Os valores dos pixels foram normalizados para o intervalo entre 0 e 1 através da divisão por 255, melhorando a estabilidade do treinamento.
+
+#### Data Augmentation
+
+Foram aplicadas técnicas de aumento artificial de dados (Data Augmentation), incluindo:
+
+- Pequenas rotações;
+- Zoom;
+- Deslocamentos horizontais;
+- Deslocamentos verticais.
+
+Essas transformações aumentam a capacidade de generalização dos modelos e ajudam a reduzir problemas de overfitting.
+
+### Divisão do Dataset
+
+Para garantir uma avaliação confiável dos modelos, o conjunto de dados foi dividido em três subconjuntos independentes:
+
+- 70% Treinamento;
+- 15% Validação;
+- 15% Teste.
+
+O resultado final da divisão é apresentado na figura abaixo.
+![Divisão do Dataset](assets/dataset/separacao_data_set.png)
 
 
 # 📊 Matrizes de Confusão e Métricas

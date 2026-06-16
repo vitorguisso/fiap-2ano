@@ -79,7 +79,7 @@ O CardioIA Vision foi desenvolvido seguindo um pipeline completo de Visão Compu
 O fluxo contempla as etapas de preparação das imagens, treinamento de diferentes arquiteturas de Deep Learning, avaliação dos resultados e implementação de uma interface interativa para demonstração da solução.
 
 <p align="center">
-  <img src="./assets/pipeline/pipeline_cardioia_vision.png" width="1000">
+  <img src="./assets/fluxograma/fluxograma_fase4.png" alt="Pipeline CardioIA Vision" width="1000">
 </p>
 
 ### Etapas do Pipeline

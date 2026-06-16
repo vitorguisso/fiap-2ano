@@ -263,21 +263,6 @@ Após os experimentos, apresentou o melhor desempenho geral do projeto.
 
 ---
 
-# 📈 Resultados Obtidos
-
-| Modelo                 | Accuracy |
-| ---------------------- | -------- |
-| CNN Própria            | 31%      |
-| ResNet50 + Fine Tuning | 25%      |
-| VGG16                  | 49%      |
-
-O modelo VGG16 apresentou:
-
-* Melhor capacidade de generalização;
-* Melhor equilíbrio entre treinamento e validação;
-* Melhor desempenho nas classes relacionadas a anormalidades cardíacas e infarto do miocárdio.
-
----
 
 # 📊 Matrizes de Confusão e Métricas
 
@@ -352,6 +337,18 @@ Apesar dessas limitações, a VGG16 apresentou melhor equilíbrio entre aprendiz
 
 A análise da matriz de confusão reforça os resultados observados nas curvas de treinamento e no relatório de classificação, consolidando a VGG16 como a arquitetura mais adequada para compor o protótipo CardioIA Vision.
 
+---
+
+## Resumo dos Resultados
+
+| Modelo | Acurácia no Teste | Principal Comportamento Observado |
+|----------|----------|----------|
+| CNN Própria | 31% | Classificou praticamente todas as imagens como normal_ecg_images, apresentando indícios de underfitting. |
+| ResNet50 com Fine Tuning | 25% | Demonstrou overfitting e forte viés para a classe abnormal_heartbeat_ecg_images. |
+| VGG16 | 49% | Melhor equilíbrio entre aprendizado e generalização, apresentando o melhor desempenho global. |
+
+---
+
 
 ## Comparação Geral das Matrizes de Confusão
 
@@ -411,15 +408,6 @@ A função de perda também apresentou comportamento positivo, com redução con
 Esse resultado sugere que a VGG16 conseguiu aproveitar melhor os padrões visuais aprendidos previamente na ImageNet, mesmo em um problema específico de imagens médicas.
 
 A arquitetura apresentou melhor equilíbrio entre aprendizado e generalização, tornando-se a melhor alternativa entre os modelos avaliados.
-
----
-## Resumo dos Resultados
-
-| Modelo | Acurácia no Teste | Principal Comportamento Observado |
-|----------|----------|----------|
-| CNN Própria | 31% | Classificou praticamente todas as imagens como normal_ecg_images, apresentando indícios de underfitting. |
-| ResNet50 com Fine Tuning | 25% | Demonstrou overfitting e forte viés para a classe abnormal_heartbeat_ecg_images. |
-| VGG16 | 49% | Melhor equilíbrio entre aprendizado e generalização, apresentando o melhor desempenho global. |
 
 ---
 

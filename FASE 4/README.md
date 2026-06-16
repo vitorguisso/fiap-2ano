@@ -279,11 +279,13 @@ O modelo VGG16 apresentou:
 
 ---
 
-# 📊 Matrizes de Confusão
+# 📊 Matrizes de Confusão e Métricas
 
 ## CNN Desenvolvida do Zero
 
 ![Matriz de Confusão CNN](assets/cnn/matriz_cnn.png)
+
+![Relatório CNN](assets/cnn/relatorio_cnn.png)
 
 A matriz de confusão da CNN desenvolvida do zero evidenciou limitações significativas na capacidade de classificação das imagens de eletrocardiograma.
 
@@ -318,6 +320,8 @@ Os resultados obtidos justificaram a utilização de arquiteturas mais robustas 
 
 ![Matriz de Confusão ResNet50](assets/resnet50/matriz_resnet50_fine_tuning.png)
 
+![Relatório ResNet50](assets/resnet50/relatorio_resnet50_fine_tuning.png)
+
 A matriz de confusão da ResNet50 após o Fine Tuning demonstrou que o modelo concentrou grande parte de suas previsões na classe abnormal heartbeat ecg images.
 
 Dos 35 exemplos dessa categoria, 34 foram classificados corretamente, resultando em recall aproximado de 97%. Entretanto, as demais classes apresentaram desempenho muito reduzido, sendo frequentemente classificadas como abnormal heartbeat ecg images.
@@ -333,6 +337,8 @@ Os principais fatores associados a esse comportamento incluem a quantidade limit
 ## VGG16
 
 ![Matriz de Confusão VGG16](assets/vgg16/MTRAIZ_VGG16.png)
+
+![Relatório VGG16](assets/vgg16/relatorio_VGG16.png)
 
 A matriz de confusão da VGG16 confirmou o melhor desempenho geral entre os modelos avaliados.
 

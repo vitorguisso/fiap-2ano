@@ -14,8 +14,9 @@
 
 ## 👨‍🎓 Integrantes
 
-* Vitor Augusto Prado Guisso
-* Vinícius Pereira Santana
+* Vitor Augusto Prado Guisso (RM562317)
+* Vinícius Pereira Santana (RM564940)
+* Isaac Maciel (RM98222)
 
 ---
 
@@ -52,6 +53,79 @@ Foram avaliadas três abordagens distintas:
 Após a comparação dos resultados, a arquitetura VGG16 apresentou o melhor desempenho geral e foi utilizada na construção do protótipo CardioIA Vision.
 
 O sistema permite que o usuário envie uma imagem de eletrocardiograma e receba automaticamente uma classificação produzida pelo modelo treinado.
+
+
+---
+
+# 📚 Documentação do Projeto
+
+Este repositório foi organizado para atender tanto aos requisitos acadêmicos da atividade quanto à necessidade de documentação técnica detalhada do projeto.
+
+Foram disponibilizados três níveis de documentação:
+
+### 📄 Relatório de Pré-processamento (Parte 1)
+
+Documento resumido elaborado conforme solicitado no enunciado da atividade (SOMENTE 2 PÁGINAS - MUITO POUCO PARA UM RELATÓRIO DE NPIVEL SUPERIOR) 
+ 
+O objetivo deste relatório é apresentar, de forma sucinta (1 a 2 páginas), as etapas de preparação dos dados, incluindo inspeção do dataset, pré-processamento das imagens e organização dos conjuntos de treinamento, validação e teste.
+
+🔗 **Acessar Relatório de Pré-processamento:**  
+[Inserir Link]
+
+---
+
+### 📘 Relatório Completo da Fase 4
+
+Documento técnico contendo todo o desenvolvimento do projeto CardioIA Vision.
+
+Inclui:
+
+- Fundamentação teórica;
+- Descrição do dataset;
+- Pipeline de Visão Computacional;
+- Desenvolvimento da CNN própria;
+- Implementação da ResNet50 com Fine Tuning;
+- Implementação da VGG16;
+- Avaliação dos modelos;
+- Matrizes de confusão;
+- Métricas de desempenho;
+- Comparação entre arquiteturas;
+- Desenvolvimento do protótipo;
+- Conclusões e trabalhos futuros.
+
+🔗 **Acessar Relatório Completo:**  
+[Inserir Link]
+
+---
+
+### 📓 Notebook Google Colab
+
+Para uma análise ainda mais aprofundada, todo o desenvolvimento do projeto está disponível no notebook principal.
+
+O notebook contém:
+
+- Código-fonte completo;
+- Pré-processamento das imagens;
+- Treinamento dos modelos;
+- Geração das métricas;
+- Matrizes de confusão;
+- Curvas de treinamento;
+- Implementação do protótipo CardioIA Vision;
+- Comentários e análises realizadas durante o desenvolvimento.
+
+🔗 **Abrir Notebook Google Colab:**  
+[Inserir Link]
+
+---
+
+### 🔍 Sugestão de Navegação
+
+| Objetivo | Documento Recomendado |
+|-----------|----------------------|
+| Entender rapidamente o pré-processamento exigido pela atividade | Relatório de Pré-processamento |
+| Compreender todo o projeto e suas análises | Relatório Completo |
+| Ver códigos, implementações e experimentos realizados | Notebook Google Colab |
+
 
 ---
 

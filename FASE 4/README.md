@@ -302,51 +302,63 @@ O modelo VGG16 apresentou:
 
 # 📈 Curvas de Treinamento
 
-Com o objetivo de analisar o comportamento dos modelos durante o processo de aprendizado, foram avaliadas as curvas de treinamento e validação.
+Com o objetivo de compreender o comportamento dos modelos durante o processo de aprendizado, foram analisadas as curvas de acurácia e perda obtidas ao longo do treinamento.
 
-Como o modelo VGG16 apresentou o melhor desempenho geral entre todas as arquiteturas testadas, suas curvas foram analisadas em maior profundidade e comparadas com a CNN própria desenvolvida do zero.
-
-Essa comparação permite observar as diferenças na capacidade de aprendizado, convergência e generalização entre uma arquitetura construída manualmente e uma arquitetura consolidada de Transfer Learning.
+Como o modelo VGG16 apresentou o melhor desempenho geral entre as arquiteturas avaliadas, suas curvas foram comparadas com as da CNN própria, utilizada como modelo de referência para o projeto.
 
 ---
 
 ## CNN Própria
 
-### Accuracy
+### Acurácia e Perda
 
-![Accuracy CNN](assets/cnn/grafico_acuracia_perda_cnn.png)
+![CNN](assets/cnn/grafico_acuracia_perda_cnn.png)
 
-A CNN própria apresentou evolução gradual da acurácia durante o treinamento. Entretanto, os resultados obtidos demonstraram capacidade limitada de generalização, refletindo a dificuldade da arquitetura em extrair características complexas presentes nas imagens de eletrocardiograma.
+A análise dos gráficos demonstrou que a acurácia da CNN permaneceu próxima de 30% tanto no treinamento quanto na validação.
+
+Esse resultado indica que o modelo apresentou dificuldade para aprender padrões suficientemente discriminativos entre as quatro classes de eletrocardiogramas.
+
+A função de perda apresentou redução inicial nas primeiras épocas, porém rapidamente se estabilizou. Esse comportamento sugere que a rede atingiu um limite de aprendizado, sem conseguir melhorar significativamente seu desempenho ao longo do treinamento.
+
+Não foram observados sinais claros de overfitting, pois as curvas de treinamento e validação permaneceram relativamente próximas. Entretanto, o desempenho geral foi baixo, indicando um possível caso de underfitting.
+
+Dessa forma, a CNN própria foi importante como linha de base para comparação, mas não conseguiu capturar com eficiência a complexidade visual das imagens de ECG.
 
 ---
 
 ## VGG16
 
-### Accuracy
+### Acurácia
 
-![Accuracy VGG16](assets/vgg16/grafico_acuracia_VGG16.png)
-
-A curva de acurácia do modelo VGG16 apresentou evolução mais consistente ao longo das épocas de treinamento. O comportamento observado indica melhor capacidade de aprendizado e extração de características relevantes do dataset quando comparado à CNN própria.
-
----
+![Acurácia VGG16](assets/vgg16/grafico_acuracia_VGG16.png)
 
 ### Loss
 
 ![Loss VGG16](assets/vgg16/grafico_loss_VGG16.png)
 
-A curva de perda demonstra a redução progressiva do erro durante o treinamento do modelo VGG16. Apesar da presença de oscilações naturais do processo de otimização, o comportamento geral evidencia convergência satisfatória e melhor estabilidade em relação ao modelo desenvolvido do zero.
+A análise das curvas de treinamento da VGG16 demonstrou comportamento mais estável em relação aos modelos anteriores.
+
+A acurácia de treinamento apresentou crescimento gradual ao longo das épocas, enquanto a acurácia de validação, apesar de oscilar, manteve tendência geral positiva.
+
+Diferentemente da ResNet50 com Fine Tuning, não houve divergência significativa entre as curvas de treinamento e validação, indicando ausência de sinais evidentes de overfitting.
+
+A função de perda também apresentou comportamento positivo, com redução consistente tanto no treinamento quanto na validação.
+
+Esse resultado sugere que a VGG16 conseguiu aproveitar melhor os padrões visuais aprendidos previamente na ImageNet, mesmo em um problema específico de imagens médicas.
+
+A arquitetura apresentou melhor equilíbrio entre aprendizado e generalização, tornando-se a melhor alternativa entre os modelos avaliados.
 
 ---
 
 ## Comparação entre CNN Própria e VGG16
 
-A comparação das curvas de treinamento reforça os resultados observados durante a avaliação dos modelos.
+A comparação das curvas de treinamento reforça os resultados obtidos durante a avaliação dos modelos.
 
-Enquanto a CNN própria apresentou limitações para aprender padrões mais complexos das imagens médicas, o VGG16 demonstrou maior capacidade de extração de características e melhor desempenho na tarefa de classificação.
+Enquanto a CNN própria apresentou acurácia próxima de 30% e sinais de underfitting, a VGG16 demonstrou crescimento progressivo da acurácia e redução consistente da função de perda.
 
-Esse comportamento é esperado, uma vez que o VGG16 utiliza Transfer Learning, aproveitando conhecimentos previamente adquiridos durante o treinamento em grandes bases de imagens, permitindo uma adaptação mais eficiente ao problema proposto.
+Além disso, a VGG16 apresentou maior estabilidade entre os conjuntos de treinamento e validação, indicando melhor capacidade de generalização para imagens não vistas.
 
-Os resultados obtidos confirmam que o modelo VGG16 foi a arquitetura mais adequada para compor o protótipo final do CardioIA Vision.
+Esses resultados contribuíram para a escolha da VGG16 como modelo final do CardioIA Vision, uma vez que apresentou o melhor equilíbrio entre aprendizado, estabilidade e desempenho geral.
 
 # 🖥 Protótipo CardioIA Vision
 

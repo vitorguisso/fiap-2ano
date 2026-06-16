@@ -450,7 +450,7 @@ O sistema permite:
 
 ## Exemplo de utilização
 
-![Protótipo](assets/prototipo_cardioia_vision.png)
+![Protótipo CardioIA Vision](assets/prototipo/prototipo_VGG16.png)
 
 ⚠️ Importante:
 
@@ -465,119 +465,7 @@ O modelo selecionado foi a arquitetura VGG16, pois apresentou o melhor desempenh
 
 ---
 
-## Opção 1 — Executar pelo Google Colab usando o GitHub
-
-### 1. Abrir o notebook do protótipo
-
-Clique no link abaixo para abrir o notebook diretamente no Google Colab:
-
-[![Abrir no Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vitorguisso/fiap-2ano/blob/main/FASE%204/notebooks/CardioIA_Prototype.ipynb)
-
----
-
-### 2. Clonar o repositório no ambiente do Colab
-
-Execute a célula abaixo no notebook:
-
-```python
-!git clone https://github.com/vitorguisso/fiap-2ano.git
-```
-
----
-
-### 3. Acessar a pasta da Fase 4
-
-```python
-import os
-
-os.chdir("/content/fiap-2ano/FASE 4")
-print("Diretório atual:", os.getcwd())
-```
-
----
-
-### 4. Verificar se o modelo está disponível
-
-```python
-import os
-
-modelo_path = "models/vgg16_cardioia.keras"
-
-if os.path.exists(modelo_path):
-    print("Modelo encontrado:", modelo_path)
-else:
-    print("Modelo não encontrado. Verifique se o arquivo está na pasta models.")
-```
-
----
-
-### 5. Carregar o modelo VGG16
-
-```python
-from tensorflow.keras.models import load_model
-
-modelo = load_model("models/vgg16_cardioia.keras")
-print("Modelo VGG16 carregado com sucesso!")
-```
-
----
-
-### 6. Fazer upload de uma imagem de ECG
-
-```python
-from google.colab import files
-
-uploaded = files.upload()
-```
-
-Após executar a célula, selecione uma imagem de eletrocardiograma no computador.
-
----
-
-### 7. Executar a predição
-
-```python
-import numpy as np
-from tensorflow.keras.preprocessing import image
-import matplotlib.pyplot as plt
-
-classes = [
-    "abnormal_heartbeat_ecg_images",
-    "myocardial_infarction_ecg_images",
-    "normal_ecg_images",
-    "post_mi_history_ecg_images"
-]
-
-nome_arquivo = list(uploaded.keys())[0]
-
-img = image.load_img(nome_arquivo, target_size=(224, 224))
-img_array = image.img_to_array(img)
-img_array = img_array / 255.0
-img_array = np.expand_dims(img_array, axis=0)
-
-predicao = modelo.predict(img_array)
-
-indice_classe = np.argmax(predicao)
-classe_prevista = classes[indice_classe]
-confianca = predicao[0][indice_classe] * 100
-
-plt.imshow(img)
-plt.axis("off")
-plt.title(f"Classe prevista: {classe_prevista}\nConfiança: {confianca:.2f}%")
-plt.show()
-
-print("Resultado da classificação:")
-print("Classe prevista:", classe_prevista)
-print(f"Confiança: {confianca:.2f}%")
-
-print("\nProbabilidades por classe:")
-for classe, probabilidade in zip(classes, predicao[0]):
-    print(f"{classe}: {probabilidade * 100:.2f}%")
-```
-
----
-
-## Opção 2 — Executar usando modelo salvo no Google Drive
+## Executar usando modelo salvo no Google Drive
 
 Caso o arquivo do modelo não esteja disponível diretamente no GitHub, ele pode ser carregado pelo Google Drive.
 

@@ -310,6 +310,7 @@ Similaridade visual entre algumas classes do dataset;
 Possível convergência para um mínimo local durante o treinamento.
 
 Os resultados obtidos justificaram a utilização de arquiteturas mais robustas baseadas em Transfer Learning nas etapas seguintes do projeto.
+
 ---
 
 ## ResNet50 com Fine Tuning
@@ -326,6 +327,7 @@ Esse comportamento evidencia forte viés para uma única classe, prejudicando a 
 Os resultados observados corroboram a análise das curvas de treinamento, que indicaram sinais de overfitting. Embora o Fine Tuning tenha aumentado a capacidade de aprendizado da arquitetura, a ResNet50 apresentou dificuldade para generalizar adequadamente para imagens não vistas.
 
 Os principais fatores associados a esse comportamento incluem a quantidade limitada de imagens disponíveis, a similaridade visual entre algumas categorias de ECG e a dificuldade de adaptação da arquitetura ao domínio médico.
+
 ---
 
 ## VGG16

@@ -694,6 +694,7 @@ Dessa forma, conclui-se que os objetivos propostos para a Fase 4 foram alcançad
 - TENSORFLOW. *TensorFlow Documentation*. Disponível em: <https://www.tensorflow.org/>. Acesso em: 16 jun. 2026.
 - KAGGLE. *ECG Images Dataset*. Kaggle, [s.d.]. Disponível em: <https://www.kaggle.com/datasets/erhmrai/ecg-image-data>. Acesso em: 16 jun. 2026.
   
+
 ---
 
 # 📋 Licença
@@ -702,5 +703,3 @@ Dessa forma, conclui-se que os objetivos propostos para a Fase 4 foram alcançad
 <img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1">
 
 Este projeto está licenciado sob Creative Commons Attribution 4.0 International.
-
-

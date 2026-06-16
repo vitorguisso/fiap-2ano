@@ -6,7 +6,6 @@
   </a>
 </p>
 
-<br>
 
 # CardioIA Vision – Classificação Inteligente de Eletrocardiogramas com Deep Learning
 

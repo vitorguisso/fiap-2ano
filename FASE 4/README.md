@@ -499,11 +499,9 @@ Clique no botão abaixo para abrir o notebook diretamente no Google Colab:
 - ECG Normal
 - Histórico Pós-Infarto
 
-
-
 ---
 
-# 🚀 Tecnologias Utilizadas
+# 🚀 Tecnologias Utilizadas no projeto
 
 ## Inteligência Artificial
 
@@ -619,8 +617,6 @@ Arquivo principal de documentação do projeto.
 ---
 
 # 🏁 Conclusão
-
-# 9. Conclusão
 
 Este projeto teve como objetivo investigar a aplicação de técnicas de Visão Computacional e Deep Learning na classificação automática de eletrocardiogramas (ECG), utilizando imagens pertencentes a quatro categorias distintas: batimentos cardíacos anormais, infarto do miocárdio, exames normais e histórico pós-infarto.
 

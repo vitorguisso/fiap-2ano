@@ -72,6 +72,39 @@ O conjunto de dados utilizado neste projeto foi obtido a partir da plataforma Ka
 ```txt
 928 imagens
 ```
+--- 
+## 🔄 Pipeline do Projeto
+
+O CardioIA Vision foi desenvolvido seguindo um pipeline completo de Visão Computacional, desde a obtenção dos dados até a construção do protótipo final.
+
+O fluxo contempla as etapas de preparação das imagens, treinamento de diferentes arquiteturas de Deep Learning, avaliação dos resultados e implementação de uma interface interativa para demonstração da solução.
+
+<p align="center">
+  <img src="./assets/pipeline/pipeline_cardioia_vision.png" width="1000">
+</p>
+
+### Etapas do Pipeline
+
+| Etapa | Descrição |
+|---------|---------|
+| 1. Dataset Público | Utilização do dataset ECG Images Dataset of Cardiac Patients. |
+| 2. Inspeção dos Dados | Verificação das classes, quantidade de imagens, resolução e formato das imagens. |
+| 3. Pré-processamento | Conversão para RGB, redimensionamento para 224x224 pixels e normalização dos pixels. |
+| 4. Organização dos Dados | Divisão em conjuntos de treinamento (70%), validação (15%) e teste (15%). |
+| 5. Data Augmentation | Aplicação de rotações, zoom e deslocamentos para aumentar a variabilidade dos dados. |
+| 6. Treinamento dos Modelos | Implementação de CNN própria, ResNet50 com Fine Tuning e VGG16 com Transfer Learning. |
+| 7. Avaliação | Análise utilizando Accuracy, Precision, Recall, F1-Score e Matriz de Confusão. |
+| 8. Comparação | Comparação quantitativa entre os modelos desenvolvidos. |
+| 9. Seleção do Melhor Modelo | Escolha da VGG16 como arquitetura de melhor desempenho. |
+| 10. Protótipo CardioIA Vision | Interface interativa para classificação de exames de ECG. |
+| 11. Resultado Interpretável | Exibição da classe prevista e nível de confiança para apoio à tomada de decisão. |
+
+### Resultado Final
+
+Após a comparação das arquiteturas avaliadas, a **VGG16 com Transfer Learning** apresentou o melhor desempenho geral, alcançando aproximadamente **49% de acurácia**, sendo selecionada para compor o protótipo CardioIA Vision.
+
+O protótipo permite que o usuário realize o upload de uma imagem de eletrocardiograma e receba automaticamente uma classificação produzida pelo modelo treinado, demonstrando de forma prática a aplicação de técnicas de Inteligência Artificial na análise de exames médicos.
+
 ---
 
 # 📚 Como Navegar pela Documentação

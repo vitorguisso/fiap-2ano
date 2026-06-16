@@ -583,6 +583,7 @@ Clique no botão abaixo para abrir o notebook diretamente no Google Colab:
 Imagens utilizadas na documentação:
 
 * matrizes de confusão;
+* métricas
 * gráficos;
 * protótipo;
 * exemplos do dataset;
@@ -592,84 +593,60 @@ Imagens utilizadas na documentação:
 
 Documentação acadêmica:
 
-* relatório da fase;
-* referências bibliográficas.
+* relatório entrega parte 1;
+* relatório completo da fase 4;
 
 ## 📂 notebooks
 
 * CardioIA_Vision_Fase4.ipynb
+* CardioIA_Prototype.ipynb
 
 ## 📄 README.md
 
 Arquivo principal de documentação do projeto.
 
----
-## 📂 Materiais Complementares
-
-Os arquivos utilizados durante o desenvolvimento foram disponibilizados no Google Drive.
-
-A pasta contém:
-
-- Dataset original;
-- Dataset processado;
-- Modelos treinados (.keras);
-- Arquivos auxiliares do projeto.
-
-🔗 Pasta CardioIA Vision:
-[Google Drive](https://drive.google.com/drive/folders/1EUozAz7xARDM7x4axd_glI4zG7Ph4BjI?usp=sharing)
-
-> Observação: o modelo VGG16 foi utilizado na implementação do protótipo CardioIA Vision por apresentar o melhor desempenho entre as arquiteturas avaliadas.
-
-
-# ▶️ Como Executar
-
-## 1. Abrir o Notebook
-
-Acesse:
-
-```txt
-Notebook Google Colab
-```
-
-ou
-
-```txt
-notebooks/CardioIA_Vision_Fase4.ipynb
-```
-
----
-
-## 2. Executar as células
-
-Executar o notebook sequencialmente.
-
----
-
-## 3. Utilizar o protótipo
-
-Ao final do notebook:
-
-* Informar o nome do paciente;
-* Fazer upload de uma imagem ECG;
-* Clicar em "Analisar ECG";
-* Visualizar o resultado produzido pela Inteligência Artificial.
 
 ---
 
 # 📚 Referências
 
-* TensorFlow Documentation: https://www.tensorflow.org/
-* Keras Documentation: https://keras.io/
-* Kaggle ECG Dataset: https://www.kaggle.com/datasets/umeradnaan/ecg-images-dataset-of-cardiac-patients
-* Goodfellow, I.; Bengio, Y.; Courville, A. Deep Learning. MIT Press.
-* Chollet, F. Deep Learning with Python.
-
+- GOODFELLOW, Ian; BENGIO, Yoshua; COURVILLE, Aaron. *Deep Learning*. Cambridge: MIT Press, 2016.
+- HE, Kaiming; ZHANG, Xiangyu; REN, Shaoqing; SUN, Jian. *Deep Residual Learning for Image Recognition*. In: IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2016.
+- SIMONYAN, Karen; ZISSERMAN, Andrew. *Very Deep Convolutional Networks for Large-Scale Image Recognition*. arXiv preprint arXiv:1409.1556, 2015.
+- SHORTEN, Connor; KHOSHGOFTAAR, Taghi M. *A Survey on Image Data Augmentation for Deep Learning*. Journal of Big Data, v. 6, n. 60, 2019.
+- TENSORFLOW. *TensorFlow Documentation*. Disponível em: <https://www.tensorflow.org/>. Acesso em: 16 jun. 2026.
+- KAGGLE. *ECG Images Dataset*. Kaggle, [s.d.]. Disponível em: <https://www.kaggle.com/datasets/erhmrai/ecg-image-data>. Acesso em: 16 jun. 2026.
 ---
 
 # 🏁 Conclusão
 
-O CardioIA Vision demonstrou a viabilidade da aplicação de técnicas de Visão Computacional e Deep Learning na classificação automática de eletrocardiogramas.
+# 9. Conclusão
 
-Entre os modelos avaliados, o VGG16 apresentou o melhor desempenho, sendo utilizado na construção de um protótipo funcional capaz de receber imagens médicas e produzir classificações automáticas.
+Este projeto teve como objetivo investigar a aplicação de técnicas de Visão Computacional e Deep Learning na classificação automática de eletrocardiogramas (ECG), utilizando imagens pertencentes a quatro categorias distintas: batimentos cardíacos anormais, infarto do miocárdio, exames normais e histórico pós-infarto.
 
-A solução representa mais um passo na evolução do ecossistema CardioIA e demonstra como a Inteligência Artificial pode contribuir para o desenvolvimento de ferramentas de apoio à análise de exames médicos.
+Inicialmente, foi desenvolvida uma Rede Neural Convolucional (CNN) própria, construída do zero, com o objetivo de estabelecer uma linha de base para comparação. Em seguida, foram avaliadas arquiteturas amplamente utilizadas na literatura por meio da estratégia de Transfer Learning, utilizando os modelos ResNet50 e VGG16 pré-treinados na base ImageNet.
+
+Durante o desenvolvimento do projeto foram realizadas as etapas de inspeção do dataset, pré-processamento das imagens, normalização, redimensionamento, divisão em conjuntos de treinamento, validação e teste, além da aplicação de técnicas de Data Augmentation para aumentar a capacidade de generalização dos modelos.
+
+Os resultados demonstraram que a CNN própria apresentou desempenho limitado, concentrando suas previsões em uma única classe e evidenciando dificuldade para aprender representações discriminativas adequadas do conjunto de dados. A ResNet50, mesmo após a aplicação de Fine Tuning, apresentou evolução durante o treinamento, porém manteve baixa capacidade de generalização, resultando em desempenho inferior ao esperado no conjunto de teste.
+
+Entre os modelos avaliados, o VGG16 apresentou os melhores resultados gerais, alcançando aproximadamente 49% de acurácia no conjunto de teste e demonstrando elevada capacidade de identificação das classes relacionadas a anormalidades cardíacas e infarto do miocárdio. A análise das curvas de treinamento indicou comportamento estável, com redução consistente da função de perda e ausência de sinais evidentes de overfitting. A matriz de confusão confirmou que o modelo foi capaz de identificar corretamente a maior parte dos exames dessas categorias, embora ainda tenha apresentado dificuldades na diferenciação das classes normal e histórico pós-infarto.
+
+Além do desenvolvimento e avaliação dos modelos, foi criado um protótipo interativo capaz de receber imagens de eletrocardiogramas e apresentar automaticamente a classificação prevista pelo modelo selecionado. Esse protótipo demonstra, de forma prática, como técnicas de Inteligência Artificial podem ser incorporadas a sistemas de apoio à decisão clínica.
+
+Os resultados obtidos demonstram que a utilização de arquiteturas pré-treinadas constitui uma alternativa promissora para problemas de classificação de imagens médicas, especialmente em cenários onde a quantidade de dados disponíveis é limitada. Ao mesmo tempo, evidenciam os desafios inerentes à análise de eletrocardiogramas, cujas classes frequentemente apresentam características visuais semelhantes.
+
+Como trabalhos futuros, recomenda-se a ampliação do conjunto de dados, a aplicação de técnicas mais avançadas de Data Augmentation, o balanceamento das classes, a realização de Fine Tuning mais aprofundado nas camadas convolucionais da VGG16 e a avaliação de arquiteturas mais modernas, como EfficientNet, DenseNet e Vision Transformers. Também podem ser exploradas abordagens híbridas que combinem análise de imagens e processamento de sinais cardíacos para aumentar a capacidade de discriminação dos modelos.
+
+Dessa forma, conclui-se que os objetivos propostos para a Fase 4 foram alcançados. O projeto permitiu construir, treinar, comparar e avaliar diferentes arquiteturas de Deep Learning aplicadas à classificação de eletrocardiogramas, além de disponibilizar um protótipo funcional para demonstração dos resultados. O estudo também contribuiu para a compreensão dos benefícios, limitações e desafios envolvidos na aplicação da Inteligência Artificial ao contexto da saúde, reforçando o potencial dessas tecnologias como ferramentas de apoio ao diagnóstico médico.
+
+---
+
+# 📋 Licença
+
+<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1">
+<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1">
+
+Este projeto está licenciado sob Creative Commons Attribution 4.0 International.
+
+

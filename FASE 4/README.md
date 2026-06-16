@@ -431,30 +431,19 @@ Documentação acadêmica:
 Arquivo principal de documentação do projeto.
 
 ---
-# 📂 Materiais Complementares
+## 📂 Materiais Complementares
 
-Para facilitar a organização do projeto, alguns arquivos foram disponibilizados no Google Drive.
+Os arquivos utilizados durante o desenvolvimento foram disponibilizados no Google Drive.
 
-Os modelos treinados não foram armazenados diretamente no GitHub devido às limitações de tamanho da plataforma. Todos os modelos podem ser acessados pela pasta oficial do projeto.
-
-## 📁 Pasta Principal do Projeto
-
-Contém:
+A pasta contém:
 
 - Dataset original;
 - Dataset processado;
-- Modelos treinados;
-- Arquivos auxiliares utilizados durante o desenvolvimento.
+- Modelos treinados (.keras);
+- Arquivos auxiliares do projeto.
 
-🔗 https://drive.google.com/drive/folders/1EUozAz7xARDM7x4axd_glI4zG7Ph4BjI?usp=drive_link
-
-## 🧠 Modelos Treinados
-
-Modelos gerados durante o desenvolvimento da solução:
-
-- CNN Própria;
-- ResNet50 com Fine Tuning;
-- VGG16 (modelo selecionado para o protótipo CardioIA Vision).
+🔗 Pasta CardioIA Vision:
+[Google Drive](https://drive.google.com/drive/folders/1EUozAz7xARDM7x4axd_glI4zG7Ph4BjI?usp=sharing)
 
 > Observação: o modelo VGG16 foi utilizado na implementação do protótipo CardioIA Vision por apresentar o melhor desempenho entre as arquiteturas avaliadas.
 

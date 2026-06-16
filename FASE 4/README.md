@@ -456,8 +456,6 @@ Modelos gerados durante o desenvolvimento da solução:
 - ResNet50 com Fine Tuning;
 - VGG16 (modelo selecionado para o protótipo CardioIA Vision).
 
-🔗 https://drive.google.com/drive/folders/1GbFi29Q-nHpjspH2xo0l5ZO5s8TDldbU?usp=drive_link
-
 > Observação: o modelo VGG16 foi utilizado na implementação do protótipo CardioIA Vision por apresentar o melhor desempenho entre as arquiteturas avaliadas.
 
 

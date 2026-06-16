@@ -356,6 +356,7 @@ A CNN própria apresentou forte limitação na capacidade de diferenciação ent
 A ResNet50 com Fine Tuning apresentou evolução durante o treinamento, porém concentrou grande parte das previsões em uma única categoria, demonstrando forte viés de classificação e sinais de overfitting.
 
 A VGG16 apresentou a melhor distribuição das previsões entre as classes avaliadas, maior estabilidade durante o treinamento e melhor capacidade de generalização, justificando sua seleção como modelo final do CardioIA Vision.
+
 ---
 
 # 📈 Curvas de Treinamento

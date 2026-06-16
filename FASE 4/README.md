@@ -183,18 +183,13 @@ Foi utilizado o dataset público:
 
 ## ECG Images Dataset of Cardiac Patients
 
-🔗 Kaggle:
+O conjunto de dados utilizado neste projeto foi obtido a partir da plataforma Kaggle e contém imagens de eletrocardiogramas (ECG) distribuídas em quatro categorias clínicas utilizadas para treinamento e avaliação dos modelos de Deep Learning.
 
-https://www.kaggle.com/datasets/umeradnaan/ecg-images-dataset-of-cardiac-patients
+🔗 **Kaggle (fonte original):**  
+[Acessar Dataset Utilizado](https://www.kaggle.com/datasets/erhmrai/ecg-image-data)
 
-O conjunto de dados contém imagens de eletrocardiogramas distribuídas em quatro categorias:
-
-* Abnormal Heartbeat ECG Images
-* Myocardial Infarction ECG Images
-* Normal ECG Images
-* Post MI History ECG Images
-
-Total de imagens utilizadas:
+🔗 **Google Drive (dataset original utilizado no projeto):**  
+[Acessar Dataset Original](https://drive.google.com/drive/folders/1ph4yYmpLv6MYzpFIoFPi8bj2a2t3_Z_5?usp=drive_link)
 
 ```txt
 928 imagens

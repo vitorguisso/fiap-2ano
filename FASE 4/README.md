@@ -285,6 +285,31 @@ O modelo VGG16 apresentou:
 
 ![Matriz de Confusão CNN](assets/cnn/matriz_cnn.png)
 
+A matriz de confusão da CNN desenvolvida do zero evidenciou limitações significativas na capacidade de classificação das imagens de eletrocardiograma.
+
+O modelo apresentou acurácia global de aproximadamente 31%, valor próximo ao esperado em um cenário de classificação aleatória entre quatro classes. A análise da matriz demonstrou que todas as imagens do conjunto de teste foram classificadas como pertencentes à classe normal_ecg_images, independentemente de sua classe real.
+
+Como consequência, as classes:
+
+abnormal_heartbeat_ecg_images;
+myocardial_infarction_ecg_images;
+post_mi_history_ecg_images;
+
+apresentaram precisão, recall e F1-score iguais a zero.
+
+Por outro lado, a classe normal_ecg_images obteve recall igual a 1,00, indicando que todas as imagens dessa categoria foram corretamente identificadas. Entretanto, esse resultado não representa uma boa capacidade de classificação, pois o modelo passou a prever a mesma classe para todas as amostras avaliadas.
+
+Esse comportamento sugere que a rede neural não conseguiu aprender características discriminantes suficientes para separar adequadamente as quatro categorias presentes no dataset.
+
+Entre os possíveis fatores que contribuíram para esse resultado destacam-se:
+
+Quantidade limitada de imagens disponíveis para treinamento;
+Complexidade relativamente baixa da arquitetura proposta;
+Dificuldade da CNN em extrair características visuais mais sofisticadas dos eletrocardiogramas;
+Similaridade visual entre algumas classes do dataset;
+Possível convergência para um mínimo local durante o treinamento.
+
+Os resultados obtidos justificaram a utilização de arquiteturas mais robustas baseadas em Transfer Learning nas etapas seguintes do projeto.
 ---
 
 ## ResNet50 com Fine Tuning
@@ -292,12 +317,43 @@ O modelo VGG16 apresentou:
 
 ![Matriz de Confusão ResNet50](assets/resnet50/matriz_resnet50_fine_tuning.png)
 
+A matriz de confusão da ResNet50 após o Fine Tuning demonstrou que o modelo concentrou grande parte de suas previsões na classe abnormal heartbeat ecg images.
+
+Dos 35 exemplos dessa categoria, 34 foram classificados corretamente, resultando em recall aproximado de 97%. Entretanto, as demais classes apresentaram desempenho muito reduzido, sendo frequentemente classificadas como abnormal heartbeat ecg images.
+
+Esse comportamento evidencia forte viés para uma única classe, prejudicando a capacidade de classificação multiclasse do modelo.
+
+Os resultados observados corroboram a análise das curvas de treinamento, que indicaram sinais de overfitting. Embora o Fine Tuning tenha aumentado a capacidade de aprendizado da arquitetura, a ResNet50 apresentou dificuldade para generalizar adequadamente para imagens não vistas.
+
+Os principais fatores associados a esse comportamento incluem a quantidade limitada de imagens disponíveis, a similaridade visual entre algumas categorias de ECG e a dificuldade de adaptação da arquitetura ao domínio médico.
 ---
 
 ## VGG16
 
 ![Matriz de Confusão VGG16](assets/vgg16/MTRAIZ_VGG16.png)
 
+A matriz de confusão da VGG16 confirmou o melhor desempenho geral entre os modelos avaliados.
+
+Dos 35 exames pertencentes à classe abnormal heartbeat ecg images, 32 foram classificados corretamente. Já na classe myocardial infarction ecg images, 33 dos 36 exames foram corretamente identificados.
+
+Esses resultados demonstram que a arquitetura conseguiu reconhecer de forma consistente padrões associados a anormalidades cardíacas e infarto do miocárdio.
+
+Por outro lado, o desempenho foi mais limitado nas classes normal ecg images e post mi history ecg images. Na categoria normal ecg images, apenas 3 dos 43 exames foram classificados corretamente, enquanto a classe post mi history ecg images não apresentou classificações corretas.
+
+Apesar dessas limitações, a VGG16 apresentou melhor equilíbrio entre aprendizado e generalização quando comparada aos demais modelos, alcançando aproximadamente 49% de acurácia no conjunto de teste.
+
+A análise da matriz de confusão reforça os resultados observados nas curvas de treinamento e no relatório de classificação, consolidando a VGG16 como a arquitetura mais adequada para compor o protótipo CardioIA Vision.
+
+
+## Comparação Geral das Matrizes de Confusão
+
+A análise conjunta das matrizes de confusão reforça os resultados obtidos ao longo do desenvolvimento do projeto.
+
+A CNN própria apresentou forte limitação na capacidade de diferenciação entre as classes, classificando todas as imagens como normal_ecg_images.
+
+A ResNet50 com Fine Tuning apresentou evolução durante o treinamento, porém concentrou grande parte das previsões em uma única categoria, demonstrando forte viés de classificação e sinais de overfitting.
+
+A VGG16 apresentou a melhor distribuição das previsões entre as classes avaliadas, maior estabilidade durante o treinamento e melhor capacidade de generalização, justificando sua seleção como modelo final do CardioIA Vision.
 ---
 
 # 📈 Curvas de Treinamento

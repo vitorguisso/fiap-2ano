@@ -340,7 +340,6 @@ A análise das curvas de treinamento da VGG16 demonstrou comportamento mais est�
 
 A acurácia de treinamento apresentou crescimento gradual ao longo das épocas, enquanto a acurácia de validação, apesar de oscilar, manteve tendência geral positiva.
 
-Diferentemente da ResNet50 com Fine Tuning, não houve divergência significativa entre as curvas de treinamento e validação, indicando ausência de sinais evidentes de overfitting.
 
 A função de perda também apresentou comportamento positivo, com redução consistente tanto no treinamento quanto na validação.
 

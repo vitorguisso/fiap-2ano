@@ -152,7 +152,7 @@ Conforme solicitado no enunciado, este relatório possui caráter resumido (1 a 
 - Justificativas das escolhas adotadas.
 
 🔗 **Acessar Relatório de Pré-processamento:**  
-[Inserir Link]
+- [Relatório de Pré-processamento - Entrega 1](https://github.com/vitorguisso/fiap-2ano/blob/main/FASE%204/document/RELAT%C3%93RIO_PRE-PROCESSAMENTO_FASE4_ENTREGA.pdf)
 
 ---
 
@@ -176,7 +176,7 @@ Neste material são apresentadas análises aprofundadas sobre:
 - Conclusões e trabalhos futuros.
 
 🔗 **Acessar Relatório Completo:**  
-[Inserir Link]
+- [Relatório Completo da Fase 4](https://github.com/vitorguisso/fiap-2ano/blob/main/FASE%204/document/RELAT%C3%93RIO%20COMPLETO%20-%20FASE4.pdf)
 
 ---
 

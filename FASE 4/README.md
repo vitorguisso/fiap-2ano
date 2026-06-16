@@ -57,38 +57,68 @@ O sistema permite que o usuário envie uma imagem de eletrocardiograma e receba 
 
 ---
 
-# 📚 Documentação do Projeto
+# 📚 Como Navegar pela Documentação
 
-Este repositório foi organizado para atender tanto aos requisitos acadêmicos da atividade quanto à necessidade de documentação técnica detalhada do projeto.
+Este repositório foi estruturado para permitir diferentes níveis de aprofundamento no projeto CardioIA Vision.
 
-Foram disponibilizados três níveis de documentação:
+Dependendo do objetivo do leitor, diferentes materiais podem ser consultados.
 
-### 📄 Relatório de Pré-processamento (Parte 1)
+---
 
-Documento resumido elaborado conforme solicitado no enunciado da atividade (SOMENTE 2 PÁGINAS - MUITO POUCO PARA UM RELATÓRIO DE NPIVEL SUPERIOR) 
- 
-O objetivo deste relatório é apresentar, de forma sucinta (1 a 2 páginas), as etapas de preparação dos dados, incluindo inspeção do dataset, pré-processamento das imagens e organização dos conjuntos de treinamento, validação e teste.
+## 📖 README (Este Documento)
+
+O README foi desenvolvido como uma leitura dinâmica do projeto.
+
+Seu objetivo é apresentar de forma rápida e objetiva os principais elementos da solução desenvolvida, incluindo:
+
+- Contexto do problema;
+- Objetivos do projeto;
+- Dataset utilizado;
+- Pipeline de Visão Computacional;
+- Arquiteturas avaliadas;
+- Resultados obtidos;
+- Comparação entre modelos;
+- Protótipo desenvolvido;
+- Principais conclusões.
+
+A leitura deste documento permite compreender o projeto como um todo em poucos minutos.
+
+Para análises mais detalhadas, recomenda-se consultar os documentos complementares apresentados a seguir.
+
+---
+
+## 📄 Relatório de Pré-processamento (Parte 1)
+
+Documento elaborado especificamente para atender ao entregável da Parte 1 da atividade.
+
+Conforme solicitado no enunciado, este relatório possui caráter resumido (1 a 2 páginas) e apresenta:
+
+- Descrição do dataset;
+- Inspeção inicial das imagens;
+- Pré-processamento realizado;
+- Divisão dos conjuntos de dados;
+- Justificativas das escolhas adotadas.
 
 🔗 **Acessar Relatório de Pré-processamento:**  
 [Inserir Link]
 
 ---
 
-### 📘 Relatório Completo da Fase 4
+## 📘 Relatório Completo da Fase 4
 
-Documento técnico contendo todo o desenvolvimento do projeto CardioIA Vision.
+Documento técnico contendo todo o desenvolvimento do CardioIA Vision.
 
-Inclui:
+Neste material são apresentadas análises aprofundadas sobre:
 
 - Fundamentação teórica;
-- Descrição do dataset;
-- Pipeline de Visão Computacional;
-- Desenvolvimento da CNN própria;
-- Implementação da ResNet50 com Fine Tuning;
-- Implementação da VGG16;
-- Avaliação dos modelos;
+- Dataset utilizado;
+- Pipeline completo;
+- CNN desenvolvida do zero;
+- ResNet50 com Fine Tuning;
+- VGG16;
+- Métricas de avaliação;
 - Matrizes de confusão;
-- Métricas de desempenho;
+- Curvas de treinamento;
 - Comparação entre arquiteturas;
 - Desenvolvimento do protótipo;
 - Conclusões e trabalhos futuros.
@@ -98,34 +128,37 @@ Inclui:
 
 ---
 
-### 📓 Notebook Google Colab
+## 📓 Notebook Google Colab
 
-Para uma análise ainda mais aprofundada, todo o desenvolvimento do projeto está disponível no notebook principal.
+O notebook contém a implementação completa do projeto.
 
-O notebook contém:
+Este é o material mais detalhado disponível e permite visualizar todo o processo de desenvolvimento realizado pela equipe.
 
-- Código-fonte completo;
+Nele estão disponíveis:
+
+- Códigos-fonte completos;
 - Pré-processamento das imagens;
 - Treinamento dos modelos;
-- Geração das métricas;
+- Implementação do Fine Tuning;
+- Avaliações e métricas;
+- Geração de gráficos;
 - Matrizes de confusão;
-- Curvas de treinamento;
-- Implementação do protótipo CardioIA Vision;
-- Comentários e análises realizadas durante o desenvolvimento.
+- Desenvolvimento do protótipo CardioIA Vision;
+- Comentários técnicos e análises realizadas durante os experimentos.
 
 🔗 **Abrir Notebook Google Colab:**  
 [Inserir Link]
 
 ---
 
-### 🔍 Sugestão de Navegação
+## 🔍 Guia Rápido
 
-| Objetivo | Documento Recomendado |
-|-----------|----------------------|
-| Entender rapidamente o pré-processamento exigido pela atividade | Relatório de Pré-processamento |
-| Compreender todo o projeto e suas análises | Relatório Completo |
-| Ver códigos, implementações e experimentos realizados | Notebook Google Colab |
-
+| Se você deseja... | Consulte |
+|-------------------|-----------|
+| Entender rapidamente o projeto | README |
+| Ver apenas o entregável da Parte 1 | Relatório de Pré-processamento |
+| Analisar todo o trabalho desenvolvido | Relatório Completo |
+| Ver códigos, experimentos e implementação detalhada | Notebook Google Colab |
 
 ---
 

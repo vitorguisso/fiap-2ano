@@ -54,7 +54,24 @@ Após a comparação dos resultados, a arquitetura VGG16 apresentou o melhor des
 
 O sistema permite que o usuário envie uma imagem de eletrocardiograma e receba automaticamente uma classificação produzida pelo modelo treinado.
 
+---
+# 📊 Dataset Utilizado
 
+Foi utilizado o dataset público:
+
+## ECG Images Dataset of Cardiac Patients
+
+O conjunto de dados utilizado neste projeto foi obtido a partir da plataforma Kaggle e contém imagens de eletrocardiogramas (ECG) distribuídas em quatro categorias clínicas utilizadas para treinamento e avaliação dos modelos de Deep Learning.
+
+🔗 **Kaggle (fonte original):**  
+[Acessar Dataset Utilizado no Kaggle](https://www.kaggle.com/datasets/erhmrai/ecg-image-data)
+
+🔗 **Google Drive (dataset original utilizado no projeto):**  
+[Acessar Dataset Utilizado no Drive](https://drive.google.com/drive/folders/1ph4yYmpLv6MYzpFIoFPi8bj2a2t3_Z_5?usp=drive_link)
+
+```txt
+928 imagens
+```
 ---
 
 # 📚 Como Navegar pela Documentação
@@ -174,26 +191,6 @@ Desenvolver um Assistente Cardiológico Virtual capaz de:
 * Classificar exames em diferentes categorias clínicas;
 * Demonstrar a aplicação prática da Visão Computacional na saúde;
 * Disponibilizar um protótipo interativo para análise dos resultados.
-
----
-
-# 📊 Dataset Utilizado
-
-Foi utilizado o dataset público:
-
-## ECG Images Dataset of Cardiac Patients
-
-O conjunto de dados utilizado neste projeto foi obtido a partir da plataforma Kaggle e contém imagens de eletrocardiogramas (ECG) distribuídas em quatro categorias clínicas utilizadas para treinamento e avaliação dos modelos de Deep Learning.
-
-🔗 **Kaggle (fonte original):**  
-[Acessar Dataset Utilizado](https://www.kaggle.com/datasets/erhmrai/ecg-image-data)
-
-🔗 **Google Drive (dataset original utilizado no projeto):**  
-[Acessar Dataset Original](https://drive.google.com/drive/folders/1ph4yYmpLv6MYzpFIoFPi8bj2a2t3_Z_5?usp=drive_link)
-
-```txt
-928 imagens
-```
 
 ---
 

@@ -413,6 +413,15 @@ Esse resultado sugere que a VGG16 conseguiu aproveitar melhor os padrões visuai
 A arquitetura apresentou melhor equilíbrio entre aprendizado e generalização, tornando-se a melhor alternativa entre os modelos avaliados.
 
 ---
+## Resumo dos Resultados
+
+| Modelo | Acurácia no Teste | Principal Comportamento Observado |
+|----------|----------|----------|
+| CNN Própria | 31% | Classificou praticamente todas as imagens como normal_ecg_images, apresentando indícios de underfitting. |
+| ResNet50 com Fine Tuning | 25% | Demonstrou overfitting e forte viés para a classe abnormal_heartbeat_ecg_images. |
+| VGG16 | 49% | Melhor equilíbrio entre aprendizado e generalização, apresentando o melhor desempenho global. |
+
+---
 
 ## Comparação entre CNN Própria e VGG16
 

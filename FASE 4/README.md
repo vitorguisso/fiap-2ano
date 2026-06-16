@@ -457,25 +457,221 @@ O sistema permite:
 O protótipo possui finalidade acadêmica e demonstrativa. Seu objetivo é apresentar a aplicação prática do modelo desenvolvido, não representar a acurácia real da solução, a qual foi avaliada separadamente por meio das métricas apresentadas no projeto.
 
 ---
+# 🧪 Execução do Protótipo CardioIA Vision
 
-# 🚀 Notebook Google Colab
+O protótipo do CardioIA Vision utiliza o modelo VGG16 treinado durante esta fase para realizar a classificação automática de imagens de eletrocardiograma.
 
-## Notebook Principal
+O modelo selecionado foi a arquitetura VGG16, pois apresentou o melhor desempenho geral entre os modelos avaliados, alcançando aproximadamente 49% de acurácia no conjunto de teste.
 
-🔗 Colab:
+---
 
-https://colab.research.google.com/drive/SEU_LINK_AQUI
+## Opção 1 — Executar pelo Google Colab usando o GitHub
 
-O notebook contém:
+### 1. Abrir o notebook do protótipo
 
-* Pré-processamento;
-* Organização dos dados;
-* CNN própria;
-* ResNet50;
-* VGG16;
-* Avaliação dos modelos;
-* Protótipo interativo.
+Clique no link abaixo para abrir o notebook diretamente no Google Colab:
 
+[![Abrir no Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vitorguisso/fiap-2ano/blob/main/FASE%204/notebooks/CardioIA_Prototype.ipynb)
+
+---
+
+### 2. Clonar o repositório no ambiente do Colab
+
+Execute a célula abaixo no notebook:
+
+```python
+!git clone https://github.com/vitorguisso/fiap-2ano.git
+```
+
+---
+
+### 3. Acessar a pasta da Fase 4
+
+```python
+import os
+
+os.chdir("/content/fiap-2ano/FASE 4")
+print("Diretório atual:", os.getcwd())
+```
+
+---
+
+### 4. Verificar se o modelo está disponível
+
+```python
+import os
+
+modelo_path = "models/vgg16_cardioia.keras"
+
+if os.path.exists(modelo_path):
+    print("Modelo encontrado:", modelo_path)
+else:
+    print("Modelo não encontrado. Verifique se o arquivo está na pasta models.")
+```
+
+---
+
+### 5. Carregar o modelo VGG16
+
+```python
+from tensorflow.keras.models import load_model
+
+modelo = load_model("models/vgg16_cardioia.keras")
+print("Modelo VGG16 carregado com sucesso!")
+```
+
+---
+
+### 6. Fazer upload de uma imagem de ECG
+
+```python
+from google.colab import files
+
+uploaded = files.upload()
+```
+
+Após executar a célula, selecione uma imagem de eletrocardiograma no computador.
+
+---
+
+### 7. Executar a predição
+
+```python
+import numpy as np
+from tensorflow.keras.preprocessing import image
+import matplotlib.pyplot as plt
+
+classes = [
+    "abnormal_heartbeat_ecg_images",
+    "myocardial_infarction_ecg_images",
+    "normal_ecg_images",
+    "post_mi_history_ecg_images"
+]
+
+nome_arquivo = list(uploaded.keys())[0]
+
+img = image.load_img(nome_arquivo, target_size=(224, 224))
+img_array = image.img_to_array(img)
+img_array = img_array / 255.0
+img_array = np.expand_dims(img_array, axis=0)
+
+predicao = modelo.predict(img_array)
+
+indice_classe = np.argmax(predicao)
+classe_prevista = classes[indice_classe]
+confianca = predicao[0][indice_classe] * 100
+
+plt.imshow(img)
+plt.axis("off")
+plt.title(f"Classe prevista: {classe_prevista}\nConfiança: {confianca:.2f}%")
+plt.show()
+
+print("Resultado da classificação:")
+print("Classe prevista:", classe_prevista)
+print(f"Confiança: {confianca:.2f}%")
+
+print("\nProbabilidades por classe:")
+for classe, probabilidade in zip(classes, predicao[0]):
+    print(f"{classe}: {probabilidade * 100:.2f}%")
+```
+
+---
+
+## Opção 2 — Executar usando modelo salvo no Google Drive
+
+Caso o arquivo do modelo não esteja disponível diretamente no GitHub, ele pode ser carregado pelo Google Drive.
+
+### 1. Montar o Google Drive no Colab
+
+```python
+from google.colab import drive
+
+drive.mount('/content/drive')
+```
+
+---
+
+### 2. Definir o caminho do modelo no Drive
+
+Altere o caminho abaixo conforme a pasta onde o modelo estiver salvo:
+
+```python
+modelo_path = "/content/drive/MyDrive/CardioIA/models/vgg16_cardioia.keras"
+```
+
+---
+
+### 3. Carregar o modelo
+
+```python
+from tensorflow.keras.models import load_model
+
+modelo = load_model(modelo_path)
+print("Modelo VGG16 carregado com sucesso a partir do Google Drive!")
+```
+
+---
+
+### 4. Fazer upload da imagem de ECG
+
+```python
+from google.colab import files
+
+uploaded = files.upload()
+```
+
+---
+
+### 5. Executar a predição
+
+```python
+import numpy as np
+from tensorflow.keras.preprocessing import image
+import matplotlib.pyplot as plt
+
+classes = [
+    "abnormal_heartbeat_ecg_images",
+    "myocardial_infarction_ecg_images",
+    "normal_ecg_images",
+    "post_mi_history_ecg_images"
+]
+
+nome_arquivo = list(uploaded.keys())[0]
+
+img = image.load_img(nome_arquivo, target_size=(224, 224))
+img_array = image.img_to_array(img)
+img_array = img_array / 255.0
+img_array = np.expand_dims(img_array, axis=0)
+
+predicao = modelo.predict(img_array)
+
+indice_classe = np.argmax(predicao)
+classe_prevista = classes[indice_classe]
+confianca = predicao[0][indice_classe] * 100
+
+plt.imshow(img)
+plt.axis("off")
+plt.title(f"Classe prevista: {classe_prevista}\nConfiança: {confianca:.2f}%")
+plt.show()
+
+print("Resultado da classificação:")
+print("Classe prevista:", classe_prevista)
+print(f"Confiança: {confianca:.2f}%")
+
+print("\nProbabilidades por classe:")
+for classe, probabilidade in zip(classes, predicao[0]):
+    print(f"{classe}: {probabilidade * 100:.2f}%")
+```
+
+---
+
+## Observação Importante
+
+O CardioIA Vision é um protótipo acadêmico desenvolvido para fins educacionais.
+
+O sistema não substitui avaliação médica profissional e não deve ser utilizado como ferramenta de diagnóstico clínico real.
+
+A proposta do projeto é demonstrar a aplicação de técnicas de Visão Computacional e Deep Learning na classificação automatizada de imagens de eletrocardiograma.
 ---
 
 # 🚀 Tecnologias Utilizadas

@@ -421,6 +421,21 @@ Além disso, a VGG16 apresentou maior estabilidade entre os conjuntos de treinam
 
 Esses resultados contribuíram para a escolha da VGG16 como modelo final do CardioIA Vision, uma vez que apresentou o melhor equilíbrio entre aprendizado, estabilidade e desempenho geral.
 
+
+## Conclusão da Avaliação dos Modelos
+
+A análise conjunta das curvas de treinamento, matrizes de confusão e relatórios de classificação permitiu comparar o comportamento das três arquiteturas avaliadas.
+
+A CNN própria demonstrou limitações na extração de características discriminativas, apresentando desempenho próximo ao de uma classificação aleatória.
+
+A ResNet50 com Fine Tuning apresentou evolução durante o treinamento, porém sofreu com overfitting e forte concentração das previsões em uma única classe.
+
+A VGG16 apresentou o melhor equilíbrio entre aprendizado e capacidade de generalização, alcançando aproximadamente 49% de acurácia no conjunto de teste e apresentando desempenho superior na identificação de exames associados a anormalidades cardíacas e infarto do miocárdio.
+
+Dessa forma, a VGG16 foi selecionada como modelo final do CardioIA Vision, sendo utilizada na construção do protótipo desenvolvido nesta fase do projeto.
+
+---
+
 # 🖥 Protótipo CardioIA Vision
 
 Após a seleção do melhor modelo foi desenvolvido um protótipo interativo utilizando Google Colab.

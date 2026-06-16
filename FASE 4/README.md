@@ -199,7 +199,10 @@ Nele estão disponíveis:
 - Comentários técnicos e análises realizadas durante os experimentos.
 
 🔗 **Abrir Notebook Google Colab:**  
-[Inserir Link]
+
+- [Notebook Principal - CardioIA Vision Fase 4](https://github.com/vitorguisso/fiap-2ano/blob/main/FASE%204/notebooks/CardioIA_Vision_Fase4.ipynb)
+
+- [Abrir diretamente no Google Colab](https://colab.research.google.com/github/vitorguisso/fiap-2ano/blob/main/FASE%204/notebooks/CardioIA_Vision_Fase4.ipynb)
 
 ---
 

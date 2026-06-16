@@ -450,7 +450,7 @@ O sistema permite:
 
 ## Exemplo de utilização
 
-![Protótipo CardioIA Vision](assets/prototipo/prototipo_VGG16.png)
+![Protótipo CardioIA Vision](assets/prototipo/prototipo_VGG16.png.PNG)
 
 ⚠️ Importante:
 
@@ -462,7 +462,7 @@ O protótipo possui finalidade acadêmica e demonstrativa. Seu objetivo é apres
 
 Clique no botão abaixo para abrir o notebook diretamente no Google Colab:
 
-[![Abrir no Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Ja3p56GMl64aEsIR1OL01RYTSOhGQqdH#scrollTo=5xPKs927b9jM)
+[![Abrir no Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vitorguisso/fiap-2ano/blob/main/FASE%204/notebooks/CardioIA_Prototype.ipynb)
 
 ---
 

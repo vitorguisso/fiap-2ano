@@ -457,109 +457,48 @@ O sistema permite:
 O protótipo possui finalidade acadêmica e demonstrativa. Seu objetivo é apresentar a aplicação prática do modelo desenvolvido, não representar a acurácia real da solução, a qual foi avaliada separadamente por meio das métricas apresentadas no projeto.
 
 ---
-# 🧪 Execução do Protótipo CardioIA Vision
 
-O protótipo do CardioIA Vision utiliza o modelo VGG16 treinado durante esta fase para realizar a classificação automática de imagens de eletrocardiograma.
+## Acessar o Protótipo
 
-O modelo selecionado foi a arquitetura VGG16, pois apresentou o melhor desempenho geral entre os modelos avaliados, alcançando aproximadamente 49% de acurácia no conjunto de teste.
+Clique no botão abaixo para abrir o notebook diretamente no Google Colab:
 
----
-
-## Executar usando modelo salvo no Google Drive
-
-Caso o arquivo do modelo não esteja disponível diretamente no GitHub, ele pode ser carregado pelo Google Drive.
-
-### 1. Montar o Google Drive no Colab
-
-```python
-from google.colab import drive
-
-drive.mount('/content/drive')
-```
+[![Abrir no Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Ja3p56GMl64aEsIR1OL01RYTSOhGQqdH#scrollTo=5xPKs927b9jM)
 
 ---
 
-### 2. Definir o caminho do modelo no Drive
+## Como Executar
 
-Altere o caminho abaixo conforme a pasta onde o modelo estiver salvo:
-
-```python
-modelo_path = "/content/drive/MyDrive/CardioIA/models/vgg16_cardioia.keras"
-```
-
----
-
-### 3. Carregar o modelo
-
-```python
-from tensorflow.keras.models import load_model
-
-modelo = load_model(modelo_path)
-print("Modelo VGG16 carregado com sucesso a partir do Google Drive!")
-```
+1. Abra o notebook no Google Colab.
+2. Execute todas as células.
+3. Aguarde o download automático do modelo VGG16.
+4. Informe o nome do paciente.
+5. Faça upload de uma imagem de eletrocardiograma (.png, .jpg ou .jpeg).
+6. Clique em **Analisar ECG**.
+7. Visualize o resultado da classificação.
 
 ---
 
-### 4. Fazer upload da imagem de ECG
+## Funcionalidades
 
-```python
-from google.colab import files
-
-uploaded = files.upload()
-```
-
----
-
-### 5. Executar a predição
-
-```python
-import numpy as np
-from tensorflow.keras.preprocessing import image
-import matplotlib.pyplot as plt
-
-classes = [
-    "abnormal_heartbeat_ecg_images",
-    "myocardial_infarction_ecg_images",
-    "normal_ecg_images",
-    "post_mi_history_ecg_images"
-]
-
-nome_arquivo = list(uploaded.keys())[0]
-
-img = image.load_img(nome_arquivo, target_size=(224, 224))
-img_array = image.img_to_array(img)
-img_array = img_array / 255.0
-img_array = np.expand_dims(img_array, axis=0)
-
-predicao = modelo.predict(img_array)
-
-indice_classe = np.argmax(predicao)
-classe_prevista = classes[indice_classe]
-confianca = predicao[0][indice_classe] * 100
-
-plt.imshow(img)
-plt.axis("off")
-plt.title(f"Classe prevista: {classe_prevista}\nConfiança: {confianca:.2f}%")
-plt.show()
-
-print("Resultado da classificação:")
-print("Classe prevista:", classe_prevista)
-print(f"Confiança: {confianca:.2f}%")
-
-print("\nProbabilidades por classe:")
-for classe, probabilidade in zip(classes, predicao[0]):
-    print(f"{classe}: {probabilidade * 100:.2f}%")
-```
+- Download automático do modelo VGG16 via Google Drive;
+- Upload de imagens ECG;
+- Pré-processamento automático da imagem;
+- Classificação em quatro categorias cardíacas;
+- Exibição da classe prevista;
+- Exibição da confiança da predição;
+- Exibição das probabilidades para todas as classes.
 
 ---
 
-## Observação Importante
+## Classes Avaliadas
 
-O CardioIA Vision é um protótipo acadêmico desenvolvido para fins educacionais.
+- Batimento Cardíaco Anormal
+- Infarto do Miocárdio
+- ECG Normal
+- Histórico Pós-Infarto
 
-O sistema não substitui avaliação médica profissional e não deve ser utilizado como ferramenta de diagnóstico clínico real.
 
-A proposta do projeto é demonstrar a aplicação de técnicas de Visão Computacional e Deep Learning na classificação automatizada de imagens de eletrocardiograma.
+
 ---
 
 # 🚀 Tecnologias Utilizadas

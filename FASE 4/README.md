@@ -217,6 +217,11 @@ Nele estão disponíveis:
 
 ---
 
+# 📑 DESENVOLVIMENTO DO PROJETO
+
+
+---
+
 # 🏥 Objetivo do Projeto
 
 Desenvolver um Assistente Cardiológico Virtual capaz de:

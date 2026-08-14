@@ -5,9 +5,9 @@ Motor de NLU local - modo de demonstracao.
 POR QUE ISSO EXISTE
     O requisito da atividade e integrar o assistente ao Watson Assistant, e essa
     e a integracao principal do projeto (ver watson_client.py). O problema: as
-    credenciais da IBM Cloud sao pessoais e nao podem ser publicadas no GitHub
-    (secao 25 do CLAUDE.md). Quem clonar o repositorio nao tem WATSON_API_KEY e,
-    sem um plano B, veria apenas uma tela de erro.
+    credenciais da IBM Cloud sao pessoais e nao podem ser publicadas em um
+    repositorio publico. Quem clonar o projeto nao tem WATSON_API_KEY e, sem um
+    plano B, veria apenas uma tela de erro.
 
     Este modulo le O MESMO arquivo de skill exportado (config/watson/) e resolve
     intencao, entidades e no de resposta localmente, devolvendo o MESMO contrato

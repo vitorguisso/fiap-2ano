@@ -195,8 +195,6 @@ Este é o entregável que materializa a modelagem conversacional e pode ser **im
 
 Vídeo curto (até 3 minutos) demonstrando o funcionamento da interação entre usuário e assistente: triagem de sintoma em múltiplas etapas, reconhecimento de urgência, captura da medida de pressão arterial e tratamento de perguntas fora do escopo.
 
-O roteiro utilizado na gravação, com os blocos demonstrados e o tempo previsto de cada um, está disponível em [document/ROTEIRO_VIDEO.md](document/ROTEIRO_VIDEO.md).
-
 🔗 **Acessar Vídeo:**
 
 <!-- ┌──────────────────────────────────────────────────────────────────────┐
@@ -222,7 +220,6 @@ O roteiro utilizado na gravação, com os blocos demonstrados e o tempo previsto
 | Importar o assistente no Watson | Skill Exportada (`config/watson/`) |
 | Ver o código do backend e da integração | `src/backend/` |
 | Ver a demonstração funcionando | Vídeo de Demonstração |
-| Regravar ou conferir o roteiro da demonstração | `document/ROTEIRO_VIDEO.md` |
 
 ---
 
@@ -249,8 +246,7 @@ Documentação acadêmica:
 
 * `RELATORIO_FLUXO_CONVERSACIONAL_FASE5.pdf` — relatório da entrega da Parte 1;
 * `RELATORIO_FLUXO_CONVERSACIONAL_FASE5.md` — fonte do relatório;
-* `FLUXO_CONVERSACIONAL.md` — documento técnico completo do fluxo, com as decisões, os testes e as 11 dificuldades registradas;
-* `ROTEIRO_VIDEO.md` — roteiro da gravação da demonstração.
+* `FLUXO_CONVERSACIONAL.md` — documento técnico completo do fluxo, com as decisões, os testes e as 11 dificuldades registradas.
 
 ## 📂 scripts
 
@@ -258,8 +254,7 @@ Scripts auxiliares:
 
 * `testar_nlu_local.py` — execução do plano de testes do fluxo conversacional;
 * `gerar_relatorio_pdf.py` — geração do PDF do relatório a partir do Markdown;
-* `auditar_entrega.py` — verificação de consistência da entrega;
-* `preparar_entrega.py` — montagem da pasta de entrega, sem credenciais nem material pessoal.
+* `auditar_entrega.py` — verificação de consistência entre documentação e implementação.
 
 ## 📂 src
 

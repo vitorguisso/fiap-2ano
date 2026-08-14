@@ -593,5 +593,5 @@ conversa.
    demonstração, não um substituto. Casos limítrofes como o T05c são resolvidos por
    similaridade de tokens, não por classificador treinado.
 
-Cada limitação acima tem evolução correspondente proposta no README (seção "Trabalhos
-futuros"), conforme seção 18 do `CLAUDE.md`.
+Cada limitação acima tem uma evolução correspondente proposta no README, na seção
+"Trabalhos futuros".

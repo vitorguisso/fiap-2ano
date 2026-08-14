@@ -107,7 +107,7 @@ def verificar_credenciais():
         re.IGNORECASE,
     )
     for arquivo in RAIZ.rglob("*.py"):
-        if "material de apoio" in str(arquivo) or ".venv" in str(arquivo):
+        if ".venv" in str(arquivo) or "__pycache__" in str(arquivo):
             continue
         for numero, linha in enumerate(
             arquivo.read_text(encoding="utf-8").splitlines(), 1
@@ -137,16 +137,20 @@ def verificar_publicacao():
     import urllib.error
     import urllib.request
 
+    import base64
     import hashlib
+    import json
     import urllib.parse
 
-    base = "https://raw.githubusercontent.com/vitorguisso/fiap-2ano/main/FASE%205/"
+    # Usamos a API do GitHub, e nao raw.githubusercontent.com. O "raw" passa por
+    # CDN com cache de alguns minutos e chega a devolver a versao ANTERIOR de um
+    # arquivo recem-publicado - o que ja gerou um falso alarme de "desatualizado"
+    # logo apos um envio correto.
+    base = "https://api.github.com/repos/vitorguisso/fiap-2ano/contents/FASE%205/"
 
-    # Compara contra os arquivos DA RAIZ do projeto, que sao a fonte da verdade.
-    # Comparar contra a pasta de entrega esconderia o caso em que ela propria
-    # esta desatualizada - foi exatamente o que aconteceu numa publicacao: os
-    # textos foram corrigidos na raiz, preparar_entrega.py nao foi reexecutado,
-    # e a conferencia acusou "identico" porque os dois lados estavam velhos.
+    # Compara o CONTEUDO, e nao apenas a existencia do arquivo. Verificar so a
+    # existencia deixaria passar o caso em que uma correcao foi feita localmente
+    # mas nunca chegou a ser publicada.
     essenciais = [
         "README.md",
         ".gitignore",
@@ -163,9 +167,17 @@ def verificar_publicacao():
     for caminho in essenciais:
         origem = RAIZ / caminho
         url = base + urllib.parse.quote(caminho)
+        pedido = urllib.request.Request(
+            url,
+            headers={
+                "User-Agent": "cardioia-auditoria",
+                "Accept": "application/vnd.github+json",
+            },
+        )
         try:
-            with urllib.request.urlopen(url, timeout=20) as resposta:
-                remoto = resposta.read()
+            with urllib.request.urlopen(pedido, timeout=30) as resposta:
+                dados = json.loads(resposta.read().decode("utf-8"))
+            remoto = base64.b64decode(dados["content"])
         except urllib.error.HTTPError as erro:
             if erro.code == 404:
                 problemas.append(f"Nao publicado no GitHub: {caminho}")
@@ -189,7 +201,7 @@ def verificar_publicacao():
         else:
             problemas.append(
                 f"Versao publicada difere da atual: {caminho} "
-                "(rode scripts/preparar_entrega.py e reenvie a pasta)"
+                "(reenvie o arquivo para o repositorio)"
             )
             print(f"    🔴 {caminho} — DESATUALIZADO no GitHub")
 

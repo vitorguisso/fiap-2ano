@@ -1,0 +1,30 @@
+# Credenciais - NUNCA versionar
+.env
+*.env
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Ambiente / editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Material didatico (PDFs pessoais, marcados com nome e RM do aluno)
+material de apoio/
+
+# Arquivos de apoio locais, nao fazem parte da entrega
+TEMPLATE PADRÃO FIAP COMO EXEMPLO.md
+enunciado_atividade.txt
+link git hub trabalho.txt
+
+# Arquivos temporarios
+*.log
+*.tmp

@@ -1,0 +1,25 @@
+# CardioIA - Fase 5 - dependencias do backend
+# Instalacao:  pip install -r requirements.txt
+
+Flask==3.0.3
+python-dotenv==1.0.1
+
+# A VERSAO DO SDK IMPORTA - nao troque por "ibm-watson" sem versao.
+#
+# A partir da versao 7, o SDK passou a exigir 'environment_id' em
+# create_session() e message(), montando a rota
+#   /v2/assistants/{id}/environments/{env}/sessions
+# Essa rota existe apenas para assistentes da experiencia NOVA.
+#
+# Este projeto usa a experiencia CLASSICA (dialog skill com intents, entities e
+# dialog nodes), exigida pelo enunciado. Nela:
+#   - list_environments responde 404 (o recurso nao existe);
+#   - list_assistants responde 400 ("API is not supported on lite plan").
+#
+# A versao 6.1.0 usa a rota /v2/assistants/{id}/sessions, que e a compativel e
+# tambem a apresentada no material didatico (Cap10, Codigo-fonte 10).
+ibm-watson==6.1.0
+
+# Usado apenas por scripts/gerar_relatorio_pdf.py, para gerar o PDF do
+# relatorio a partir do Markdown. Nao e necessario para executar a aplicacao.
+reportlab==4.2.5

@@ -1,0 +1,1586 @@
+{
+  "name": "CardioIA - Assistente Cardiológico",
+  "description": "Assistente conversacional de atendimento inicial em contexto cardiológico. Projeto CardioIA - FIAP Fase 5. Triagem informativa: não emite diagnóstico, não prescreve medicamento.",
+  "language": "pt-br",
+  "learning_opt_out": false,
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "system_settings": {
+    "spelling_auto_correct": true,
+    "disambiguation": {
+      "prompt": "Não tenho certeza do que você precisa. Escolha uma das opções:",
+      "enabled": false,
+      "randomize": false,
+      "max_suggestions": 4,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "Nenhuma dessas opções"
+    },
+    "tooling": {
+      "store_generic_responses": true
+    }
+  },
+  "intents": [
+    {
+      "intent": "saudacao",
+      "description": "Abertura da conversa pelo paciente",
+      "examples": [
+        {
+          "text": "oi"
+        },
+        {
+          "text": "olá"
+        },
+        {
+          "text": "bom dia"
+        },
+        {
+          "text": "boa tarde"
+        },
+        {
+          "text": "boa noite"
+        },
+        {
+          "text": "oi, tudo bem?"
+        },
+        {
+          "text": "olá, preciso de ajuda"
+        },
+        {
+          "text": "e aí"
+        },
+        {
+          "text": "oi cardioia"
+        },
+        {
+          "text": "bom dia, pode me ajudar?"
+        }
+      ]
+    },
+    {
+      "intent": "despedida",
+      "description": "Encerramento da conversa e agradecimento",
+      "examples": [
+        {
+          "text": "tchau"
+        },
+        {
+          "text": "obrigado"
+        },
+        {
+          "text": "obrigada, era isso"
+        },
+        {
+          "text": "valeu"
+        },
+        {
+          "text": "até logo"
+        },
+        {
+          "text": "muito obrigado pela ajuda"
+        },
+        {
+          "text": "só isso, tchau"
+        },
+        {
+          "text": "encerrar"
+        },
+        {
+          "text": "era só isso"
+        },
+        {
+          "text": "até mais"
+        }
+      ]
+    },
+    {
+      "intent": "capacidades_assistente",
+      "description": "Paciente quer saber o que o assistente faz",
+      "examples": [
+        {
+          "text": "o que você faz"
+        },
+        {
+          "text": "como você pode me ajudar"
+        },
+        {
+          "text": "quais suas funções"
+        },
+        {
+          "text": "você é um médico"
+        },
+        {
+          "text": "você dá diagnóstico"
+        },
+        {
+          "text": "com o que você pode me ajudar"
+        },
+        {
+          "text": "me explica como funciona"
+        },
+        {
+          "text": "o que você sabe fazer"
+        },
+        {
+          "text": "para que serve esse chat"
+        },
+        {
+          "text": "você substitui o cardiologista"
+        }
+      ]
+    },
+    {
+      "intent": "emergencia_cardiaca",
+      "description": "Quadro agudo em curso que exige atendimento imediato",
+      "examples": [
+        {
+          "text": "estou com uma dor muito forte no peito agora"
+        },
+        {
+          "text": "acho que estou tendo um infarto"
+        },
+        {
+          "text": "meu peito está apertado e o braço esquerdo formigando"
+        },
+        {
+          "text": "não consigo respirar e estou suando frio"
+        },
+        {
+          "text": "dor no peito que irradia para o braço"
+        },
+        {
+          "text": "estou passando mal do coração agora"
+        },
+        {
+          "text": "sinto o peito pesado e estou com tontura forte"
+        },
+        {
+          "text": "socorro, dor no peito insuportável"
+        },
+        {
+          "text": "quase desmaiei e estou com dor no peito"
+        },
+        {
+          "text": "aperto no peito com falta de ar intensa"
+        },
+        {
+          "text": "dor no peito e vômito"
+        },
+        {
+          "text": "estou com dor no peito há vinte minutos e não passa"
+        }
+      ]
+    },
+    {
+      "intent": "informar_sintoma",
+      "description": "Relato de sintoma cardiológico sem característica de urgência aguda",
+      "examples": [
+        {
+          "text": "ando cansado ao subir escada"
+        },
+        {
+          "text": "sinto o coração acelerado às vezes"
+        },
+        {
+          "text": "minhas pernas estão inchando no fim do dia"
+        },
+        {
+          "text": "tenho sentido palpitações"
+        },
+        {
+          "text": "tenho palpitação de vez em quando"
+        },
+        {
+          "text": "sinto palpitação quando deito"
+        },
+        {
+          "text": "senti uma tontura rápida hoje de manhã"
+        },
+        {
+          "text": "estou com falta de ar quando caminho"
+        },
+        {
+          "text": "meu coração falha uma batida de vez em quando"
+        },
+        {
+          "text": "sinto um cansaço fora do normal"
+        },
+        {
+          "text": "tive uma pontada no peito ontem"
+        },
+        {
+          "text": "sinto uma dor leve no peito"
+        },
+        {
+          "text": "tive uma dor fraca no peito ontem"
+        },
+        {
+          "text": "meu pé está inchado"
+        },
+        {
+          "text": "sinto o coração disparar quando fico nervoso"
+        },
+        {
+          "text": "queria relatar um sintoma"
+        }
+      ]
+    },
+    {
+      "intent": "duvida_pressao",
+      "description": "Dúvidas sobre valores e conceitos de pressão arterial",
+      "examples": [
+        {
+          "text": "minha pressão deu 150 por 100"
+        },
+        {
+          "text": "medi 12 por 8, está bom?"
+        },
+        {
+          "text": "minha pressão está alta?"
+        },
+        {
+          "text": "pressão 140/90 é ruim"
+        },
+        {
+          "text": "o que é pressão sistólica"
+        },
+        {
+          "text": "qual a pressão normal"
+        },
+        {
+          "text": "medi a pressão e deu 130x85"
+        },
+        {
+          "text": "estou com a pressão baixa"
+        },
+        {
+          "text": "quantas vezes devo medir a pressão"
+        },
+        {
+          "text": "minha pressão varia muito durante o dia"
+        },
+        {
+          "text": "pressão 18 por 11"
+        }
+      ]
+    },
+    {
+      "intent": "duvida_medicamento",
+      "description": "Dúvidas sobre uso, dose, esquecimento ou efeito de medicamento",
+      "examples": [
+        {
+          "text": "esqueci de tomar o remédio da pressão"
+        },
+        {
+          "text": "posso parar de tomar losartana"
+        },
+        {
+          "text": "esse medicamento dá tosse?"
+        },
+        {
+          "text": "posso dobrar a dose hoje"
+        },
+        {
+          "text": "qual o horário certo de tomar o remédio"
+        },
+        {
+          "text": "posso tomar meu remédio com suco"
+        },
+        {
+          "text": "o remédio do coração pode ser tomado com anti-inflamatório"
+        },
+        {
+          "text": "quantos miligramas devo tomar"
+        },
+        {
+          "text": "estou com efeito colateral do medicamento"
+        },
+        {
+          "text": "posso trocar meu remédio por um genérico"
+        },
+        {
+          "text": "acabou meu medicamento, o que faço"
+        }
+      ]
+    },
+    {
+      "intent": "duvida_exame",
+      "description": "Dúvidas sobre finalidade e preparo de exames cardiológicos",
+      "examples": [
+        {
+          "text": "o que é holter"
+        },
+        {
+          "text": "para que serve o eletrocardiograma"
+        },
+        {
+          "text": "preciso de jejum para o ecocardiograma"
+        },
+        {
+          "text": "como funciona o teste ergométrico"
+        },
+        {
+          "text": "o cateterismo é perigoso"
+        },
+        {
+          "text": "que exame o cardiologista costuma pedir"
+        },
+        {
+          "text": "como me preparar para o exame"
+        },
+        {
+          "text": "quanto tempo demora o eletro"
+        },
+        {
+          "text": "o que o exame de sangue mostra do coração"
+        },
+        {
+          "text": "tenho um ecg marcado, o que devo levar"
+        }
+      ]
+    },
+    {
+      "intent": "agendar_consulta",
+      "description": "Marcar, remarcar ou cancelar consulta ou retorno",
+      "examples": [
+        {
+          "text": "quero marcar uma consulta"
+        },
+        {
+          "text": "preciso agendar com o cardiologista"
+        },
+        {
+          "text": "como faço para marcar retorno"
+        },
+        {
+          "text": "quero remarcar minha consulta"
+        },
+        {
+          "text": "preciso cancelar a consulta de amanhã"
+        },
+        {
+          "text": "tem horário disponível essa semana"
+        },
+        {
+          "text": "quero agendar uma avaliação"
+        },
+        {
+          "text": "gostaria de marcar consulta de rotina"
+        },
+        {
+          "text": "posso marcar para segunda"
+        },
+        {
+          "text": "queria uma consulta com cardiologista"
+        }
+      ]
+    },
+    {
+      "intent": "habitos_saudaveis",
+      "description": "Prevenção cardiovascular, alimentação, exercício e fatores de risco",
+      "examples": [
+        {
+          "text": "o que fazer para cuidar do coração"
+        },
+        {
+          "text": "que exercício é bom para o coração"
+        },
+        {
+          "text": "como reduzir o colesterol"
+        },
+        {
+          "text": "quero diminuir o sal da comida"
+        },
+        {
+          "text": "parar de fumar melhora o coração"
+        },
+        {
+          "text": "sou sedentário, por onde começo"
+        },
+        {
+          "text": "dieta boa para hipertensão"
+        },
+        {
+          "text": "como prevenir problema no coração"
+        },
+        {
+          "text": "tenho diabetes, preciso cuidar do coração"
+        },
+        {
+          "text": "meu pai teve infarto, tenho risco"
+        },
+        {
+          "text": "como perder peso para ajudar o coração"
+        }
+      ]
+    }
+  ],
+  "entities": [
+    {
+      "entity": "sintoma",
+      "fuzzy_match": true,
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "dor no peito",
+          "synonyms": [
+            "dor no peito",
+            "dor torácica",
+            "aperto no peito",
+            "peito apertado",
+            "pontada no peito",
+            "queimação no peito",
+            "peso no peito",
+            "peito pesado"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "falta de ar",
+          "synonyms": [
+            "falta de ar",
+            "dificuldade para respirar",
+            "não consigo respirar",
+            "sem ar",
+            "dispneia",
+            "respiração curta",
+            "cansaço para respirar"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "palpitação",
+          "synonyms": [
+            "palpitação",
+            "palpitações",
+            "coração acelerado",
+            "coração disparado",
+            "taquicardia",
+            "batimento irregular",
+            "coração falhando",
+            "coração descompassado"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "tontura",
+          "synonyms": [
+            "tontura",
+            "tonteira",
+            "vertigem",
+            "cabeça leve",
+            "sensação de desmaio",
+            "mundo girando"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "inchaço",
+          "synonyms": [
+            "inchaço",
+            "pernas inchadas",
+            "pernas inchando",
+            "pé inchado",
+            "pé inchando",
+            "tornozelo inchado",
+            "inchando",
+            "edema",
+            "retenção de líquido"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "cansaço",
+          "synonyms": [
+            "cansaço",
+            "fadiga",
+            "sem energia",
+            "cansado fácil",
+            "fraqueza",
+            "indisposição"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "desmaio",
+          "synonyms": [
+            "desmaio",
+            "desmaiei",
+            "síncope",
+            "perdi a consciência",
+            "apaguei"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "sudorese",
+          "synonyms": [
+            "sudorese",
+            "suor frio",
+            "suando frio",
+            "suor excessivo",
+            "transpiração fria"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": "intensidade",
+      "fuzzy_match": true,
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "leve",
+          "synonyms": [
+            "leve",
+            "fraca",
+            "fraco",
+            "pouca",
+            "suportável",
+            "de leve"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "moderada",
+          "synonyms": [
+            "moderada",
+            "moderado",
+            "média",
+            "médio",
+            "mais ou menos",
+            "razoável"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "forte",
+          "synonyms": [
+            "forte",
+            "muito forte",
+            "intensa",
+            "intenso",
+            "insuportável",
+            "grave",
+            "terrível",
+            "pior dor da minha vida"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": "duracao",
+      "fuzzy_match": true,
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "agora",
+          "synonyms": [
+            "agora",
+            "neste momento",
+            "começou agora",
+            "há poucos minutos",
+            "está acontecendo"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "hoje",
+          "synonyms": [
+            "hoje",
+            "desde hoje",
+            "hoje de manhã",
+            "algumas horas",
+            "ontem"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "dias",
+          "synonyms": [
+            "dias",
+            "alguns dias",
+            "três dias",
+            "uma semana",
+            "desde a semana passada"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "semanas",
+          "synonyms": [
+            "semanas",
+            "duas semanas",
+            "algumas semanas",
+            "quinze dias"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "meses",
+          "synonyms": [
+            "meses",
+            "alguns meses",
+            "muito tempo",
+            "há anos",
+            "faz tempo"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": "pressao_arterial",
+      "fuzzy_match": false,
+      "values": [
+        {
+          "type": "patterns",
+          "value": "medida",
+          "patterns": [
+            "\\d{2,3}\\s*(?:x|X|/|por)\\s*\\d{1,3}"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": "exame",
+      "fuzzy_match": true,
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "eletrocardiograma",
+          "synonyms": [
+            "eletrocardiograma",
+            "ecg",
+            "eletro",
+            "eletro do coração"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "ecocardiograma",
+          "synonyms": [
+            "ecocardiograma",
+            "eco",
+            "ultrassom do coração",
+            "ecodoppler"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "holter",
+          "synonyms": [
+            "holter",
+            "holter 24 horas",
+            "monitor de 24 horas"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "teste_ergometrico",
+          "synonyms": [
+            "teste ergométrico",
+            "teste de esforço",
+            "esteira",
+            "ergométrico"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "cateterismo",
+          "synonyms": [
+            "cateterismo",
+            "cateter",
+            "angioplastia",
+            "coronariografia"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "exame_de_sangue",
+          "synonyms": [
+            "exame de sangue",
+            "sangue",
+            "perfil lipídico",
+            "troponina",
+            "hemograma",
+            "laboratório"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": "fator_risco",
+      "fuzzy_match": true,
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "hipertensão",
+          "synonyms": [
+            "hipertensão",
+            "pressão alta",
+            "hipertenso",
+            "sal"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "diabetes",
+          "synonyms": [
+            "diabetes",
+            "diabético",
+            "açúcar no sangue",
+            "glicemia"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "colesterol",
+          "synonyms": [
+            "colesterol",
+            "colesterol alto",
+            "triglicérides",
+            "gordura no sangue"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "tabagismo",
+          "synonyms": [
+            "tabagismo",
+            "fumo",
+            "cigarro",
+            "fumar",
+            "parar de fumar"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "sedentarismo",
+          "synonyms": [
+            "sedentarismo",
+            "sedentário",
+            "não me exercito",
+            "sem atividade física",
+            "exercício"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "obesidade",
+          "synonyms": [
+            "obesidade",
+            "obeso",
+            "sobrepeso",
+            "perder peso",
+            "estou acima do peso"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "histórico familiar",
+          "synonyms": [
+            "histórico familiar",
+            "meu pai teve infarto",
+            "família tem problema de coração",
+            "hereditário"
+          ]
+        }
+      ]
+    }
+  ],
+  "counterexamples": [
+    {
+      "text": "minha casa está pegando fogo"
+    },
+    {
+      "text": "fui assaltado na rua"
+    },
+    {
+      "text": "meu carro quebrou na estrada"
+    },
+    {
+      "text": "tem um vazamento de gás aqui"
+    },
+    {
+      "text": "meu filho está com febre alta"
+    },
+    {
+      "text": "estou com dor de dente"
+    },
+    {
+      "text": "quebrei o braço, o que faço"
+    },
+    {
+      "text": "estou com muita ansiedade e insônia"
+    },
+    {
+      "text": "meu cachorro está passando mal"
+    },
+    {
+      "text": "estou grávida, posso tomar isso"
+    },
+    {
+      "text": "estou com uma alergia na pele"
+    },
+    {
+      "text": "torci o tornozelo jogando bola"
+    },
+    {
+      "text": "quanto custa uma consulta particular"
+    },
+    {
+      "text": "vocês aceitam qual convênio"
+    },
+    {
+      "text": "qual o endereço da clínica"
+    },
+    {
+      "text": "quero falar com o financeiro"
+    },
+    {
+      "text": "preciso da nota fiscal"
+    },
+    {
+      "text": "qual a previsão do tempo"
+    },
+    {
+      "text": "quanto custa um carro"
+    },
+    {
+      "text": "quem ganhou o jogo ontem"
+    },
+    {
+      "text": "me conta uma piada"
+    },
+    {
+      "text": "qual a capital da França"
+    },
+    {
+      "text": "quero pedir uma pizza"
+    },
+    {
+      "text": "que horas são"
+    }
+  ],
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Boas-vindas",
+      "conditions": "welcome",
+      "dialog_node": "node_welcome",
+      "parent": null,
+      "previous_sibling": null,
+      "context": {
+        "falhas": 0,
+        "urgencia": false
+      },
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "selection_policy": "sequential",
+            "values": [
+              {
+                "text": "Olá! Eu sou o CardioIA, assistente de atendimento inicial em saúde cardiovascular. Posso registrar sintomas, esclarecer dúvidas sobre pressão arterial e exames, orientar sobre hábitos de prevenção e ajudar no agendamento. IMPORTANTE: eu não faço diagnóstico e não substituo a avaliação de um médico. Se estiver com dor no peito forte, falta de ar intensa ou mal-estar súbito agora, procure atendimento imediato ou ligue 192 (SAMU). Como posso ajudar?"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "standard",
+      "title": "Emergência cardíaca",
+      "conditions": "#emergencia_cardiaca",
+      "dialog_node": "node_emergencia",
+      "parent": null,
+      "previous_sibling": "node_welcome",
+      "context": {
+        "urgencia": true,
+        "falhas": 0
+      },
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "selection_policy": "sequential",
+            "values": [
+              {
+                "text": "ATENÇÃO: o que você descreve pode indicar uma emergência cardíaca. Procure atendimento médico AGORA. Ligue 192 (SAMU) ou vá ao pronto-socorro mais próximo. Não dirija por conta própria e não espere para ver se melhora. Se possível, fique acompanhado e mantenha-se em repouso. Este atendimento não substitui o serviço de emergência."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "standard",
+      "title": "Sintoma de forte intensidade",
+      "conditions": "#informar_sintoma && @intensidade:forte",
+      "dialog_node": "node_sintoma_forte",
+      "parent": null,
+      "previous_sibling": "node_emergencia",
+      "context": {
+        "urgencia": true,
+        "sintoma_relatado": "@sintoma",
+        "intensidade": "forte",
+        "falhas": 0
+      },
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "selection_policy": "sequential",
+            "values": [
+              {
+                "text": "Você relatou um sintoma de forte intensidade. Sintomas cardiovasculares intensos não devem ser acompanhados em casa. Procure atendimento médico hoje, e imediatamente (192 ou pronto-socorro) se houver dor no peito persistente, falta de ar intensa, desmaio ou suor frio. Eu registro o relato, mas a avaliação precisa ser presencial."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "standard",
+      "title": "Sintoma identificado",
+      "conditions": "#informar_sintoma && @sintoma",
+      "dialog_node": "node_sintoma_ident",
+      "parent": null,
+      "previous_sibling": "node_sintoma_forte",
+      "context": {
+        "sintoma_relatado": "@sintoma",
+        "falhas": 0,
+        "urgencia": false
+      },
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "selection_policy": "sequential",
+            "values": [
+              {
+                "text": "Entendi, você relatou: <? $sintoma_relatado ?>. Para organizar melhor a informação, há quanto tempo isso acontece? (por exemplo: começou agora, hoje, alguns dias, semanas)"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "standard",
+      "title": "Coleta - duração",
+      "conditions": "true",
+      "dialog_node": "node_sintoma_duracao",
+      "parent": "node_sintoma_ident",
+      "previous_sibling": null,
+      "context": {
+        "duracao": "<? input.text ?>",
+        "urgencia": false
+      },
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "selection_policy": "sequential",
+            "values": [
+              {
+                "text": "Obrigado. E qual a intensidade do sintoma: leve, moderada ou forte?"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "standard",
+      "title": "Coleta - intensidade forte",
+      "conditions": "@intensidade:forte",
+      "dialog_node": "node_sintoma_int_forte",
+      "parent": "node_sintoma_duracao",
+      "previous_sibling": null,
+      "context": {
+        "intensidade": "forte",
+        "urgencia": true
+      },
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "selection_policy": "sequential",
+            "values": [
+              {
+                "text": "Registrado: <? $sintoma_relatado ?>, duração informada \"<? $duracao ?>\", intensidade forte. Sintoma cardiovascular de forte intensidade exige avaliação médica sem demora. Procure atendimento hoje, ou o serviço de emergência (192) se o quadro estiver em curso agora. Este resumo pode ser mostrado ao profissional que te atender."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "standard",
+      "title": "Coleta - intensidade registrada",
+      "conditions": "true",
+      "dialog_node": "node_sintoma_int",
+      "parent": "node_sintoma_duracao",
+      "previous_sibling": "node_sintoma_int_forte",
+      "context": {
+        "intensidade": "<? input.text ?>",
+        "urgencia": false
+      },
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "selection_policy": "sequential",
+            "values": [
+              {
+                "text": "Registrado: <? $sintoma_relatado ?>, duração informada \"<? $duracao ?>\", intensidade \"<? $intensidade ?>\". Recomendo agendar uma avaliação com cardiologista para investigar esse sintoma, levando esse relato. Se o quadro piorar, ficar contínuo ou vier acompanhado de dor no peito, falta de ar intensa ou desmaio, procure atendimento imediato. Lembrando que eu não faço diagnóstico. Posso ajudar com mais alguma coisa?"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "standard",
+      "title": "Sintoma não especificado",
+      "conditions": "#informar_sintoma",
+      "dialog_node": "node_sintoma_vago",
+      "parent": null,
+      "previous_sibling": "node_sintoma_ident",
+      "context": {
+        "falhas": 0,
+        "urgencia": false
+      },
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "selection_policy": "sequential",
+            "values": [
+              {
+                "text": "Certo, vamos registrar seu relato. Qual sintoma você está sentindo? Alguns exemplos: dor no peito, falta de ar, palpitação, tontura, inchaço nas pernas, cansaço."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "standard",
+      "title": "Captura do sintoma",
+      "conditions": "@sintoma",
+      "dialog_node": "node_sintoma_captura",
+      "parent": "node_sintoma_vago",
+      "previous_sibling": null,
+      "context": {
+        "sintoma_relatado": "@sintoma",
+        "urgencia": false
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_sintoma_ident"
+      },
+      "output": {}
+    },
+    {
+      "type": "standard",
+      "title": "Pressão com valor informado",
+      "conditions": "#duvida_pressao && @pressao_arterial",
+      "dialog_node": "node_pressao_valor",
+      "parent": null,
+      "previous_sibling": "node_sintoma_vago",
+      "context": {
+        "pressao_informada": "<? @pressao_arterial.literal ?>",
+        "falhas": 0,
+        "urgencia": false
+      },
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "selection_policy": "sequential",
+            "values": [
+              {
+                "text": "Registrei a medida <? $pressao_informada ?>. Como referência geral para adultos, a Sociedade Brasileira de Cardiologia considera pressão ótima abaixo de 120/80 mmHg, normal até 129/84, pré-hipertensão entre 130/85 e 139/89, e hipertensão a partir de 140/90 mmHg. Esses valores são apenas referência: uma única medida não define nada, e a interpretação depende de idade, medicação em uso, outras doenças e das condições da medição. Se você tem medidas repetidas acima de 140/90, leve o registro ao seu médico. Se estiver acima de 180/110 com sintomas como dor no peito, falta de ar ou alteração visual, procure atendimento imediato."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "standard",
+      "title": "Pressão sem valor",
+      "conditions": "#duvida_pressao",
+      "dialog_node": "node_pressao_sem",
+      "parent": null,
+      "previous_sibling": "node_pressao_valor",
+      "context": {
+        "falhas": 0,
+        "urgencia": false
+      },
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "selection_policy": "sequential",
+            "values": [
+              {
+                "text": "Posso te dar as faixas de referência de pressão arterial. Qual foi o valor medido? Você pode escrever como preferir, por exemplo 150/100, 150 por 100 ou 15x10."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "standard",
+      "title": "Captura da pressão",
+      "conditions": "@pressao_arterial",
+      "dialog_node": "node_pressao_captura",
+      "parent": "node_pressao_sem",
+      "previous_sibling": null,
+      "context": {
+        "pressao_informada": "<? @pressao_arterial.literal ?>",
+        "urgencia": false
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_pressao_valor"
+      },
+      "output": {}
+    },
+    {
+      "type": "standard",
+      "title": "Dúvida de medicamento",
+      "conditions": "#duvida_medicamento",
+      "dialog_node": "node_medicamento",
+      "parent": null,
+      "previous_sibling": "node_pressao_sem",
+      "context": {
+        "falhas": 0,
+        "urgencia": false
+      },
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "selection_policy": "sequential",
+            "values": [
+              {
+                "text": "Entendo sua dúvida sobre medicação, mas essa é uma pergunta que eu não posso responder. Orientação sobre dose, horário, troca, suspensão ou interação de medicamentos precisa vir do médico que prescreveu ou de um farmacêutico. Nunca interrompa nem ajuste um medicamento cardiovascular por conta própria: em remédios de pressão e anticoagulantes isso pode ser perigoso. O que eu recomendo: entre em contato com seu médico ou com a farmácia da sua unidade de saúde. Se você esqueceu uma dose, não tome dose dobrada para compensar sem orientação. Se estiver sentindo algum efeito que te preocupa agora, posso registrar o sintoma. Quer fazer isso?"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "standard",
+      "title": "Exame - eletrocardiograma",
+      "conditions": "#duvida_exame && @exame:eletrocardiograma",
+      "dialog_node": "node_exame_ecg",
+      "parent": null,
+      "previous_sibling": "node_medicamento",
+      "context": {
+        "falhas": 0,
+        "urgencia": false
+      },
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "selection_policy": "sequential",
+            "values": [
+              {
+                "text": "O eletrocardiograma (ECG ou \"eletro\") registra a atividade elétrica do coração por meio de eletrodos colocados no peito, braços e pernas. Serve para avaliar ritmo, frequência e sinais de sobrecarga ou de isquemia. Dura poucos minutos, não dói e não precisa de jejum. Não aplica choque nem injeta contraste. Recomendação prática: use roupa fácil de abrir na frente e evite creme no peito no dia do exame. A interpretação do resultado é sempre do médico."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "standard",
+      "title": "Exame - ecocardiograma",
+      "conditions": "#duvida_exame && @exame:ecocardiograma",
+      "dialog_node": "node_exame_eco",
+      "parent": null,
+      "previous_sibling": "node_exame_ecg",
+      "context": {
+        "falhas": 0,
+        "urgencia": false
+      },
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "selection_policy": "sequential",
+            "values": [
+              {
+                "text": "O ecocardiograma é um ultrassom do coração. Com gel e um transdutor sobre o peito, ele mostra as estruturas em movimento: tamanho das cavidades, funcionamento das valvas e a força de contração (fração de ejeção). Não usa radiação, não dói e normalmente não exige jejum nem preparo especial. Dura em média de 20 a 40 minutos. A interpretação do laudo é do médico."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "standard",
+      "title": "Exame - holter",
+      "conditions": "#duvida_exame && @exame:holter",
+      "dialog_node": "node_exame_holter",
+      "parent": null,
+      "previous_sibling": "node_exame_eco",
+      "context": {
+        "falhas": 0,
+        "urgencia": false
+      },
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "selection_policy": "sequential",
+            "values": [
+              {
+                "text": "O Holter é um aparelho portátil que registra o eletrocardiograma continuamente, em geral por 24 horas, enquanto você segue a rotina normal. É útil justamente para sintomas que aparecem e desaparecem, como palpitação ou tontura, e que um eletro de poucos minutos não pegaria. Preparo: no dia do exame não tome banho com o aparelho instalado, mantenha os eletrodos no lugar e anote os horários dos sintomas em um diário. Essa anotação ajuda muito na interpretação."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "standard",
+      "title": "Exame - teste ergométrico",
+      "conditions": "#duvida_exame && @exame:teste_ergometrico",
+      "dialog_node": "node_exame_ergo",
+      "parent": null,
+      "previous_sibling": "node_exame_holter",
+      "context": {
+        "falhas": 0,
+        "urgencia": false
+      },
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "selection_policy": "sequential",
+            "values": [
+              {
+                "text": "O teste ergométrico (teste de esforço, ou \"teste da esteira\") avalia o comportamento do coração durante exercício progressivo, com monitoramento de eletrocardiograma, pressão e sintomas. Serve para investigar isquemia e capacidade funcional. Preparo típico: leve roupa e tênis adequados para caminhar, evite refeição pesada, café e cigarro nas horas anteriores, e confirme com o médico se algum medicamento em uso deve ser suspenso. Essa decisão é dele, não minha. O exame é feito sob supervisão médica."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "standard",
+      "title": "Exame - cateterismo",
+      "conditions": "#duvida_exame && @exame:cateterismo",
+      "dialog_node": "node_exame_cateter",
+      "parent": null,
+      "previous_sibling": "node_exame_ergo",
+      "context": {
+        "falhas": 0,
+        "urgencia": false
+      },
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "selection_policy": "sequential",
+            "values": [
+              {
+                "text": "O cateterismo cardíaco é um procedimento invasivo: um cateter fino é introduzido por uma artéria (geralmente no punho ou na virilha) e, com contraste, permite visualizar as artérias coronárias. É realizado em ambiente hospitalar, com equipe especializada, e pode ser diagnóstico ou terapêutico (angioplastia). Como todo procedimento invasivo, tem indicações e riscos que precisam ser discutidos individualmente com o seu cardiologista. Eu não tenho como avaliar isso. O preparo, incluindo jejum, é orientado pelo serviço que vai realizar o exame."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "standard",
+      "title": "Exame - sangue",
+      "conditions": "#duvida_exame && @exame:exame_de_sangue",
+      "dialog_node": "node_exame_sangue",
+      "parent": null,
+      "previous_sibling": "node_exame_cateter",
+      "context": {
+        "falhas": 0,
+        "urgencia": false
+      },
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "selection_policy": "sequential",
+            "values": [
+              {
+                "text": "Nos exames de sangue com relação cardiovascular, os mais comuns são o perfil lipídico (colesterol total, LDL, HDL e triglicérides), a glicemia, a função renal e, em contexto de dor no peito aguda no hospital, a troponina, que é um marcador de lesão no músculo cardíaco. O jejum varia conforme o pedido médico e o laboratório, então confirme no agendamento. Resultado de exame de sangue não se interpreta isoladamente: ele precisa ser lido junto com seu histórico, pelo seu médico."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "standard",
+      "title": "Exame não especificado",
+      "conditions": "#duvida_exame",
+      "dialog_node": "node_exame_sem",
+      "parent": null,
+      "previous_sibling": "node_exame_sangue",
+      "context": {
+        "falhas": 0,
+        "urgencia": false
+      },
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "selection_policy": "sequential",
+            "values": [
+              {
+                "text": "Posso explicar a finalidade e o preparo dos exames cardiológicos mais comuns. Sobre qual deles você quer saber: eletrocardiograma (ECG), ecocardiograma, Holter 24 horas, teste ergométrico, cateterismo ou exames de sangue?"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "standard",
+      "title": "Agendar consulta",
+      "conditions": "#agendar_consulta",
+      "dialog_node": "node_agendar",
+      "parent": null,
+      "previous_sibling": "node_exame_sem",
+      "context": {
+        "falhas": 0,
+        "urgencia": false
+      },
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "selection_policy": "sequential",
+            "values": [
+              {
+                "text": "Posso encaminhar sua solicitação de agendamento. Qual seria a sua preferência de período: manhã ou tarde? (Este é um protótipo acadêmico: a solicitação é simulada e não gera agendamento real.)"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "standard",
+      "title": "Confirmação do agendamento",
+      "conditions": "true",
+      "dialog_node": "node_agendar_conf",
+      "parent": "node_agendar",
+      "previous_sibling": null,
+      "context": {
+        "preferencia_periodo": "<? input.text ?>",
+        "urgencia": false
+      },
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "selection_policy": "sequential",
+            "values": [
+              {
+                "text": "Solicitação registrada com preferência \"<? $preferencia_periodo ?>\". A equipe de agendamento entraria em contato para confirmar data e horário. Lembrando que este é um protótipo acadêmico e nenhum agendamento real foi criado. Posso ajudar com mais alguma coisa?"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "standard",
+      "title": "Hábitos - fator de risco identificado",
+      "conditions": "#habitos_saudaveis && @fator_risco",
+      "dialog_node": "node_habitos_fator",
+      "parent": null,
+      "previous_sibling": "node_agendar",
+      "context": {
+        "fator": "@fator_risco",
+        "falhas": 0,
+        "urgencia": false
+      },
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "selection_policy": "sequential",
+            "values": [
+              {
+                "text": "Você mencionou um fator de risco importante: <? $fator ?>. Medidas de prevenção cardiovascular com benefício bem estabelecido incluem: reduzir o sal e alimentos ultraprocessados; priorizar frutas, verduras, grãos integrais e peixes; praticar pelo menos 150 minutos por semana de atividade física moderada; não fumar; moderar o álcool; dormir bem; e manter acompanhamento regular da pressão, do colesterol e da glicemia. Para um fator de risco específico como o seu, o plano precisa ser individualizado com o seu médico, inclusive a liberação para iniciar exercício, se você está sedentário ou tem doença cardíaca conhecida."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "standard",
+      "title": "Hábitos - orientação geral",
+      "conditions": "#habitos_saudaveis",
+      "dialog_node": "node_habitos_geral",
+      "parent": null,
+      "previous_sibling": "node_habitos_fator",
+      "context": {
+        "falhas": 0,
+        "urgencia": false
+      },
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "selection_policy": "sequential",
+            "values": [
+              {
+                "text": "Cuidar do coração passa por poucos hábitos consistentes: alimentação com menos sal e menos ultraprocessados; atividade física regular, algo em torno de 150 minutos por semana em intensidade moderada; não fumar; moderar o álcool; controlar peso, pressão, colesterol e glicemia; dormir o suficiente; e cuidar do estresse. Nenhuma dessas medidas precisa ser radical para funcionar: constância vale mais que intensidade. Se você está sedentário, tem alguma doença cardíaca ou mais de um fator de risco, converse com um médico antes de começar a se exercitar. Quer orientação sobre algum ponto específico, como pressão alta, colesterol, cigarro ou sedentarismo?"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "standard",
+      "title": "Capacidades do assistente",
+      "conditions": "#capacidades_assistente",
+      "dialog_node": "node_capacidades",
+      "parent": null,
+      "previous_sibling": "node_habitos_geral",
+      "context": {
+        "falhas": 0,
+        "urgencia": false
+      },
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "selection_policy": "sequential",
+            "values": [
+              {
+                "text": "Eu sou um assistente virtual de atendimento inicial, não um médico. O que eu faço: registrar e organizar o relato de sintomas cardiovasculares; informar as faixas de referência de pressão arterial; explicar a finalidade e o preparo de exames cardiológicos; orientar sobre hábitos de prevenção; encaminhar solicitação de consulta; e identificar sinais de urgência para te direcionar ao atendimento certo. O que eu não faço: diagnosticar, interpretar laudo, prescrever ou ajustar medicamento, e substituir consulta médica. Como posso ajudar?"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "standard",
+      "title": "Saudação",
+      "conditions": "#saudacao",
+      "dialog_node": "node_saudacao",
+      "parent": null,
+      "previous_sibling": "node_capacidades",
+      "context": {
+        "falhas": 0,
+        "urgencia": false
+      },
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "selection_policy": "sequential",
+            "values": [
+              {
+                "text": "Olá! Como posso ajudar hoje? Posso registrar um sintoma, esclarecer dúvidas sobre pressão arterial ou exames, orientar sobre prevenção ou encaminhar um agendamento."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "standard",
+      "title": "Despedida",
+      "conditions": "#despedida",
+      "dialog_node": "node_despedida",
+      "parent": null,
+      "previous_sibling": "node_saudacao",
+      "context": {
+        "falhas": 0,
+        "urgencia": false
+      },
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "selection_policy": "sequential",
+            "values": [
+              {
+                "text": "Foi bom conversar com você. Cuide-se: mantenha o acompanhamento médico em dia e, diante de dor no peito, falta de ar intensa ou mal-estar súbito, procure atendimento imediato (192). Até logo!"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "standard",
+      "title": "Não entendi - escalonamento",
+      "conditions": "anything_else && $falhas > 0",
+      "dialog_node": "node_falha_escalonamento",
+      "parent": null,
+      "previous_sibling": "node_despedida",
+      "context": {
+        "falhas": 0,
+        "urgencia": false
+      },
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "selection_policy": "sequential",
+            "values": [
+              {
+                "text": "Continuo sem entender, e prefiro ser honesto: esse assunto pode estar fora do que eu sei tratar. Eu consigo ajudar com: registro de sintomas, pressão arterial, exames cardiológicos, hábitos de prevenção e agendamento. Se a sua dúvida for clínica ou urgente, o caminho certo é falar com um profissional de saúde, pela sua unidade de saúde, pelo seu convênio ou, em urgência, pelo 192. Quer tentar um desses temas comigo?"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "standard",
+      "title": "Não entendi",
+      "conditions": "anything_else",
+      "dialog_node": "node_falha_1",
+      "parent": null,
+      "previous_sibling": "node_falha_escalonamento",
+      "context": {
+        "falhas": 1,
+        "urgencia": false
+      },
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "selection_policy": "sequential",
+            "values": [
+              {
+                "text": "Desculpe, não entendi. Pode reformular com outras palavras? Alguns exemplos do que eu entendo: \"estou com falta de ar ao caminhar\", \"minha pressão deu 150/100\", \"para que serve o Holter\", \"quero marcar consulta\", \"como reduzir o colesterol\"."
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CardioIA - Assistente Cardiológico</title>
+  <!--
+    CardioIA - Fase 5 - Interface de interação (Parte 2)
+    Base didática: Cap10, seção 2.1 (Código-fonte 6): template HTML com
+    JavaScript que consome a rota /api/chat do servidor Flask via fetch().
+    Mantido em arquivo único e sem dependências externas de propósito: o
+    avaliador só precisa do Flask rodando, sem npm, build ou CDN.
+  -->
+  <style>
+    :root {
+      --fundo: #f4f6f8;
+      --painel: #ffffff;
+      --borda: #dfe4ea;
+      --texto: #1f2933;
+      --texto-suave: #62707d;
+      --primaria: #b3122c;
+      --primaria-escura: #8d0e22;
+      --bot: #eef1f5;
+      --urgencia: #fdecec;
+      --urgencia-borda: #d93025;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: var(--fundo);
+      color: var(--texto);
+      display: flex;
+      justify-content: center;
+      padding: 24px 16px;
+    }
+
+    .app {
+      width: 100%;
+      max-width: 760px;
+      background: var(--painel);
+      border: 1px solid var(--borda);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: calc(100vh - 48px);
+      max-height: 900px;
+    }
+
+    header {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--borda);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      background: var(--primaria);
+      color: #fff;
+      display: grid; place-items: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    header h1 { margin: 0; font-size: 17px; }
+    header p { margin: 2px 0 0; font-size: 12.5px; color: var(--texto-suave); }
+
+    .motor {
+      margin-left: auto;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      padding: 4px 9px;
+      border-radius: 20px;
+      background: var(--bot);
+      color: var(--texto-suave);
+      white-space: nowrap;
+    }
+
+    .aviso {
+      background: #fff8e1;
+      border-bottom: 1px solid #f0e0a8;
+      padding: 10px 20px;
+      font-size: 12.5px;
+      color: #6b5a10;
+      line-height: 1.5;
+    }
+
+    .conversa {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .msg { display: flex; }
+    .msg .bolha {
+      max-width: 82%;
+      padding: 11px 14px;
+      border-radius: 12px;
+      font-size: 14.5px;
+      line-height: 1.55;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+
+    .msg.usuario { justify-content: flex-end; }
+    .msg.usuario .bolha {
+      background: var(--primaria);
+      color: #fff;
+      border-bottom-right-radius: 4px;
+    }
+
+    .msg.bot .bolha {
+      background: var(--bot);
+      border-bottom-left-radius: 4px;
+    }
+
+    .msg.bot.urgente .bolha {
+      background: var(--urgencia);
+      border: 1px solid var(--urgencia-borda);
+      color: #7a1414;
+    }
+
+    .msg.bot.urgente .bolha::before {
+      content: "⚠ ORIENTAÇÃO DE URGÊNCIA";
+      display: block;
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: .04em;
+      color: var(--urgencia-borda);
+      margin-bottom: 6px;
+    }
+
+    .meta {
+      font-size: 11px;
+      color: var(--texto-suave);
+      margin-top: 6px;
+      font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+    }
+
+    .digitando .bolha { color: var(--texto-suave); font-style: italic; }
+
+    form {
+      display: flex;
+      gap: 10px;
+      padding: 14px 16px;
+      border-top: 1px solid var(--borda);
+      background: var(--painel);
+    }
+
+    input[type="text"] {
+      flex: 1;
+      padding: 12px 14px;
+      font-size: 14.5px;
+      border: 1px solid var(--borda);
+      border-radius: 8px;
+      font-family: inherit;
+    }
+
+    input[type="text"]:focus {
+      outline: 2px solid var(--primaria);
+      outline-offset: -1px;
+    }
+
+    button {
+      padding: 12px 20px;
+      font-size: 14.5px;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      background: var(--primaria);
+      color: #fff;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    button:hover:not(:disabled) { background: var(--primaria-escura); }
+    button:disabled { opacity: .5; cursor: not-allowed; }
+
+    .rodape {
+      padding: 10px 20px;
+      border-top: 1px solid var(--borda);
+      font-size: 11.5px;
+      color: var(--texto-suave);
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .rodape button {
+      background: none;
+      color: var(--texto-suave);
+      padding: 0;
+      font-size: 11.5px;
+      font-weight: 500;
+      text-decoration: underline;
+    }
+
+    .rodape button:hover:not(:disabled) { background: none; color: var(--primaria); }
+
+    @media (max-width: 520px) {
+      body { padding: 0; }
+      .app { height: 100vh; max-height: none; border: none; border-radius: 0; }
+      .msg .bolha { max-width: 92%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="logo" aria-hidden="true">♥</div>
+      <div>
+        <h1>CardioIA</h1>
+        <p>Assistente de atendimento inicial em saúde cardiovascular</p>
+      </div>
+      <span class="motor" id="motor" title="Motor de NLU em uso">{{ modo }}</span>
+    </header>
+
+    <div class="aviso">
+      <strong>Protótipo acadêmico.</strong> Este assistente não realiza diagnóstico,
+      não interpreta exames e não substitui avaliação médica. Em caso de emergência,
+      ligue <strong>192 (SAMU)</strong>.
+    </div>
+
+    <div class="conversa" id="conversa" role="log" aria-live="polite"></div>
+
+    <form id="formulario" autocomplete="off">
+      <input
+        type="text"
+        id="entrada"
+        placeholder="Descreva o que você está sentindo ou sua dúvida..."
+        maxlength="500"
+        aria-label="Mensagem"
+      >
+      <button type="submit" id="enviar">Enviar</button>
+    </form>
+
+    <div class="rodape">
+      <span id="detalhes">—</span>
+      <button type="button" id="reiniciar">Reiniciar conversa</button>
+    </div>
+  </div>
+
+  <script>
+    const conversa   = document.getElementById("conversa");
+    const formulario = document.getElementById("formulario");
+    const entrada    = document.getElementById("entrada");
+    const botao      = document.getElementById("enviar");
+    const detalhes   = document.getElementById("detalhes");
+    const reiniciar  = document.getElementById("reiniciar");
+
+    // Acrescenta uma bolha na conversa.
+    function adicionar(texto, autor, opcoes = {}) {
+      const linha = document.createElement("div");
+      linha.className = "msg " + autor + (opcoes.urgente ? " urgente" : "");
+      if (opcoes.digitando) linha.classList.add("digitando");
+
+      const bolha = document.createElement("div");
+      bolha.className = "bolha";
+      bolha.textContent = texto;
+      linha.appendChild(bolha);
+
+      conversa.appendChild(linha);
+      conversa.scrollTop = conversa.scrollHeight;
+      return linha;
+    }
+
+    // Mostra intenção e entidades reconhecidas — útil na demonstração e na
+    // depuração, pois evidencia o resultado do NLU.
+    function mostrarDetalhes(dados) {
+      if (!dados || (!dados.intent && !(dados.entidades || []).length)) {
+        detalhes.textContent = "—";
+        return;
+      }
+      const partes = [];
+      if (dados.intent) {
+        partes.push("intenção: #" + dados.intent +
+          (dados.confianca != null ? " (" + dados.confianca + ")" : ""));
+      }
+      if ((dados.entidades || []).length) {
+        partes.push("entidades: " + dados.entidades
+          .map(e => "@" + e.entidade + ":" + e.valor).join(", "));
+      }
+      if (dados.analise_pressao) {
+        partes.push("pressão: " + dados.analise_pressao.valor +
+          " → " + dados.analise_pressao.classificacao);
+      }
+      detalhes.textContent = partes.join(" | ");
+    }
+
+    async function chamar(rota, corpo) {
+      const resposta = await fetch(rota, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(corpo || {})
+      });
+      return resposta.json();
+    }
+
+    async function enviarMensagem(texto) {
+      adicionar(texto, "usuario");
+      entrada.value = "";
+      botao.disabled = true;
+
+      const aguardando = adicionar("CardioIA está digitando...", "bot", { digitando: true });
+
+      try {
+        const dados = await chamar("/api/chat", { message: texto });
+        aguardando.remove();
+        adicionar(dados.texto, "bot", { urgente: dados.urgencia });
+        mostrarDetalhes(dados);
+      } catch (erro) {
+        // Falha de rede: o servidor pode ter caído. Não deixa a interface muda.
+        aguardando.remove();
+        adicionar(
+          "Não consegui me conectar ao servidor. Verifique se o backend está rodando " +
+          "e tente novamente. Em caso de emergência, ligue 192.",
+          "bot"
+        );
+        console.error(erro);
+      } finally {
+        botao.disabled = false;
+        entrada.focus();
+      }
+    }
+
+    formulario.addEventListener("submit", (evento) => {
+      evento.preventDefault();
+      const texto = entrada.value.trim();
+      if (texto) enviarMensagem(texto);
+    });
+
+    reiniciar.addEventListener("click", async () => {
+      await chamar("/api/reset");
+      conversa.innerHTML = "";
+      detalhes.textContent = "—";
+      iniciar();
+    });
+
+    // Abre a conversa buscando a saudação do nó de boas-vindas da skill.
+    async function iniciar() {
+      try {
+        const dados = await chamar("/api/iniciar");
+        adicionar(dados.texto, "bot", { urgente: dados.urgencia });
+      } catch (erro) {
+        adicionar("Não consegui iniciar a conversa. O backend está rodando?", "bot");
+        console.error(erro);
+      }
+      entrada.focus();
+    }
+
+    iniciar();
+  </script>
+</body>
+</html>

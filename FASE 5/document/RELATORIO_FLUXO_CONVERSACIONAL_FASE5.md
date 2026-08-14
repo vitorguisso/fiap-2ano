@@ -62,7 +62,11 @@ O plano de testes cobre 17 casos, executados sobre o fluxo: saudação, emergên
 
 Foram verificados também cinco diálogos de múltiplos turnos, entre eles a coleta completa de sintoma, os dois saltos entre nós e a interrupção da coleta por emergência. A regra de faixa de pressão foi validada em nove formatos de entrada, incluindo a escala coloquial (*"12 por 8"* → 120/80 mmHg) e valor implausível.
 
-> **Pendente:** os mesmos casos precisam ser reexecutados na aba *Try it out* do Watson Assistant após a importação da skill. Esses resultados ainda não podem ser registrados como obtidos.
+A skill foi importada em uma instância real do watsonx Assistant (plano Lite, Dallas, experiência clássica), que confirma o conteúdo: **10 intenções, 6 entidades e 29 nós de diálogo**. Os casos foram reexecutados contra a nuvem, com o backend integrado: emergência reconhecida com confiança 1,00; coleta de sintoma preservando contexto entre três turnos; medida de pressão capturada nos formatos com barra e por extenso; recusa correta na dúvida sobre medicamento.
+
+Foram testadas também seis entradas **fora do domínio** — de "minha casa tá pegando fogo" a "meu cachorro está passando mal". Na primeira execução, três foram indevidamente classificadas dentro do domínio, uma delas como emergência cardíaca. A correção exigiu adicionar 24 *counterexamples* à skill, desligar a desambiguação e criar uma rede de segurança no backend contra respostas vazias. Após a correção, as seis passaram a cair corretamente no tratamento de exceção.
+
+Ao todo, onze dificuldades técnicas reais foram registradas durante o desenvolvimento, com causa, solução e resultado. Seis delas só se tornaram visíveis no uso real da aplicação ou após a integração com a nuvem — nenhuma seria detectável apenas pelos testes automatizados.
 
 ## 7. Limitações
 

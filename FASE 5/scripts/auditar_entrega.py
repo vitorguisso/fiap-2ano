@@ -124,6 +124,76 @@ def verificar_entregaveis():
             problemas.append(f"Entregável ausente: {nome} ({caminho})")
 
 
+def verificar_publicacao():
+    """Confere se os arquivos chegaram ao GitHub.
+
+    POR QUE ISSO EXISTE: o upload de pasta pelo navegador do GitHub IGNORA
+    arquivos cujo nome comeca com ponto. Na primeira publicacao, .gitignore e
+    src/backend/.env.example ficaram de fora sem nenhum aviso - e o README
+    instrui o avaliador a copiar justamente o .env.example.
+
+    Conferir apenas o disco local nao detecta esse tipo de falha.
+    """
+    import urllib.error
+    import urllib.request
+
+    import hashlib
+    import urllib.parse
+
+    base = "https://raw.githubusercontent.com/vitorguisso/fiap-2ano/main/FASE%205/"
+
+    # Compara contra os arquivos DA RAIZ do projeto, que sao a fonte da verdade.
+    # Comparar contra a pasta de entrega esconderia o caso em que ela propria
+    # esta desatualizada - foi exatamente o que aconteceu numa publicacao: os
+    # textos foram corrigidos na raiz, preparar_entrega.py nao foi reexecutado,
+    # e a conferencia acusou "identico" porque os dois lados estavam velhos.
+    essenciais = [
+        "README.md",
+        ".gitignore",
+        "src/backend/.env.example",
+        "src/backend/app.py",
+        "src/backend/requirements.txt",
+        "config/watson/skill-cardioia-dialog.json",
+        "document/FLUXO_CONVERSACIONAL.md",
+        "document/RELATORIO_FLUXO_CONVERSACIONAL_FASE5.md",
+        "document/RELATORIO_FLUXO_CONVERSACIONAL_FASE5.pdf",
+    ]
+
+    print("\n  Publicacao no GitHub (conteudo comparado com a raiz do projeto):")
+    for caminho in essenciais:
+        origem = RAIZ / caminho
+        url = base + urllib.parse.quote(caminho)
+        try:
+            with urllib.request.urlopen(url, timeout=20) as resposta:
+                remoto = resposta.read()
+        except urllib.error.HTTPError as erro:
+            if erro.code == 404:
+                problemas.append(f"Nao publicado no GitHub: {caminho}")
+                print(f"    🔴 {caminho} — NAO PUBLICADO")
+            else:
+                alertas.append(f"Nao foi possivel verificar {caminho}: HTTP {erro.code}")
+            continue
+        except OSError:
+            alertas.append("Sem conexao para verificar a publicacao no GitHub")
+            print("    (sem conexao — verificacao ignorada)")
+            return
+
+        if not origem.exists():
+            alertas.append(f"{caminho} existe no GitHub mas nao na raiz do projeto")
+            continue
+
+        local = origem.read_bytes().replace(b"\r\n", b"\n")
+        remoto_norm = remoto.replace(b"\r\n", b"\n")
+        if hashlib.sha256(local).hexdigest() == hashlib.sha256(remoto_norm).hexdigest():
+            print(f"    ✅ {caminho}")
+        else:
+            problemas.append(
+                f"Versao publicada difere da atual: {caminho} "
+                "(rode scripts/preparar_entrega.py e reenvie a pasta)"
+            )
+            print(f"    🔴 {caminho} — DESATUALIZADO no GitHub")
+
+
 def verificar_pendencias():
     for arquivo in [README, RAIZ / "document/FLUXO_CONVERSACIONAL.md"]:
         texto = arquivo.read_text(encoding="utf-8")
@@ -144,6 +214,7 @@ def main():
     verificar_links_readme()
     verificar_numeros()
     verificar_credenciais()
+    verificar_publicacao()
     verificar_pendencias()
 
     print()

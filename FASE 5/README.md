@@ -155,8 +155,7 @@ Conforme solicitado no enunciado, este relatório possui caráter resumido (1 a 
 - [Versão em Markdown](document/RELATORIO_FLUXO_CONVERSACIONAL_FASE5.md) (fonte do PDF)
 
 O PDF é gerado a partir do Markdown por `scripts/gerar_relatorio_pdf.py`, o que permite
-revisar o conteúdo versionado e regerar o documento quando os resultados dos testes no
-Watson Assistant forem obtidos.
+manter o conteúdo versionado e regerar o documento sempre que ele for revisado.
 
 ---
 
@@ -804,7 +803,9 @@ Ao longo do trabalho, algumas decisões se mostraram mais determinantes do que a
 
 A implementação também exigiu divergir do exemplo apresentado no material didático em um ponto específico: o reaproveitamento da sessão do Watson Assistant. Criar uma sessão nova a cada mensagem, como no exemplo original, descartaria as variáveis de contexto entre turnos e inviabilizaria todo o fluxo de coleta em múltiplas etapas.
 
-Sete dificuldades técnicas reais foram enfrentadas e documentadas, com destaque para três que apareceram apenas durante o teste manual da interface, quando os testes automatizados já estavam integralmente aprovados. Esse foi um aprendizado prático relevante: cobertura de teste automatizado não substitui o uso real da aplicação.
+Onze dificuldades técnicas reais foram enfrentadas e documentadas. Três delas apareceram apenas durante o teste manual da interface, quando os testes automatizados já estavam integralmente aprovados. Outras três só se manifestaram após a integração com a nuvem, sendo indetectáveis no modo de demonstração local. E a última surgiu ao investigar uma pergunta aparentemente simples — o que o assistente faz diante de algo que não foi previsto? —, revelando que frases fora do domínio eram forçadas para dentro dele, ao ponto de "meu cachorro está passando mal" ser classificado como emergência cardíaca.
+
+Esse foi o aprendizado prático mais relevante do trabalho: cobertura de teste automatizado não substitui o uso real da aplicação, e nenhum dos dois substitui o esforço deliberado de procurar onde a solução falha.
 
 Os resultados obtidos demonstram que agentes conversacionais podem organizar informação clínica de forma compreensível e cumprir um papel útil de acolhimento e direcionamento. Evidenciam igualmente os limites dessa abordagem: um assistente que interpreta apenas linguagem não realiza triagem clínica, e reconhecer explicitamente essa fronteira é parte da responsabilidade de projeto.
 
